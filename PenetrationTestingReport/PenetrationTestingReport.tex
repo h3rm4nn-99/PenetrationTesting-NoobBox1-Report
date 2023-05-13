@@ -1,0 +1,79 @@
+\documentclass[a4paper, 12pt, oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=3cm, bindingoffset=1cm]{geometry}
+\linespread{1.5}
+\usepackage{float}
+\usepackage{csquotes}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\usepackage{alphabeta}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage[htt]{hyphenat}
+\usepackage{pgfplots}
+
+\usepackage[
+    backend=biber,
+    sorting=none
+]{biblatex}
+\addbibresource{bibliography.bib}
+
+
+\setlength{\parindent}{1cm}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\textbf{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\contentsname}{Indice}
+
+\usepackage[Conny]{fncychap}
+
+  
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        \LARGE{\uppercase{Università degli Studi di Salerno}}\\
+        \vspace{5mm}
+    	\uppercase{\normalsize Dipartimento di Informatica }\\
+    \end{center}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.35\textwidth]{logo_unisa}
+    \end{figure}
+    
+    \begin{center}
+        \normalsize{Corso di \textbf{Penetration Testing and Ethical Hacking}}\\
+    	\vspace{10mm}
+    	\LARGE{\textbf{\textsc{NoobBox-1}:\\ Penetration Testing Report}}\\
+    	\vspace{3mm}
+        \large{\uppercase{Anno Accademico 2022/2023}}
+    \end{center}
+
+    \vspace{70mm}
+    \noindent
+    \begin{minipage}[t]{0.6\textwidth}
+    	Docente:\\\textbf{Prof. Arcangelo Castiglione}
+    	\vspace{10mm}\\
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.4\textwidth}\raggedleft
+    	Studente: \\\textbf{Hermann Senatore}
+    \end{minipage}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Introduzione}
+
+\newpage
+\printbibliography[title={Riferimenti bibliografici}]
+\end{document}

@@ -299,3 +299,9 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
+
+# For the purposes of this project, we can avoid uploading the pdf files to the remote repository.
+*.pdf
+
+# macOS stuff
+.DS_Store
