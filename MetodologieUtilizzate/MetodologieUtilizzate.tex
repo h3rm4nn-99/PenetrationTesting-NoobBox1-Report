@@ -73,6 +73,28 @@
 \newpage
 
 \section{Introduzione}
+Questo documento si propone di raccogliere in maniera esaustiva tutte le operazioni che sono state compiute allo scopo di condurre l'analisi sull'asset vulnerabile \textsc{NoobBox-1}, disponibile sulla piattaforma VulnHub. 
+
+Tale documento costituisce il \textbf{Documento 2}, necessario per la consegna dell'attività progettuale del corso di \textbf{Penetration Testing and Ethical Hacking}.
+
+In particolare, questa sezione consiste una panoramica sull'asset che è stato analizzato e ci si sofferma sull'ambiente utilizzato per condurre l'analisi sull'asset stesso.
+
+\subsection{Ambiente di lavoro}
+La piattaforma sulla quale è stato svolto l'intero processo consiste in un \textbf{MacBook Air} (late 2020) che utilizza il processore Apple Silicon M1 e che fa uso dell'architettura \textbf{arm64}. Anche se questa informazione al momento può apparire come di poco conto, diventerà rilevante durante la fase di Vulnerability Mapping ed in particolare al momento dell'installazione dei tools necessari. Ulteriori informazioni sul topic saranno fornite più avanti in questo documento.
+
+Per condurre concretamente l'indagine sono state sfruttate due macchine virtuali utilizzando l'\textit{hypervisor} \textbf{UTM}.
+
+In particolare:
+
+\begin{itemize}
+    \item La prima macchina virtuale consiste nella versione \textbf{aarch64} del sistema operativo \textbf{Kali Linux};
+    \item La seconda macchina virtuale consiste invece nell'asset vulnerabile menzionato poc'anzi.
+\end{itemize}
+
+\subsubsection{Macchina virtuale 1: dettagli}
+La prima macchina virtuale è stata creata in maniera standard utilizzando l'immagine ISO reperibile presso il sito web della distribuzione \cite{kali}. La versione utilizzata risulta essere la \textbf{2023.1}, rilasciata il 13 marzo 2023. 
+
+In fase di installazione è stato necessario adottare alcuni accorgimenti suggeriti nella relativa documentazione dell'\textit{hypervisor} utilizzato \cite{kali-utm}. Le informazioni presenti in questa pagina sono state create per le versioni \textbf{2022.x} ma sono valide anche per la versione utilizzata durante questo processo.
 
 \newpage
 \printbibliography[title={Riferimenti bibliografici}]
