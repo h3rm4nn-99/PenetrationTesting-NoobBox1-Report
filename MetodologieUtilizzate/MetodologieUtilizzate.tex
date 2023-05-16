@@ -80,7 +80,7 @@ Tale documento costituisce il \textbf{Documento 2}, necessario per la consegna d
 
 In particolare, questa sezione consiste una panoramica sull'asset che è stato analizzato e ci si sofferma sull'ambiente utilizzato per condurre l'analisi sull'asset stesso.
 
-\subsection{Ambiente di lavoro}
+\subsection{Ambiente di lavoro ed Information Gathering}
 La piattaforma sulla quale è stato svolto l'intero processo consiste in un \textbf{MacBook Air} (late 2020) che utilizza il processore Apple Silicon M1 e che fa uso dell'architettura \textbf{arm64}. Anche se questa informazione al momento può apparire come di poco conto, diventerà rilevante durante la fase di Vulnerability Mapping ed in particolare al momento dell'installazione dei tools necessari. Ulteriori informazioni sul topic saranno fornite più avanti in questo documento.
 
 Per condurre concretamente l'indagine sono state sfruttate due macchine virtuali utilizzando l'\textit{hypervisor} \textbf{UTM}, che utilizza \textbf{QEMU} come suo backend.
@@ -107,7 +107,7 @@ La macchina virtuale in questione utilizza il kernel Linux 6.1 e di seguito è p
     \caption{La versione del kernel utilizzata da Kali}
 \end{figure}
 
-\subsubsection{Macchina virtuale 2: dettagli}
+\subsubsection{Dettagli sull'asset}
 Come menzionato in precedenza, la seconda macchina consiste proprio nell'asset su cui deve essere condotta l'analisi. Originariamente pensato per essere una sfida CTF, sulla piattaforma VulnHub viene rivelata la presenza di due \textit{flags} a cui accedere: una per l'utente non privilegiato ed una per \texttt{root}. 
 
 Naturalmente, allo scopo di questo progetto non ci si è limitati alla cattura delle flag ma è stato seguito un approccio più sistematico che prevede l'utilizzo di tools e di metodologie standard tipiche di un processo di Penetration Testing.
@@ -127,7 +127,52 @@ Gli step seguiti per la conversione dell'immagine disco sono riportati qui di se
     Lo switch \texttt{-f} permette di esplicitare il formato \textbf{sorgente}, mentre lo switch \texttt{-O} quello di \textbf{output}.
 \end{enumerate}
 
-Successivamente, è stato possibile creare una nuova macchina virtuale \textbf{Linux} e, conseguentemente, importare il file appena creato come disco virtuale. 
+Successivamente, è stato possibile creare una nuova macchina virtuale \textbf{Linux} e, conseguentemente, importare il file appena creato come disco virtuale.
+
+Al primo avvio della macchina ci si rende conto che è in uso il sistema operativo \textbf{Debian GNU\slash Linux} in versione 10 (codename \texttt{buster}), rilasciato il 6 Luglio 2019. \cite{debian}
+
+La quantità di informazioni che è possibile carpire senza effettuare analisi "esterne" all'asset stesso si ferma tuttavia qui poiché \textbf{non è possibile accedere alla macchina}. Lo scopo della sfida CTF è in reltà proprio quello di effettuare il login e "catturare" le due flag descritte in precedenza. È quindi necessario svolgere ulteriori analisi
+
+Tutti i passaggi descritti in questo documento assumono che la macchina Kali si trovi \textbf{sulla stessa rete locale} della macchina che costituise l'asset da analizzare.
+
+\section{Target Discovery}
+Come detto, la diretta conseguenza dell'impossibilità di accedere all'asset in alcun modo consiste nella necessità di determinare in qualche modo il suo indirizzo IP sulla rete.
+
+L'hypervisor UTM crea come impostazione predefinita una rete \textbf{NAT} che usa il range (qui riportato in notazione CIDR) \textbf{192.168.64.0\slash24}.
+
+Prima di tutto, è necessario specificare che:
+
+\begin{itemize}
+    \item Anche la macchina Host (su cui è in esecuzione l'hypervisor) fa parte della rete NAT ed ha indirizzo IP \textbf{192.168.64.1} sull'interfaccia \texttt{bridge100};
+    \item La macchina Kali ha come indirizzo \textbf{192.168.64.15} sull'interfaccia \texttt{eth0}.
+\end{itemize}
+
+A questo punto, per determinare l'indirizzo IP dell'asset è possibile utilizzare il tool \texttt{netdiscover}, che viene fornito di default con Kali Linux e che deve essere eseguito come utente \texttt{root}.
+
+Suddetto tool, secondo la documentazione accessibile mediante il comando \texttt{man netdiscover}, permette di rilevare host attivi su di una rete locale inviandogli richeste \textbf{ARP}. 
+
+Due sono le opzioni che devono essere specificate in questo contesto:
+
+\begin{itemize}
+    \item \texttt{-i eth0} permette di utilizzare l'interfaccia di rete \texttt{eth0};
+    \item \texttt{-r 192.168.64.0\slash24} permette invece di specificare il range di indirizzi compreso tra 192.168.64.0 e 192.168.64.255, specificato in notazione CIDR.
+\end{itemize}.
+
+\newpage
+L'output per
+\begin{center}
+    \texttt{netdiscover -i eth0 -r 192.168.64.0\slash24}
+\end{center}
+
+viene riportato qui di seguito.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{img/netdiscover.png}
+    \caption{L'output di \texttt{netdiscover}}
+\end{figure}
+
+Tralasciando l'host 192.168.64.1 che si è menzionato appartenere alla macchina fisica che ospita l'hypervisor, è possibile notare la presenza di un host attivo con indirizzo 192.168.64.21 e, dato che al momento dell'esecuzione del tool non erano in esecuzione altre macchine virtuali oltre all'asset in analisi, è possibile concludere che \textbf{192.168.64.21} sia effettivamente \textbf{il suo indirizzo}.
 
 \newpage
 \printbibliography[title={Riferimenti bibliografici e risorse consultate}]
