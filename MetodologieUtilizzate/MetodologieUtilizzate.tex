@@ -234,7 +234,47 @@ Di seguito viene riportato il risultato della scansione.
     \caption{L'output di \texttt{nmap}.}
 \end{figure}
 
-Secondo \texttt{nmap}, il target consiste in una macchina \textbf{general purpose} che utilizza il kernel \textbf{Linux} in una versione compresa tra la \textbf{4.15} e la \textbf{5.6}. Considerando che Debian 10 è stato rilasciato con il kernel \textbf{4.19} \cite{debian}, è possibile concludere che le informazioni ottenute in precedenza risultano \textbf{corrette}.
+Secondo \texttt{nmap}, il target consiste in una macchina \textbf{general purpose} che utilizza il kernel \textbf{Linux} in una versione compresa tra la \textbf{4.15} e la \textbf{5.6}. Considerando che Debian 10 è stato rilasciato con il kernel \textbf{4.19} \cite{debian}, è possibile concludere che le informazioni ottenute in precedenza risultano \textbf{corrette}. Si noti come \texttt{nmap} abbia inoltre rilevato la porta 80 come \textbf{aperta}.
+
+\section{Target Enumeration}
+
+Nella fase precedente, oltre all'estrazione di diverse informazioni sul target, è stata ricavata anche un'altra, importante, informazione circa lo stato di apertura della porta \texttt{tcp/80}. Il fatto che la porta 80 sia aperta fa presupporre che sul target sia in esecuzione un qualche tipo di servizio web. Questa sezione, definita di \textbf{Target Enumeration}, approfondisce questa ipotesi e conduce un'analisi sistematica riguardo ai servizi in esecuzione sul target mediante il tool \texttt{nmap}, stavolta utilizzato nel suo contesto principale.
+
+In particolare, il tool \texttt{nmap} sarà utilizzato per:
+
+\begin{itemize}
+    \item Scansionare tutte le 65535 porte del target (switch \texttt{-p-});
+    \item Identificare la versione dei servizi attivi (switch \texttt{-sV});
+    \item Esportare i risultati della scansione in formato XML nel file \texttt{nmap\_noobbox\_report.xml} (switch \texttt{-oX nmap\_noobbox\_report.xml}).
+\end{itemize}
+
+Il comando utilizzato quindi risulta essere:
+
+\begin{center}
+    \texttt{nmap -p- -sV 192.168.64.1 -oX nmap\_noobbox\_report.xml}
+\end{center}
+
+In questo caso, avendo a disposizione l'accesso root alla macchina Kali, è stato utilizzata la cosiddetta \textbf{SYN Scan} (switch \texttt{-sS}, ma che essendo la scansione di default è stato omesso dalla command line).
+
+Di seguito è riportato l'output del tool.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/nmap-enum.png}
+    \caption{L'output di \texttt{nmap}.}
+\end{figure}
+
+In allegato al presente documento è presente il report generato da \texttt{nmap} e convertito in HTML mediante il tool \texttt{xsltproc}, chiamato \texttt{nmap\_noobbox\_report.html}.
+
+\newpage
+\subsection{Analisi dei risultati}
+Facendo riferimento al report generato è possibile notare che:
+
+\begin{itemize}
+    \item Il servizio presente sulla porta 80 TCP (identificata come aperta anche in precedenza) consiste in \textbf{Apache \texttt{httpd}} in versione \textbf{2.4.38};
+    \item Non è presente nessun altro servizio TCP attivo sul target, dato che le altre 65534 porte sono state dichiarate \textbf{chiuse};
+    \item È stato possibile ottenere un ulteriore discontro sul sistema operativo in esecuzione sull'asset: \textbf{Debian}.
+\end{itemize}
 
 \newpage
 \printbibliography[title={Riferimenti bibliografici e risorse consultate}]
