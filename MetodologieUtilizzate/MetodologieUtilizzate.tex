@@ -131,6 +131,8 @@ Successivamente, è stato possibile creare una nuova macchina virtuale \textbf{L
 
 Al primo avvio della macchina ci si rende conto che è in uso il sistema operativo \textbf{Debian GNU\slash Linux} in versione 10 (codename \texttt{buster}), rilasciato il 6 Luglio 2019. \cite{debian}
 
+In ogni caso, la versione del sistema operativo utilizzato dall'asset sarà oggetto di una successiva analisi per evitare qualsiasi tipo di depistaggio o ambiguità.
+
 La quantità di informazioni che è possibile carpire senza effettuare analisi "esterne" all'asset stesso si ferma tuttavia qui poiché \textbf{non è possibile accedere alla macchina}. Lo scopo della sfida CTF è in reltà proprio quello di effettuare il login e "catturare" le due flag descritte in precedenza. È quindi necessario svolgere ulteriori analisi
 
 Tutti i passaggi descritti in questo documento assumono che la macchina Kali si trovi \textbf{sulla stessa rete locale} della macchina che costituise l'asset da analizzare.
@@ -173,6 +175,66 @@ viene riportato qui di seguito.
 \end{figure}
 
 Tralasciando l'host 192.168.64.1 che si è menzionato appartenere alla macchina fisica che ospita l'hypervisor, è possibile notare la presenza di un host attivo con indirizzo 192.168.64.21 e, dato che al momento dell'esecuzione del tool non erano in esecuzione altre macchine virtuali oltre all'asset in analisi, è possibile concludere che \textbf{192.168.64.21} sia effettivamente \textbf{il suo indirizzo}.
+
+\subsection{Probing della macchina}
+
+Una volta ottenuto l'indirizzo IP della macchina, è ora necessario cercare di capire se la macchina identificata sia effettivamente raggiungibile in qualche modo. In questa sezione, viene sfruttato il tool \texttt{ping} che sfrutta il meccanismo degli \textbf{ICMP Echo Request\slash Reply}.
+
+La sintassi del comando ping, come specificato nella relativa documentazione, prevede la specifica di un indirizzo IP da contattare, ed eventualmente (mediante lo switch \texttt{-c}) il numero di richieste da inoltrare al target da analizzare. In questo contesto, al target verranno inoltrare 3 richieste ICMP. Il comando eseguito risulta quindi essere:
+
+\begin{center}
+    \texttt{ping -c 3 192.168.64.21}
+\end{center}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/ping.png}
+    \caption{L'output di \texttt{ping}}
+\end{figure}
+
+Senza adottare particolari accorgimenti, dall'output del comando mostrato qui sopra è possibile notare come la macchina in questione sia effettivamente \textbf{raggiungibile dall'esterno}, almeno utilizzando il protocollo ICMP.
+
+\subsection{OS Fingerprinting}
+Il passo successivo dell'analisi condotta consiste nell'identificare con certezza ed in maniera non ambigua il sistema operativo utilizzato dall'asset. A questo scopo, è possibile far riferimento ai tool \texttt{p0f} ed \texttt{nmap}, quest'ultimo utilizzato anche nelle fasi successive dell'analisi.
+
+\subsubsection{\texttt{p0f}}
+Il tool \textbf{\texttt{p0f}} utilizza una \textbf{tecnica di fingerprinting} basata sull'analisi della composizione dei pacchetti \textbf{TCP\slash IP} provenienti dalla macchina target per determinare \textbf{passivamente} il suo sistema operativo\cite{p0f}. L'utilizzo del tool prevede l'esecuzione come utente root. Una volta avviato, si mette in ascolto sull'interfaccia specificata dallo switch \texttt{-i} (in questo caso \texttt{eth0}), catturerà i pacchetti e restituirà informazioni sull'host che ha generato quel determinato pacchetto. Si rivela quindi necessaria la \textbf{generazione} di traffico verso il target per condurre l'analisi in questione. 
+
+Il comando completo utilizzato in questo contesto risulta essere:
+
+\begin{center}
+    \texttt{p0f -i eth0}
+\end{center}
+
+Come prima cosa, si è provato ad accedere all'asset mediante il comando \texttt{curl} utilizzando l'indirizzo IP ottenuto in precedenza sulla porta 80, che in questo caso si è rivelata \textbf{aperta}.\footnote{Si tenga presente che lo stato della porta 80 costituisce già di per sé un elemento \textbf{prezioso} per l'indagine in corso, ma una discussione approfonditta su questo topic verrà affrontata nella sezione dedicata alla \textbf{Target Enumeration}}.
+
+
+Analizzando tuttavia i risultati mostrati a schermo (qui di seguito, si notino i punti interrogativi in corrispondenza della voce \texttt{server}) ci si accorge che il tool \texttt{p0f} \textbf{non è riuscito ad identificare correttamente il sistema operativo del target}. Si è reso quindi necessario provare altre strategie.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/p0f.png}
+    \caption{L'output di \texttt{p0f}. L'indirizzo IP \texttt{192.168.64.15} appartiene alla macchina Kali.}
+\end{figure}
+
+\subsubsection{\texttt{nmap}}
+\texttt{nmap} è probabilmente uno dei tool più conosciuti ed utilizzati per condurre operazioni di Target Enumeration (ed infatti verrà utilizzato principalmente in questa fase per effettuare l'operazione di \textbf{port scanning}) e di security auditing in generale ma che può essere utilizzato anche per effettuare OS Fingerprinting.\cite{nmap}
+
+Suddetta operazione può essere effettuata mediante lo switch \texttt{-O} in combinazione con l'host da scansionare. La command line completa utilizzata in questo caso è la seguente:
+
+\begin{center}
+    \texttt{nmap -O 192.168.64.21}
+\end{center}
+
+Di seguito viene riportato il risultato della scansione.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/nmap-os.png}
+    \caption{L'output di \texttt{nmap}.}
+\end{figure}
+
+Secondo \texttt{nmap}, il target consiste in una macchina \textbf{general purpose} che utilizza il kernel \textbf{Linux} in una versione compresa tra la \textbf{4.15} e la \textbf{5.6}. Considerando che Debian 10 è stato rilasciato con il kernel \textbf{4.19} \cite{debian}, è possibile concludere che le informazioni ottenute in precedenza risultano \textbf{corrette}.
 
 \newpage
 \printbibliography[title={Riferimenti bibliografici e risorse consultate}]
