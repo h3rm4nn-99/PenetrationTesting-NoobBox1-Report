@@ -308,7 +308,7 @@ Di seguito viene riportato l'output del comando precedente.
 \subsubsection{UDP Port scanning: analisi dei risultati}
 Consultando l'output del comando, ci si rende conto che sull'asset \textbf{non sia presente} alcun servizio attivo su \textbf{nessuna} porta UDP.
 
-Si noti il messaggio di errore relativo al delay. Secondo la \textit{manpage} \cite{unicornscan-man} del tool, il tool di default sfrutta il timer \textbf{TSC} per gestire il delay tra l'invio dei vari pacchetti. Quando questo timer non è disponibile, il tool ne utilizza un altro: \textbf{GTOD}. 
+Si noti il messaggio di errore relativo al delay. Secondo la \textit{manpage} \cite{unicornscan-man}, il tool di default sfrutta il timer \textbf{TSC} per gestire il delay tra l'invio dei vari pacchetti. Quando questo timer non è disponibile, il tool ne utilizza un altro: \textbf{GTOD}. 
 
 Il timer TSC è presente su quasi tutte le CPU \textbf{x86} ed \textbf{x86\_64} con quella denominazione, ma non sulle CPU basate sull'architettura \textbf{aarch64}, come quella utilizzata per condurre l'indagine. 
 
