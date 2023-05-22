@@ -81,7 +81,7 @@ Tale documento costituisce il \textbf{Documento 2}, necessario per la consegna d
 In particolare, questa sezione consiste una panoramica sull'asset che è stato analizzato e ci si sofferma sull'ambiente utilizzato per condurre l'analisi sull'asset stesso.
 
 \subsection{Ambiente di lavoro ed Information Gathering}
-La piattaforma sulla quale è stato svolto l'intero processo consiste in un \textbf{MacBook Air} (late 2020) che utilizza il processore Apple Silicon M1 e che fa uso dell'architettura \textbf{arm64}. Anche se questa informazione al momento può apparire come di poco conto, diventerà rilevante durante la fase di Vulnerability Mapping ed in particolare al momento dell'installazione dei tools necessari. Ulteriori informazioni sul topic saranno fornite più avanti in questo documento.
+La piattaforma sulla quale è stato svolto l'intero processo consiste in un \textbf{MacBook Air} (late 2020) che utilizza il processore Apple Silicon M1 e che fa uso dell'architettura \textbf{arm64} (aka \textbf{aarch64}).
 
 Per condurre concretamente l'indagine sono state sfruttate due macchine virtuali utilizzando l'\textit{hypervisor} \textbf{UTM}, che utilizza \textbf{QEMU} come suo backend.
 
@@ -236,7 +236,7 @@ Di seguito viene riportato il risultato della scansione.
 
 Secondo \texttt{nmap}, il target consiste in una macchina \textbf{general purpose} che utilizza il kernel \textbf{Linux} in una versione compresa tra la \textbf{4.15} e la \textbf{5.6}. Considerando che Debian 10 è stato rilasciato con il kernel \textbf{4.19} \cite{debian}, è possibile concludere che le informazioni ottenute in precedenza risultano \textbf{corrette}. Si noti come \texttt{nmap} abbia inoltre rilevato la porta 80 come \textbf{aperta}.
 
-\section{Target Enumeration}
+\section{TCP Port Scanning e Target Enumeration}
 
 Nella fase precedente, oltre all'estrazione di diverse informazioni sul target, è stata ricavata anche un'altra, importante, informazione circa lo stato di apertura della porta \texttt{tcp/80}. Il fatto che la porta 80 sia aperta fa presupporre che sul target sia in esecuzione un qualche tipo di servizio web. Questa sezione, definita di \textbf{Target Enumeration}, approfondisce questa ipotesi e conduce un'analisi sistematica riguardo ai servizi in esecuzione sul target mediante il tool \texttt{nmap}, stavolta utilizzato nel suo contesto principale.
 
@@ -266,8 +266,7 @@ Di seguito è riportato l'output del tool.
 
 In allegato al presente documento è presente il report generato da \texttt{nmap} e convertito in HTML mediante il tool \texttt{xsltproc}, chiamato \texttt{nmap\_noobbox\_report.html}.
 
-\newpage
-\subsection{Analisi dei risultati}
+\subsection{TCP Port Scanning: Analisi dei risultati}
 Facendo riferimento al report generato è possibile notare che:
 
 \begin{itemize}
@@ -275,6 +274,67 @@ Facendo riferimento al report generato è possibile notare che:
     \item Non è presente nessun altro servizio TCP attivo sul target, dato che le altre 65534 porte sono state dichiarate \textbf{chiuse};
     \item È stato possibile ottenere un ulteriore discontro sul sistema operativo in esecuzione sull'asset: \textbf{Debian}.
 \end{itemize}
+
+\subsection{Extra: UDP Port Scanning}
+La scansione effettuata in precedenza tramite \texttt{nmap} ha determinato lo stato di apertura delle 65535 porte \textbf{TCP}. Per completezza, sarà ripetuta la stessa scansione delle 65535 porte stavolta usando il protocollo \textbf{UDP}. Il tool utilizzato in questo contesto consiste in \texttt{unicornscan}. Questo tool non è presente nell'installazione di default di Kali Linux, ma è possibile installarlo (insieme alle relative dipendenze) mediante il comando:
+
+\begin{center}
+    \texttt{sudo apt install unicornscan}
+\end{center}
+
+La sintassi di \texttt{unicornscan} \cite{unicornscan} è abbastanza simile a quella utilizzata da \texttt{nmap}. In questo caso, il tool verrà utilizzato per:
+
+\begin{itemize}
+    \item Effettuare una scansione \textbf{UDP} (switch \texttt{-m U});
+    \item Scansionare le 65535 porte dell'asset con indirizzo IP 192.168.64.21 (usando la sintassi \texttt{192.168.64.21:1-65535});
+    \item Ottenere un output \textit{prolisso} (switch \texttt{-Iv});
+    \item Inviare 2000 pacchetti al secondo (più veloce rispetto ai 300 pacchetti al secondo di default) (switch \texttt{-r 2000}).
+\end{itemize}
+
+Riassumendo:
+
+\begin{center}
+    \texttt{unicornscan -m U 192.168.64.21:1-65535 -Iv -r 2000}
+\end{center}
+
+Di seguito viene riportato l'output del comando precedente.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{img/unicornscan.png}
+    \caption{L'output di \texttt{unicornscan}.}
+\end{figure}
+
+\subsubsection{UDP Port scanning: analisi dei risultati}
+Consultando l'output del comando, ci si rende conto che sull'asset \textbf{non sia presente} alcun servizio attivo su \textbf{nessuna} porta UDP.
+
+Si noti il messaggio di errore relativo al delay. Secondo la \textit{manpage} \cite{unicornscan-man} del tool, il tool di default sfrutta il timer \textbf{TSC} per gestire il delay tra l'invio dei vari pacchetti. Quando questo timer non è disponibile, il tool ne utilizza un altro: \textbf{GTOD}. 
+
+Il timer TSC è presente su quasi tutte le CPU \textbf{x86} ed \textbf{x86\_64} con quella denominazione, ma non sulle CPU basate sull'architettura \textbf{aarch64}, come quella utilizzata per condurre l'indagine. 
+
+La scansione con \textbf{unicornscan} ha quindi utilizzato il timer \textbf{GTOD}, senza particolari differenze all'atto pratico.
+
+\subsection{Analisi del server web}
+Uno dei risultati principali della fase di port scanning consiste nell'aver scoperto che la porta 80 sia \textbf{aperta}. Dall'analisi condotta mediante \texttt{nmap} è stato appurato che sulla porta 80 sia attivo il web server \textbf{Apache \texttt{httpd}}. 
+
+Visitando la pagina \texttt{http://192.168.64.21/} dalla macchina Kali, viene infatti presentata la pagina di default del web server quando installato su \textbf{Debian}.
+\newpage
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/itworks.png}
+    \caption{It actually works!}
+\end{figure}
+
+Come fase successiva dell'indagine, si è deciso di provvedere alla ricerca dei contenuti presenti sul server web in questione. Allo scopo, saranno utilizzati tre tool in particolare:
+
+\begin{itemize}
+    \item \texttt{dirb};
+    \item \texttt{dirbuster};
+    \item \texttt{gobuster}
+\end{itemize}
+
+per ottenere un risultato quanto più preciso possibile. Tutti questi tool fanno riferimento ad un \textbf{dizionario} contenente i nomi delle risorse più comuni presenti sui web server (come directory o file di configurazione).
 
 \newpage
 \printbibliography[title={Riferimenti bibliografici e risorse consultate}]
