@@ -33,7 +33,7 @@
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
 \renewcommand{\contentsname}{Indice}
-\renewcommand{\figurename}{Fig.}
+\renewcommand{\figurename}{Figura}
 
 \usepackage[Conny]{fncychap}
 
@@ -103,7 +103,7 @@ La macchina virtuale in questione utilizza il kernel Linux 6.1 e di seguito è p
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.5]{img/uname.png}
+    \includegraphics[width=\textwidth]{img/uname.png}
     \caption{La versione del kernel utilizzata da Kali}
 \end{figure}
 
@@ -158,7 +158,7 @@ Due sono le opzioni che devono essere specificate in questo contesto:
 \begin{itemize}
     \item \texttt{-i eth0} permette di utilizzare l'interfaccia di rete \texttt{eth0};
     \item \texttt{-r 192.168.64.0\slash24} permette invece di specificare il range di indirizzi compreso tra 192.168.64.0 e 192.168.64.255, specificato in notazione CIDR.
-\end{itemize}.
+\end{itemize}
 
 \newpage
 L'output per
@@ -170,7 +170,7 @@ viene riportato qui di seguito.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.5]{img/netdiscover.png}
+    \includegraphics[width=\textwidth]{img/netdiscover.png}
     \caption{L'output di \texttt{netdiscover}}
 \end{figure}
 
@@ -188,7 +188,7 @@ La sintassi del comando ping, come specificato nella relativa documentazione, pr
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.5]{img/ping.png}
+    \includegraphics[width=\textwidth]{img/ping.png}
     \caption{L'output di \texttt{ping}}
 \end{figure}
 
@@ -213,7 +213,7 @@ Analizzando tuttavia i risultati mostrati a schermo (qui di seguito, si notino i
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.5]{img/p0f.png}
+    \includegraphics[width=\textwidth]{img/p0f.png}
     \caption{L'output di \texttt{p0f}. L'indirizzo IP \texttt{192.168.64.15} appartiene alla macchina Kali.}
 \end{figure}
 
@@ -230,7 +230,7 @@ Di seguito viene riportato il risultato della scansione.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.5]{img/nmap-os.png}
+    \includegraphics[width=\textwidth]{img/nmap-os.png}
     \caption{L'output di \texttt{nmap}.}
 \end{figure}
 
@@ -260,7 +260,7 @@ Di seguito è riportato l'output del tool.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.5]{img/nmap-enum.png}
+    \includegraphics[width=\textwidth]{img/nmap-enum.png}
     \caption{L'output di \texttt{nmap}.}
 \end{figure}
 
@@ -301,7 +301,7 @@ Di seguito viene riportato l'output del comando precedente.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.5]{img/unicornscan.png}
+    \includegraphics[width=\textwidth]{img/unicornscan.png}
     \caption{L'output di \texttt{unicornscan}.}
 \end{figure}
 
@@ -331,10 +331,48 @@ Come fase successiva dell'indagine, si è deciso di provvedere alla ricerca dei 
 \begin{itemize}
     \item \texttt{dirb};
     \item \texttt{dirbuster};
-    \item \texttt{gobuster}
+    \item \texttt{gobuster}.
 \end{itemize}
 
 per ottenere un risultato quanto più preciso possibile. Tutti questi tool fanno riferimento ad un \textbf{dizionario} contenente i nomi delle risorse più comuni presenti sui web server (come directory o file di configurazione).
+
+\subsubsection{\texttt{dirb}}
+\texttt{dirb} è probabilmente il web content scanner più diffuso. 
+Come menzionato in precedenza, fa uso di un \textbf{dizionario} per interrogare il server web target ed identificare risorse basandosi sullo \textit{status code} della risposta HTTP. 
+Le \textit{wordlists} che compongono il dizionario di questo tool sono presenti al percorso \texttt{/usr/share/wordlists/dirb/}.
+
+Il tool viene invocato da riga di comando specificando come primo parametro la risorsa web da analizzare. È anche possibile salvare l'output del tool in un file mediante lo switch \texttt{-o}. 
+
+Il report completo generato dal tool è disponibile nel file \texttt{noobbox-dirb.txt}, allegato al presente documento.
+
+\begin{center}
+    \texttt{dirb http://192.168.64.21/ -o noobbox-dirb.txt}
+\end{center}
+
+Facendo riferimento al report generato, salta subito all'occhio la presenza di una directory chiamata \texttt{wordpress/}. Con molta probabilità, quindi, il server web utilizza questo framework. Maggiori informazioni sul topic saranno fornite in una sezione \textit{ad hoc}.
+
+Altre risorse presenti sul server sono di importanza relativamente bassa, in quanto fanno riferimento alla \textbf{documentazione} del server web in diverse lingue, presente nella directory \texttt{manual/}. Consultando questo endpoint è tuttavia possibile risalire alla versione del server web installato, ma quest'ultima è un'informazione già ottenuta utilizzando \texttt{nmap} nella fase precedente della target enumeration.
+
+È inoltre presente una pagina denominata \texttt{server-status}, ma visitando quest'ultima si riceve lo \textit{status code} 403, che indica un \textbf{permesso negato}.
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/dirb-output.png}
+    \caption{\texttt{dirb} ha rilevato wordpress}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/permission-denied.png}
+    \caption{Ouch!}
+\end{figure}
+
+\newpage
+
+Basandosi sull'output di \texttt{dirb} diventa subito evidente che il \textit{focus} dell'indagine debba cadere sull'analisi dell'installazione corrente di \textbf{wordpress}. 
+
+Per completezza, verranno comunque presi in considerazione gli altri due tool precedentemente menzionati.
 
 \newpage
 \printbibliography[title={Riferimenti bibliografici e risorse consultate}]
