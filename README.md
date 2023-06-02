@@ -4,4 +4,4 @@ Questa repository contiene tutti i documenti prodotti durante il processo di Pen
 
 - Il **Penetration Testing Report**, che contiene un resoconto esaustivo delle vulnerabilità individuate durante il processo in questione;
 
-- Un documento che descrive le **metodologie ed i tool utilizzati** durante il processo.
+- Un documento che descrive **passo dopo passo** il processo di Penetration Testing, con una particolare attenzione  alle **metodologie e ai tool utilizzati**.
