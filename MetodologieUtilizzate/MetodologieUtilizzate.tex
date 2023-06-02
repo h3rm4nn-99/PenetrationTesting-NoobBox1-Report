@@ -326,15 +326,7 @@ Visitando la pagina \texttt{http://192.168.64.21/} dalla macchina Kali, viene in
     \caption{It actually works!}
 \end{figure}
 
-Come fase successiva dell'indagine, si è deciso di provvedere alla ricerca dei contenuti presenti sul server web in questione. Allo scopo, saranno utilizzati tre tool in particolare:
-
-\begin{itemize}
-    \item \texttt{dirb};
-    \item \texttt{dirbuster};
-    \item \texttt{gobuster}.
-\end{itemize}
-
-per ottenere un risultato quanto più preciso possibile. Tutti questi tool fanno riferimento ad un \textbf{dizionario} contenente i nomi delle risorse più comuni presenti sui web server (come directory o file di configurazione).
+Come fase successiva dell'indagine, si è deciso di provvedere alla ricerca dei contenuti presenti sul server web in questione. Allo scopo, sarà utilizzato il tool \texttt{dirb}
 
 \subsubsection{\texttt{dirb}}
 \texttt{dirb} è probabilmente il web content scanner più diffuso. 
@@ -359,7 +351,7 @@ Altre risorse presenti sul server sono di importanza relativamente bassa, in qua
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{img/dirb-output.png}
-    \caption{\texttt{dirb} ha rilevato wordpress}
+    \caption{\texttt{dirb} ha rilevato una directory wordpress}
 \end{figure}
 
 \begin{figure}[h!]
@@ -370,9 +362,65 @@ Altre risorse presenti sul server sono di importanza relativamente bassa, in qua
 
 \newpage
 
-Basandosi sull'output di \texttt{dirb} diventa subito evidente che il \textit{focus} dell'indagine debba cadere sull'analisi dell'installazione corrente di \textbf{wordpress}. 
+Basandosi sull'output di \texttt{dirb} diventa subito evidente che il \textit{focus} dell'indagine debba cadere sull'analisi di una possibile installazione del framework \textbf{wordpress}.
 
-Per completezza, verranno comunque presi in considerazione gli altri due tool precedentemente menzionati.
+È inoltre possibile configurare dirb per cercare file con determinate estensioni mediante lo switch \texttt{-X}. A questo scopo si è scelto di cercare immagini JPEG, file di testo in formato .txt, script PHP e documenti HTML nella root del web server.
+
+Il comando diventa quindi:
+
+\begin{center}
+    \texttt{dirb http://192.168.64.21/ -X .jpg,.php,.txt,.html -o dirb-documents-output.txt}
+\end{center}
+
+Di seguito è presente l'output di questa scansione. Il report completo è allegato a questo docuemnto nel file \texttt{dirb-documents-output.txt}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/dirb-files-root.png}
+    \caption{\texttt{dirb} ha trovato due file.}
+\end{figure}
+
+Come riportato in figura, è possibile notare la presenza di un file index.html, che contiene la pagina di default di Apache ma anche un file chiamato \texttt{img.jpg}. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/space.png}
+    \caption{Space?}
+\end{figure}
+
+Aprendo il file visitando l'URL \texttt{192.168.64.21/img.jpg} si ottiene quanto mostrato nella Figura 12.
+
+Si noti come nella seconda scansione (in cui sono state specificate le estensioni da considerare) non è avvenuta una ricerca ricorsiva. Per ovviare a questa problematica, verrà preso in considerazione il tool \texttt{feroxbuster}.
+
+\subsection{\texttt{feroxbuster}}
+
+\texttt{feroxbuster} può essere considerata un'alternativa al ben più noto tool \texttt{gobuster} e che risolve il suo difetto più grande: il mancato supporto alle scansioni ricorsive.
+
+Scritto nel linguaggio \textbf{rust}, questo tool è presente nei repository di Kali Linux ed è installabile tramite il comando
+
+\begin{center}
+    \texttt{sudo apt-get install feroxbuster}
+\end{center}
+
+Eseguendo questo comando, verranno installati sia il tool che un apposito insieme di \textbf{wordlists}, presenti nel pacchetto \texttt{seclists}.
+
+Il tool verrà usato per andare ad analizzare la cartella \texttt{/wordpress} per cercare di capire se il sito web offerto dalla macchina ne faccia effettivamente uso.
+
+Il comando invocato a questo scopo è il seguente:
+
+\begin{center}
+    \texttt{feroxbuster -{}-url http://192.168.64.21/wordpress -{}-extensions php,jpg,txt,html -{}-output feroxbuster\_noobbox\_wordpress.txt  -{}-depth 10}
+\end{center}
+
+Data la prolissità dell'output, esso è stato salvato all'interno del file \texttt{feroxbuster\_noobbox\_wordpress.txt}, allegato al presente documento.
+
+Consultando i risultati del tool, all'interno di tale cartella sembra sia \textbf{sia effettivamente presente un'installazione di wordpress}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/feroxbuster.png}
+    \caption{\texttt{feroxbuster} in esecuzione}
+\end{figure}
 
 \newpage
 \printbibliography[title={Riferimenti bibliografici e risorse consultate}]

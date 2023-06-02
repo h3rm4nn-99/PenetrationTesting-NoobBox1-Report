@@ -1,0 +1,23 @@
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+OUTPUT_FILE: dirb-documents-output.txt
+START_TIME: Thu Jun  1 10:31:09 2023
+URL_BASE: http://192.168.64.21/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+EXTENSIONS_LIST: (.jpg,.php,.txt,.html) | (.jpg)(.php)(.txt)(.html) [NUM = 4]
+
+-----------------
+
+GENERATED WORDS: 4612
+
+---- Scanning URL: http://192.168.64.21/ ----
++ http://192.168.64.21/img.jpg (CODE:200|SIZE:4811)
++ http://192.168.64.21/index.html (CODE:200|SIZE:10701)
+
+-----------------
+END_TIME: Thu Jun  1 10:31:24 2023
+DOWNLOADED: 18448 - FOUND: 2
