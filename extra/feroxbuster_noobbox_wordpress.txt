@@ -1,0 +1,1329 @@
+301      GET        9l       28w      318c http://192.168.64.21/wordpress => http://192.168.64.21/wordpress/
+301      GET        0l        0w        0c http://192.168.64.21/wordpress/index.php => http://192.168.64.21/wordpress/
+405      GET        1l        6w       42c http://192.168.64.21/wordpress/xmlrpc.php
+301      GET        9l       28w      330c http://192.168.64.21/wordpress/wp-includes => http://192.168.64.21/wordpress/wp-includes/
+301      GET        9l       28w      327c http://192.168.64.21/wordpress/wp-admin => http://192.168.64.21/wordpress/wp-admin/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes (Apache)
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/update.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/atomlib.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/query.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/theme-compat (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/user.php
+500      GET        2l        4w       52c http://192.168.64.21/wordpress/wp-includes/theme-compat/embed-404.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/theme-compat/sidebar.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-text-diff-renderer-inline.php
+200      GET        5l       15w      135c http://192.168.64.21/wordpress/wp-trackback.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-customize-panel.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-block-type-registry.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class.wp-scripts.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/functions.wp-styles.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/taxonomy.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-role.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-simplepie-sanitize-kses.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/media-template.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-walker-page-dropdown.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-http.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/post-template.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-http-response.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/bookmark-template.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-comment-query.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/feed-rdf.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/media.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/option.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-text-diff-renderer-table.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/post-thumbnail-template.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-date-query.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-list-util.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-tax-query.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-widget.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/meta.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/registration.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-json.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-object-cache.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/functions.wp-scripts.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rss-functions.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-block-patterns-registry.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/session.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-dependency.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/rest-api (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/revision.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-user.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/shortcodes.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sitemaps.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-customize-widgets.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-image-editor.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/template.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/rest-api/search (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-matchesmapregex.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/version.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-phpass.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/css (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-walker.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ms-load.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/theme.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/bookmark.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/cache.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-session-tokens.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-hook.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-block-pattern-categories-registry.php
+200      GET       18l      110w     4529c http://192.168.64.21/wordpress/wp-includes/css/jquery-ui-dialog.min.css
+200      GET       43l       43w     1045c http://192.168.64.21/wordpress/wp-includes/wlwmanifest.xml
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/pluggable-deprecated.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/cache-compat.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-rewrite.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/feed-rss2-comments.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-block-list.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-block-styles-registry.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/search/class-wp-rest-search-handler.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-image-editor-gd.php
+200      GET        2l      622w    19328c http://192.168.64.21/wordpress/wp-includes/css/admin-bar-rtl.min.css
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-query.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-block-type.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-term.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/blocks.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-theme.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/load.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/default-constants.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-meta-query.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-requests.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-network.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-simplepie-file.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ms-default-filters.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/locale.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/feed-rss.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-block.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/template-loader.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-http-curl.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/pomo (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/admin-bar.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-network-query.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/IXR (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/compat.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/comment.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-http-requests-hooks.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-walker-comment.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-admin-bar.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/nav-menu-template.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/pomo/mo.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/pomo/entry.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/pomo/streams.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-walker-nav-menu.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-walker-category-dropdown.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/capabilities.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/pomo/translations.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/pomo/plural-forms.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/customize (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-embed.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-http-proxy.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-site-query.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-recovery-mode.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/feed.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-feed-cache.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-smtp.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rss.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-feed.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-nav-menu-control.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-recovery-mode-link-service.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/general-template.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/feed-rss2.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-taxonomy.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-xmlrpc-server.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/functions.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-user-query.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-background-position-control.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat (Apache)
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-customize-control.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-term-query.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-background-image-control.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-nav-menu-item-control.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/pomo/po.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-new-menu-control.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/plugin.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-themes-section.php
+301      GET        9l       28w      329c http://192.168.64.21/wordpress/wp-content => http://192.168.64.21/wordpress/wp-content/
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-nav-menus-panel.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-background-image-setting.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-partial.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/images (Apache)
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/default-filters.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-sidebar-section.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-nav-menu-name-control.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/category-template.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-themes-panel.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-image-control.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-theme-control.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-simplepie.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-upload-control.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-selective-refresh.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-image-editor-imagick.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-nav-menu-setting.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-nav-menu-location-control.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-header-image-control.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-custom-css-setting.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/cron.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-oembed.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-site-icon-control.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-widget-area-customize-control.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-filter-setting.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-header-image-setting.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-nav-menu-locations-control.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/theme-compat/header.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/default-widgets.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-fatal-error-handler.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/theme-compat/comments.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-nav-menu-item-setting.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-nav-menu-section.php
+500      GET        2l        3w       22c http://192.168.64.21/wordpress/wp-includes/theme-compat/header-embed.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-new-menu-section.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-nav-menu-auto-add-control.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-snoopy.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/theme-compat/footer-embed.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-date-time-control.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-customize-setting.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/theme-compat/embed.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/vars.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/theme-compat/footer.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-ajax-response.php
+500      GET        1l        1w        6c http://192.168.64.21/wordpress/wp-includes/theme-compat/embed-content.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-user-meta-session-tokens.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ms-functions.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/feed-atom.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-customize-manager.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rewrite.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/script-loader.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/author-template.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/spl-autoload-compat.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/block-patterns (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-error.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class.wp-styles.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-metadata-lazyloader.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-http-encoding.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/l10n.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-editor.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/ID3 (Apache)
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-media-control.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-code-editor-control.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sitemaps (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-phpmailer.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/block-patterns/two-buttons.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-recovery-mode-cookie-service.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/wp-db.php
+200      GET      627l     2992w    26245c http://192.168.64.21/wordpress/wp-includes/ID3/readme.txt
+200      GET       29l       93w     1361c http://192.168.64.21/wordpress/wp-includes/ID3/license.txt
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-locale.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/block-patterns.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ID3/module.audio.dts.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-oembed.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/block-patterns/quote.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/block-patterns/text-two-columns.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/block-patterns/large-header.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/formatting.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sitemaps/class-wp-sitemaps-index.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/canonical.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/block-patterns/two-images.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sitemaps/class-wp-sitemaps-stylesheet.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ID3/module.audio.flac.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/embed.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-http-streams.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/block-patterns/heading-paragraph.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/date.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sitemaps/class-wp-sitemaps-registry.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/block-patterns/text-three-columns-buttons.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/embed-template.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-walker-category.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sitemaps/providers (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-post.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/Requests (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/random_compat (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class.wp-dependencies.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-http-cookie.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/category.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-IXR.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/Text (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ID3/module.audio.ogg.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ms-blogs.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sitemaps/providers/class-wp-sitemaps-users.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sitemaps/providers/class-wp-sitemaps-taxonomies.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Hooks.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/IRI.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/SSL.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ID3/getid3.lib.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ID3/getid3.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Response.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ms-site.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/Requests/Utility (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-recovery-mode-key-service.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Utility/FilteredIterator.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Utility/CaseInsensitiveDictionary.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Cookie.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/SimplePie (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Auth.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/Requests/Auth (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/gzdecode.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ID3/module.audio-video.asf.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/class-wp-rest-server.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/Requests/Exception (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Cache.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/random_compat/cast_to_int.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Registry.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Rating.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Category.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Core.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Credit.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Transport.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Author.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/SimplePie/Cache (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/SimplePie/Parse (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-oembed-controller.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/class-wp-rest-response.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/File.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/Requests/Proxy (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/random_compat/random_bytes_mcrypt.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Cache/File.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Sanitize.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Cache/Memcache.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Cache/DB.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Cache/Base.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Cache/Memcached.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Locator.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Cache/MySQL.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/class-wp-rest-request.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Proxy/HTTP.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Text/Diff.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/IRI.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/rest-api/fields (Apache)
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/search/class-wp-rest-term-search-handler.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Parser.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Parse/Date.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/fields/class-wp-rest-post-meta-fields.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/fields/class-wp-rest-user-meta-fields.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/fields/class-wp-rest-comment-meta-fields.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/fields/class-wp-rest-term-meta-fields.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/fields/class-wp-rest-meta-fields.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/search/class-wp-rest-post-search-handler.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ID3/module.tag.id3v2.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js (Apache)
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-application-passwords-controller.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-post-types-controller.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-post-statuses-controller.php
+200      GET      166l      409w     3629c http://192.168.64.21/wordpress/wp-includes/css/customize-preview.css
+200      GET        2l       85w     3239c http://192.168.64.21/wordpress/wp-includes/css/wp-pointer-rtl.min.css
+200      GET        1l        4w       29c http://192.168.64.21/wordpress/wp-includes/ms-files.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP (Apache)
+200      GET        2l       98w     7860c http://192.168.64.21/wordpress/wp-includes/js/customize-base.min.js
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Misc.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/search/class-wp-rest-post-format-search-handler.php
+200      GET      171l      599w     4225c http://192.168.64.21/wordpress/wp-includes/js/wp-auth-check.js
+200      GET        2l      622w    19329c http://192.168.64.21/wordpress/wp-includes/css/admin-bar.min.css
+200      GET        2l       65w     2854c http://192.168.64.21/wordpress/wp-includes/css/customize-preview.min.css
+200      GET        5l       78w    14229c http://192.168.64.21/wordpress/wp-includes/js/wp-emoji-release.min.js
+200      GET     1073l     2622w    23608c http://192.168.64.21/wordpress/wp-includes/css/admin-bar-rtl.css
+200      GET      985l     3606w    26059c http://192.168.64.21/wordpress/wp-includes/js/mce-view.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/418.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/404.php
+200      GET       18l      110w     4533c http://192.168.64.21/wordpress/wp-includes/css/jquery-ui-dialog-rtl.min.css
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/409.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/406.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/Unknown.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/429.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/417.php
+200      GET      358l      727w     5954c http://192.168.64.21/wordpress/wp-includes/css/jquery-ui-dialog-rtl.css
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/414.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/305.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/405.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-http-requests-response.php
+200      GET        2l       12w    59010c http://192.168.64.21/wordpress/wp-includes/css/dashicons.min.css
+200      GET     1072l     2616w    23574c http://192.168.64.21/wordpress/wp-includes/css/admin-bar.css
+200      GET      225l      478w     4062c http://192.168.64.21/wordpress/wp-includes/css/wp-pointer-rtl.css
+200      GET        2l      173w     5845c http://192.168.64.21/wordpress/wp-includes/css/buttons.min.css
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-site-health-controller.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-search-controller.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-taxonomies-controller.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php
+200      GET        2l       10w      352c http://192.168.64.21/wordpress/wp-includes/js/zxcvbn-async.min.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/500.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/503.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/304.php
+200      GET      401l     1015w     9589c http://192.168.64.21/wordpress/wp-includes/css/buttons.css
+200      GET      519l     2244w    18422c http://192.168.64.21/wordpress/wp-includes/js/json2.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/403.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/IXR/class-IXR-message.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/IXR/class-IXR-client.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/401.php
+200      GET       61l      198w     1350c http://192.168.64.21/wordpress/wp-includes/js/wp-sanitize.js
+200      GET      359l      661w     7925c http://192.168.64.21/wordpress/wp-includes/css/wp-embed-template.css
+200      GET        4l      190w    10231c http://192.168.64.21/wordpress/wp-includes/js/swfobject.js
+200      GET        2l       43w     7416c http://192.168.64.21/wordpress/wp-includes/js/wp-lists.min.js
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-application-passwords.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-blocks-controller.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-color-control.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/Text/Diff (Apache)
+200      GET     1882l     3611w    32983c http://192.168.64.21/wordpress/wp-includes/css/editor.css
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/http.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/SimplePie/Net (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/pluggable.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/501.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-widget-form-customize-control.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/customize/class-wp-customize-cropped-image-control.php
+200      GET        2l       53w    11307c http://192.168.64.21/wordpress/wp-includes/js/twemoji.min.js
+200      GET        2l      105w    14688c http://192.168.64.21/wordpress/wp-includes/js/wp-api.min.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php
+200      GET       28l      136w      970c http://192.168.64.21/wordpress/wp-includes/js/wp-list-revisions.js
+200      GET     1066l     4097w    33332c http://192.168.64.21/wordpress/wp-includes/js/customize-selective-refresh.js
+200      GET      707l     2637w    29083c http://192.168.64.21/wordpress/wp-includes/js/colorpicker.js
+200      GET     1440l     1872w    62361c http://192.168.64.21/wordpress/wp-includes/css/dashicons.css
+200      GET        2l       21w     2451c http://192.168.64.21/wordpress/wp-includes/js/customize-views.min.js
+200      GET        2l       34w     1674c http://192.168.64.21/wordpress/wp-includes/js/wp-auth-check.min.js
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-paused-extensions-storage.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/IXR/class-IXR-request.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Net/IPv6.php
+200      GET        2l      109w    11147c http://192.168.64.21/wordpress/wp-includes/js/quicktags.min.js
+200      GET     2904l     6110w    55995c http://192.168.64.21/wordpress/wp-includes/css/media-views.css
+200      GET        2l       45w     4446c http://192.168.64.21/wordpress/wp-includes/js/wp-custom-header.min.js
+200      GET      204l      799w     4665c http://192.168.64.21/wordpress/wp-includes/js/utils.js
+200      GET        2l       35w     2093c http://192.168.64.21/wordpress/wp-includes/js/wp-ajax-response.min.js
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-pop3.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/IXR/class-IXR-error.php
+200      GET       21l      155w      918c http://192.168.64.21/wordpress/wp-includes/sodium_compat/LICENSE
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-widget-factory.php
+200      GET        2l       96w    10909c http://192.168.64.21/wordpress/wp-includes/js/media-editor.min.js
+200      GET        9l     1359w    45450c http://192.168.64.21/wordpress/wp-includes/css/media-views.min.css
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/assets (Apache)
+200      GET        2l       38w     1718c http://192.168.64.21/wordpress/wp-includes/js/hoverintent-js.min.js
+200      GET       97l      416w     6941c http://192.168.64.21/wordpress/wp-login.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/lib (Apache)
+200      GET        2l      100w     7824c http://192.168.64.21/wordpress/wp-includes/js/customize-preview-widgets.min.js
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/assets/script-loader-packages.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/Requests/Exception/Transport (Apache)
+200      GET        2l      685w   107227c http://192.168.64.21/wordpress/wp-includes/js/media-views.min.js
+200      GET      568l     2231w    28010c http://192.168.64.21/wordpress/wp-includes/js/twemoji.js
+200      GET        2l       14w     1122c http://192.168.64.21/wordpress/wp-includes/js/hoverIntent.min.js
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/lib/php72compat_const.php
+200      GET        2l       67w    11211c http://192.168.64.21/wordpress/wp-includes/js/wplink.min.js
+200      GET      870l     3108w    23154c http://192.168.64.21/wordpress/wp-includes/js/heartbeat.js
+200      GET        2l       27w     3299c http://192.168.64.21/wordpress/wp-includes/js/tw-sack.min.js
+200      GET      216l      722w     6392c http://192.168.64.21/wordpress/wp-includes/js/wp-embed-template.js
+200      GET      903l     3077w    22485c http://192.168.64.21/wordpress/wp-includes/js/autosave.js
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-post-type.php
+200      GET        2l       46w     5038c http://192.168.64.21/wordpress/wp-includes/js/customize-preview-nav-menus.min.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/Transport/cURL.php
+200      GET        2l       60w     5804c http://192.168.64.21/wordpress/wp-includes/js/autosave.min.js
+200      GET      453l     1486w    10762c http://192.168.64.21/wordpress/wp-includes/js/admin-bar.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/Text/Diff/Renderer (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/post.php
+200      GET        2l       15w     1426c http://192.168.64.21/wordpress/wp-includes/js/wp-embed.min.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/crop (Apache)
+200      GET        2l       10w      597c http://192.168.64.21/wordpress/wp-includes/js/wp-list-revisions.min.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/504.php
+200      GET      858l     3386w    25267c http://192.168.64.21/wordpress/wp-includes/js/wp-lists.js
+200      GET        7l       31w     1389c http://192.168.64.21/wordpress/wp-includes/images/icon-pointer-flag.png
+200      GET        3l        9w      331c http://192.168.64.21/wordpress/wp-includes/images/xit.gif
+200      GET        7l       26w     1459c http://192.168.64.21/wordpress/wp-includes/images/xit-2x.gif
+200      GET        1l        8w      369c http://192.168.64.21/wordpress/wp-includes/js/crop/marqueeHoriz.gif
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/mediaelement (Apache)
+200      GET        9l       11w      401c http://192.168.64.21/wordpress/wp-includes/js/crop/marqueeVert.gif
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce (Apache)
+200      GET      165l      407w     2949c http://192.168.64.21/wordpress/wp-includes/js/crop/cropper.css
+200      GET     1093l     3320w    29510c http://192.168.64.21/wordpress/wp-includes/js/media-grid.js
+200      GET      281l      661w     6821c http://192.168.64.21/wordpress/wp-includes/js/customize-models.js
+200      GET        2l       25w     2873c http://192.168.64.21/wordpress/wp-includes/js/wp-emoji.min.js
+200      GET        2l       58w     5885c http://192.168.64.21/wordpress/wp-includes/js/heartbeat.min.js
+200      GET      465l     1263w    10447c http://192.168.64.21/wordpress/wp-includes/js/wp-custom-header.js
+200      GET        9l       48w     2439c http://192.168.64.21/wordpress/wp-includes/images/icon-pointer-flag-2x.png
+200      GET        2l       40w     3623c http://192.168.64.21/wordpress/wp-includes/js/wp-pointer.min.js
+200      GET       88l      316w     2363c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/wp-mediaelement.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/Text/Diff/Engine (Apache)
+200      GET        1l       87w     4186c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/wp-mediaelement.min.css
+200      GET      203l      618w     5357c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/wp-playlist.js
+200      GET        1l       14w     1193c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/mediaelement-migrate.min.js
+200      GET        1l      353w     4598c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/mejs-controls.svg
+200      GET      516l      845w    16485c http://192.168.64.21/wordpress/wp-includes/js/crop/cropper.js
+200      GET        1l      132w    11256c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css
+200      GET       84l      386w     2841c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/mediaelement-migrate.js
+200      GET       10l       70w     5447c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/mejs-controls.png
+200      GET      774l     1574w    15758c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/mediaelementplayer-legacy.css
+200      GET        1l      132w    11407c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/mediaelementplayer.min.css
+200      GET      115l      593w     4950c http://192.168.64.21/wordpress/wp-includes/js/hoverIntent.js
+200      GET        1l        7w      906c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/wp-mediaelement.min.js
+200      GET      774l     1574w    15907c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/mediaelementplayer.css
+200      GET      542l     1928w    15988c http://192.168.64.21/wordpress/wp-includes/js/tinymce/tiny_mce_popup.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/langs (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/utils (Apache)
+200      GET      504l     4372w    26441c http://192.168.64.21/wordpress/wp-includes/js/tinymce/license.txt
+200      GET       72l      197w     2125c http://192.168.64.21/wordpress/wp-includes/js/tinymce/utils/editable_selects.js
+200      GET       12l     1294w    68193c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/mediaelement.min.js
+200      GET        1l       14w     3431c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/wp-playlist.min.js
+200      GET      516l     1703w    15529c http://192.168.64.21/wordpress/wp-includes/js/tinymce/langs/wp-langs-en.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/block-supports (Apache)
+200      GET      293l      520w     4960c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/wp-mediaelement.css
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/themes (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Text/Diff/Engine/xdiff.php
+200      GET      168l      424w     4160c http://192.168.64.21/wordpress/wp-includes/js/tinymce/utils/mctabs.js
+200      GET      267l      828w     6466c http://192.168.64.21/wordpress/wp-includes/js/tinymce/utils/validate.js
+200      GET      222l      689w     6071c http://192.168.64.21/wordpress/wp-includes/js/tinymce/utils/form_utils.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/block-supports/generated-classname.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/block-supports/typography.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/block-supports/colors.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/mediaelement/renderers (Apache)
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/block-supports/custom-classname.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/block-supports/align.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Text/Diff/Renderer.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Text/Diff/Renderer/inline.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Text/Diff/Engine/shell.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Text/Diff/Engine/string.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Item.php
+200      GET        2l      106w    12857c http://192.168.64.21/wordpress/wp-includes/js/media-audiovideo.min.js
+200      GET      387l     1664w    10758c http://192.168.64.21/wordpress/wp-includes/js/shortcode.js
+200      GET       24l      133w    12904c http://192.168.64.21/wordpress/wp-includes/images/wpicons.png
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Text/Diff/Engine/native.php
+200      GET        2l       27w     3154c http://192.168.64.21/wordpress/wp-includes/js/wp-embed-template.min.js
+200      GET      202l      437w     5065c http://192.168.64.21/wordpress/wp-includes/js/customize-views.js
+200      GET       12l     2021w   157610c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/mediaelement-and-player.min.js
+200      GET     1669l     6159w    45462c http://192.168.64.21/wordpress/wp-includes/js/media-models.js
+200      GET      566l     2192w    15240c http://192.168.64.21/wordpress/wp-includes/js/wp-backbone.js
+200      GET     3981l    13055w   122401c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/mediaelement.js
+200      GET      128l      454w     3214c http://192.168.64.21/wordpress/wp-includes/js/wp-embed.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/wordpress (Apache)
+200      GET        2l        2w       47c http://192.168.64.21/wordpress/wp-includes/images/blank.gif
+200      GET    10250l    31194w   267266c http://192.168.64.21/wordpress/wp-includes/js/media-views.js
+200      GET      137l      540w     3981c http://192.168.64.21/wordpress/wp-includes/js/wp-util.js
+200      GET     8527l    26983w   265275c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/mediaelement-and-player.js
+200      GET        2l       63w     3153c http://192.168.64.21/wordpress/wp-includes/js/json2.min.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/themes/modern (Apache)
+200      GET        6l       34w     2808c http://192.168.64.21/wordpress/wp-includes/images/uploader-icons.png
+200      GET       30l      102w      821c http://192.168.64.21/wordpress/wp-includes/js/zxcvbn-async.js
+200      GET        2l       11w      458c http://192.168.64.21/wordpress/wp-includes/js/wp-sanitize.min.js
+200      GET       12l       35w     2316c http://192.168.64.21/wordpress/wp-includes/images/rss-2x.png
+200      GET        2l       18w     3693c http://192.168.64.21/wordpress/wp-includes/js/customize-models.min.js
+200      GET      495l     1048w     8624c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/wordpress/wp-content.css
+200      GET      432l     1116w    12416c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/renderers/vimeo.js
+200      GET       12l      128w     6464c http://192.168.64.21/wordpress/wp-includes/js/mediaelement/renderers/vimeo.min.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/images/media (Apache)
+200      GET      291l      999w     7904c http://192.168.64.21/wordpress/wp-includes/js/customize-loader.js
+200      GET        4l       11w      328c http://192.168.64.21/wordpress/wp-includes/images/media/document.png
+200      GET        3l       15w      457c http://192.168.64.21/wordpress/wp-includes/images/media/code.png
+200      GET        3l        8w      260c http://192.168.64.21/wordpress/wp-includes/images/media/default.png
+200      GET        4l       16w      674c http://192.168.64.21/wordpress/wp-includes/images/media/archive.png
+200      GET        5l       10w      286c http://192.168.64.21/wordpress/wp-includes/images/media/text.png
+200      GET        3l        8w      299c http://192.168.64.21/wordpress/wp-includes/images/media/spreadsheet.png
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray (Apache)
+200      GET        6l       20w      646c http://192.168.64.21/wordpress/wp-includes/images/media/audio.png
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/themes/inlite (Apache)
+200      GET        2l     5480w   365570c http://192.168.64.21/wordpress/wp-includes/js/tinymce/tinymce.min.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/wordpress/images (Apache)
+200      GET      773l     2726w    23253c http://192.168.64.21/wordpress/wp-includes/js/customize-preview-widgets.js
+200      GET        1l       73w     4017c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/content.min.css
+200      GET        4l       11w      487c http://192.168.64.21/wordpress/wp-includes/images/media/video.png
+200      GET        4l       10w      573c http://192.168.64.21/wordpress/wp-includes/images/media/interactive.png
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/plupload (Apache)
+200      GET        1l       73w     3611c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/content.inline.min.css
+200      GET      899l     3528w    27960c http://192.168.64.21/wordpress/wp-includes/js/customize-preview.js
+200      GET        4l        7w      739c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/wordpress/images/more.png
+200      GET        2l      349w    16058c http://192.168.64.21/wordpress/wp-includes/js/underscore.min.js
+200      GET        1l      787w    44010c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/skin.min.css
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/swfupload (Apache)
+200      GET     2096l     9725w    77794c http://192.168.64.21/wordpress/wp-includes/js/backbone.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/img (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/fonts (Apache)
+200      GET        4l       15w      688c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/wordpress/images/audio.png
+200      GET        1l       38w     5832c http://192.168.64.21/wordpress/wp-includes/js/plupload/wp-plupload.min.js
+200      GET        2l        5w      271c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/img/object.gif
+200      GET        1l       26w     1276c http://192.168.64.21/wordpress/wp-includes/js/swfupload/handlers.min.js
+200      GET       53l      123w     4020c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/img/loader.gif
+200      GET        1l        2w       75c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/img/anchor.gif
+200      GET        2l     5608w   369699c http://192.168.64.21/wordpress/wp-includes/js/tinymce/wp-tinymce.php
+200      GET       32l      222w     1540c http://192.168.64.21/wordpress/wp-includes/js/swfupload/license.txt
+200      GET      140l      387w     4439c http://192.168.64.21/wordpress/wp-includes/js/swfupload/swfupload.js
+200      GET       54l      147w     1460c http://192.168.64.21/wordpress/wp-includes/js/swfupload/handlers.js
+200      GET      339l     2968w    17987c http://192.168.64.21/wordpress/wp-includes/js/plupload/license.txt
+200      GET      618l     2465w    18944c http://192.168.64.21/wordpress/wp-includes/js/plupload/handlers.js
+200      GET        1l      145w    15612c http://192.168.64.21/wordpress/wp-includes/js/plupload/plupload.min.js
+200      GET        1l      120w    11346c http://192.168.64.21/wordpress/wp-includes/js/plupload/handlers.min.js
+200      GET      571l     2098w    16171c http://192.168.64.21/wordpress/wp-includes/js/plupload/wp-plupload.js
+200      GET       20l      262w    12100c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce-small.woff
+200      GET       20l      261w    12022c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce-small.ttf
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/deprecated.php
+200      GET       71l      458w    24424c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce.woff
+200      GET       63l     1701w    24727c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce-small.svg
+200      GET     2379l     7881w    60314c http://192.168.64.21/wordpress/wp-includes/js/plupload/plupload.js
+200      GET        1l     1790w   131875c http://192.168.64.21/wordpress/wp-includes/js/tinymce/themes/inlite/theme.min.js
+200      GET      132l     3318w    46373c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce.svg
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/error-protection.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/lib/sodium_compat.php
+200      GET        1l     1185w    87689c http://192.168.64.21/wordpress/wp-includes/js/plupload/moxie.min.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/lib/php72compat.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/lib/constants.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/src (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/media (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/link (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/SodiumException.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/wplink (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Compat.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/wpautoresize (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/autoload.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/lib/namespaced.php
+200      GET        1l       16w     2344c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/wpautoresize/plugin.min.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/wpview (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/fullscreen (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/PHP52 (Apache)
+200      GET      610l     2176w    17605c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/wplink/plugin.js
+200      GET        1l      191w    16576c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/media/plugin.min.js
+200      GET        1l       14w     2184c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/fullscreen/plugin.min.js
+200      GET     9607l    29531w   315475c http://192.168.64.21/wordpress/wp-includes/js/tinymce/themes/modern/theme.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/wordpress/ (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/PHP52/SplFixedArray.php
+200      GET      177l      467w     5595c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/fullscreen/plugin.js
+200      GET      225l      802w     6083c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/wpview/plugin.js
+200      GET      713l     2089w    24009c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/link/plugin.js
+200      GET        1l      101w     8871c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/wplink/plugin.min.js
+200      GET        1l       27w     2911c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/wpview/plugin.min.js
+200      GET      207l      812w     5988c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/wpautoresize/plugin.js
+200      GET     1306l     3788w    41338c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/media/plugin.js
+200      GET        1l      122w     8940c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/link/plugin.min.js
+200      GET        1l      275w    16421c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/wordpress/plugin.min.js
+200      GET     1207l     4529w    34189c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/wordpress/plugin.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32 (Apache)
+200      GET     9792l    30135w   320767c http://192.168.64.21/wordpress/wp-includes/js/tinymce/themes/inlite/theme.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/XSalsa20.php
+200      GET     9901l    28653w   254084c http://192.168.64.21/wordpress/wp-includes/js/plupload/moxie.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Poly1305.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Util.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/HChaCha20.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/SecretStream (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Poly1305 (Apache)
+200      GET       49l    10128w   671354c http://192.168.64.21/wordpress/wp-includes/js/tinymce/wp-tinymce.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/XChaCha20.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/File.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/ChaCha20.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Crypto32.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/autoload-php7.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/X25519.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/HSalsa20.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/SecretStream/State.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/ChaCha20 (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Curve25519 (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Crypto.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/ChaCha20/Ctx.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Salsa20.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Ed25519.php
+200      GET        3l       17w      218c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Curve25519/README.md
+200      GET       63l      138w     1566c http://192.168.64.21/wordpress/wp-includes/sodium_compat/composer.json
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core (Apache)
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/ChaCha20/IetfCtx.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Int32.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-block-parser.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/nav-menu.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Poly1305 (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/fonts (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Curve25519/Ge (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Int64.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/tabfocus (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Base64 (Apache)
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Poly1305/State.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Poly1305.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/BLAKE2b.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/wp-diff.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/XSalsa20.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/HChaCha20.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Curve25519 (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Curve25519/Fe.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Curve25519/Ge/P2.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Curve25519/Ge/Cached.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/HSalsa20.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Curve25519/Ge/P3.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/SipHash.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Compat.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/File.php
+200      GET        1l       16w     1614c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/tabfocus/plugin.min.js
+200      GET        3l       17w      218c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Curve25519/README.md
+200      GET      102l      601w    47387c http://192.168.64.21/wordpress/wp-includes/fonts/dashicons.woff2
+200      GET      113l      574w    47174c http://192.168.64.21/wordpress/wp-includes/fonts/dashicons.woff
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Crypto.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Base64/UrlSafe.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Base64/Original.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Curve25519/Fe.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Base64/Common.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/ChaCha20.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Poly1305/State.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/SipHash.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Curve25519/Ge (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/SecretStream (Apache)
+200      GET      517l     2416w    65631c http://192.168.64.21/wordpress/wp-includes/fonts/dashicons.ttf
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Salsa20.php
+200      GET        3l        5w       83c http://192.168.64.21/wordpress/wp-includes/images/down_arrow.gif
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-recovery-mode-email-service.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/widgets (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-roles.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-links.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-calendar.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-media-image.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-media-gallery.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-rss.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-media.php
+200      GET      124l      360w     3722c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/tabfocus/plugin.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-recent-comments.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-categories.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-media-audio.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-customize-section.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Ed25519.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Curve25519/Ge/P1p1.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Curve25519/Ge/P1p1.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-http-ixr-client.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Curve25519/Ge/P2.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Curve25519/Ge/P3.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Curve25519/Ge/Precomp.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/SecretStream/State.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/BLAKE2b.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Util.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Curve25519/Ge/Cached.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-text.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-feed-cache-transient.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/kses.php
+200      GET        1l    10399w   124614c http://192.168.64.21/wordpress/wp-includes/fonts/dashicons.svg
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core (Apache)
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-nav-menu-widget.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/feed-atom-comments.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sitemaps/class-wp-sitemaps-renderer.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Poly1305.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/X25519.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sitemaps/class-wp-sitemaps-provider.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/HChaCha20.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/ChaCha20.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Xsalsa20.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/HSalsa20.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Curve25519.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Util.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/BLAKE2b.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/XChaCha20.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Curve25519/H.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/class-wp-block-supports.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Poly1305 (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/ChaCha20 (Apache)
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/SipHash.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Salsa20.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Ed25519.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ms-deprecated.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/registration-functions.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Curve25519/H.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/random_compat/random.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/SimplePie/Decode (Apache)
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Caption.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ms-settings.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/IXR/class-IXR-clientmulticall.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/IXR/class-IXR-date.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Source.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/Transport.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-block-directory-controller.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Auth/Basic.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Curve25519 (Apache)
+200      GET      124l      472w     3324c http://192.168.64.21/wordpress/wp-includes/js/api-request.js
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ID3/module.audio.ac3.php
+200      GET      446l     1795w    15024c http://192.168.64.21/wordpress/wp-includes/js/customize-preview-nav-menus.js
+200      GET        2l      148w    10699c http://192.168.64.21/wordpress/wp-includes/js/customize-selective-refresh.min.js
+200      GET        2l       93w     9883c http://192.168.64.21/wordpress/wp-includes/js/mce-view.min.js
+200      GET      973l     3159w    29493c http://192.168.64.21/wordpress/wp-includes/js/clipboard.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Curve25519/Ge (Apache)
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/ChaCha20/IetfCtx.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Curve25519/H.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Curve25519/Fe.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core32/Curve25519.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/ChaCha20/Ctx.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/SimplePie/Decode/HTML (Apache)
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Curve25519.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Curve25519/Ge/Cached.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Curve25519/Ge/Precomp.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Curve25519/Ge/P2.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Curve25519/Ge/P1p1.php
+200      GET        2l       16w     1852c http://192.168.64.21/wordpress/wp-includes/js/wp-emoji-loader.min.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/412.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/411.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/ID3/module.audio-video.riff.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/407.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-settings-controller.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/431.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php
+200      GET      384l     3177w    19915c http://192.168.64.21/wordpress/license.txt
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php
+200      GET        2l       35w     2650c http://192.168.64.21/wordpress/wp-includes/js/shortcode.min.js
+200      GET       27l       68w      560c http://192.168.64.21/wordpress/wp-includes/js/wpdialog.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/dist (Apache)
+200      GET        2l       17w     1077c http://192.168.64.21/wordpress/wp-includes/js/wp-util.min.js
+200      GET      140l      626w     5081c http://192.168.64.21/wordpress/wp-includes/js/dist/dom-ready.js
+200      GET        2l       40w     1705c http://192.168.64.21/wordpress/wp-includes/js/dist/is-shallow-equal.min.js
+200      GET        2l       57w     1688c http://192.168.64.21/wordpress/wp-includes/js/dist/deprecated.min.js
+200      GET        2l      112w     4482c http://192.168.64.21/wordpress/wp-includes/js/dist/block-serialization-default-parser.min.js
+200      GET        2l       49w     1571c http://192.168.64.21/wordpress/wp-includes/js/dist/blob.min.js
+200      GET        2l       46w     1702c http://192.168.64.21/wordpress/wp-includes/js/dist/priority-queue.min.js
+200      GET        2l       80w     3067c http://192.168.64.21/wordpress/wp-includes/js/dist/a11y.min.js
+200      GET        2l      197w     7351c http://192.168.64.21/wordpress/wp-includes/js/dist/keyboard-shortcuts.min.js
+200      GET        2l       82w     2824c http://192.168.64.21/wordpress/wp-includes/js/dist/warning.min.js
+200      GET        2l      138w     5605c http://192.168.64.21/wordpress/wp-includes/js/dist/keycodes.min.js
+200      GET        2l       48w     3556c http://192.168.64.21/wordpress/wp-includes/js/admin-bar.min.js
+200      GET        2l      401w    16204c http://192.168.64.21/wordpress/wp-includes/js/dist/media-utils.min.js
+200      GET      467l     1856w    17694c http://192.168.64.21/wordpress/wp-includes/js/dist/wordcount.js
+200      GET      234l      895w     6525c http://192.168.64.21/wordpress/wp-includes/js/dist/is-shallow-equal.js
+200      GET      725l     2817w    25454c http://192.168.64.21/wordpress/wp-includes/js/dist/hooks.js
+200      GET        2l       81w     4079c http://192.168.64.21/wordpress/wp-includes/js/dist/shortcode.min.js
+200      GET        2l      122w    13934c http://192.168.64.21/wordpress/wp-includes/js/media-models.min.js
+200      GET     1332l     4587w    47415c http://192.168.64.21/wordpress/wp-includes/js/dist/media-utils.js
+200      GET     1523l     5968w    50803c http://192.168.64.21/wordpress/wp-includes/js/dist/dom.js
+200      GET        2l      205w     6174c http://192.168.64.21/wordpress/wp-includes/js/dist/hooks.min.js
+200      GET      158l      718w     5832c http://192.168.64.21/wordpress/wp-includes/js/dist/html-entities.js
+200      GET     1238l     4814w    42599c http://192.168.64.21/wordpress/wp-includes/js/dist/annotations.js
+200      GET      832l     2306w    25190c http://192.168.64.21/wordpress/wp-includes/js/dist/list-reusable-blocks.js
+200      GET      568l     2267w    20031c http://192.168.64.21/wordpress/wp-includes/js/dist/keycodes.js
+200      GET      184l      780w     6225c http://192.168.64.21/wordpress/wp-includes/js/dist/blob.js
+200      GET      229l      982w     8488c http://192.168.64.21/wordpress/wp-includes/js/dist/data-controls.js
+200      GET      884l     2608w    29883c http://192.168.64.21/wordpress/wp-includes/js/dist/reusable-blocks.js
+200      GET      193l      503w     4971c http://192.168.64.21/wordpress/wp-includes/js/tw-sack.js
+200      GET     2460l     7488w    85932c http://192.168.64.21/wordpress/wp-includes/js/dist/block-directory.js
+200      GET        2l       38w     1408c http://192.168.64.21/wordpress/wp-includes/js/dist/html-entities.min.js
+200      GET        2l      209w     9532c http://192.168.64.21/wordpress/wp-includes/js/dist/i18n.min.js
+200      GET       10l      400w    24138c http://192.168.64.21/wordpress/wp-includes/js/masonry.min.js
+200      GET      579l     1942w    18005c http://192.168.64.21/wordpress/wp-includes/js/dist/viewport.js
+200      GET        2l      224w     9588c http://192.168.64.21/wordpress/wp-includes/js/dist/reusable-blocks.min.js
+200      GET      983l     3654w    35633c http://192.168.64.21/wordpress/wp-includes/js/dist/api-fetch.js
+200      GET        2l      222w     8852c http://192.168.64.21/wordpress/wp-includes/js/dist/list-reusable-blocks.min.js
+200      GET      407l     1453w    14069c http://192.168.64.21/wordpress/wp-includes/js/dist/primitives.js
+200      GET     2180l     6489w    74585c http://192.168.64.21/wordpress/wp-includes/js/dist/format-library.js
+200      GET      940l     2987w    25568c http://192.168.64.21/wordpress/wp-includes/js/dist/redux-routine.js
+200      GET      618l     2769w    22544c http://192.168.64.21/wordpress/wp-includes/js/dist/autop.js
+200      GET        2l       84w     3533c http://192.168.64.21/wordpress/wp-includes/js/dist/token-list.min.js
+200      GET        2l      143w     5014c http://192.168.64.21/wordpress/wp-includes/js/dist/notices.min.js
+200      GET      318l     1246w    10711c http://192.168.64.21/wordpress/wp-includes/js/dist/a11y.js
+200      GET        2l      128w     4652c http://192.168.64.21/wordpress/wp-includes/js/dist/viewport.min.js
+200      GET        2l      351w    14626c http://192.168.64.21/wordpress/wp-includes/js/dist/element.min.js
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-controller.php
+200      GET        2l      255w    11564c http://192.168.64.21/wordpress/wp-includes/js/dist/annotations.min.js
+200      GET      709l     2442w    25142c http://192.168.64.21/wordpress/wp-includes/js/dist/server-side-render.js
+200      GET        2l      235w    12768c http://192.168.64.21/wordpress/wp-includes/js/dist/dom.min.js
+200      GET     1685l     6387w    57202c http://192.168.64.21/wordpress/wp-includes/js/dist/element.js
+200      GET      936l     3415w    29672c http://192.168.64.21/wordpress/wp-includes/js/dist/keyboard-shortcuts.js
+200      GET       12l    28312w   204020c http://192.168.64.21/wordpress/wp-includes/js/dist/date.min.js
+200      GET       12l     3207w   175556c http://192.168.64.21/wordpress/wp-includes/js/dist/editor.min.js
+200      GET        7l      117w     4337c http://192.168.64.21/wordpress/wp-includes/js/dist/primitives.min.js
+200      GET      592l     2426w    22119c http://192.168.64.21/wordpress/wp-includes/js/dist/notices.js
+200      GET     5267l    19072w   174757c http://192.168.64.21/wordpress/wp-includes/js/dist/rich-text.js
+200      GET     1687l    33262w   236092c http://192.168.64.21/wordpress/wp-includes/js/dist/date.js
+200      GET        2l      986w    48867c http://192.168.64.21/wordpress/wp-includes/js/dist/rich-text.min.js
+200      GET        2l      204w     9851c http://192.168.64.21/wordpress/wp-includes/js/dist/redux-routine.min.js
+200      GET      461l     1501w    14226c http://192.168.64.21/wordpress/wp-includes/js/dist/token-list.js
+200      GET        2l      975w    32611c http://192.168.64.21/wordpress/wp-includes/js/dist/data.min.js
+200      GET     1533l     5320w    45647c http://192.168.64.21/wordpress/wp-includes/js/dist/url.js
+200      GET     3952l    13589w   127007c http://192.168.64.21/wordpress/wp-includes/js/dist/compose.js
+200      GET     4468l    17493w   147320c http://192.168.64.21/wordpress/wp-includes/js/dist/data.js
+200      GET       43l     8443w   439579c http://192.168.64.21/wordpress/wp-includes/js/dist/block-library.min.js
+200      GET        7l     2531w   507167c http://192.168.64.21/wordpress/wp-includes/js/dist/edit-post.min.js
+200      GET    13266l    42930w   489123c http://192.168.64.21/wordpress/wp-includes/js/dist/editor.js
+200      GET        2l       40w     1864c http://192.168.64.21/wordpress/wp-includes/js/utils.min.js
+200      GET       12l     8905w   490957c http://192.168.64.21/wordpress/wp-includes/js/dist/block-editor.min.js
+200      GET    13872l    52671w   498333c http://192.168.64.21/wordpress/wp-includes/js/dist/blocks.js
+200      GET    28666l    87333w  1047068c http://192.168.64.21/wordpress/wp-includes/js/dist/block-library.js
+200      GET        2l       21w     1025c http://192.168.64.21/wordpress/wp-includes/js/api-request.min.js
+200      GET        2l        7w      272c http://192.168.64.21/wordpress/wp-includes/js/wpdialog.min.js
+200      GET        2l      321w    23828c http://192.168.64.21/wordpress/wp-includes/js/backbone.min.js
+200      GET        2l       58w    10758c http://192.168.64.21/wordpress/wp-includes/js/customize-preview.min.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/codemirror (Apache)
+200      GET       43l      143w     1002c http://192.168.64.21/wordpress/wp-includes/js/codemirror/fakejshint.js
+200      GET       30l      145w      984c http://192.168.64.21/wordpress/wp-includes/js/codemirror/htmlhint-kses.js
+200      GET      432l     1347w    16189c http://192.168.64.21/wordpress/wp-includes/js/codemirror/jsonlint.js
+200      GET       11l      228w    15899c http://192.168.64.21/wordpress/wp-includes/js/codemirror/codemirror.min.css
+200      GET        8l      628w    17735c http://192.168.64.21/wordpress/wp-includes/js/codemirror/htmlhint.js
+200      GET    58509l   189493w  1980028c http://192.168.64.21/wordpress/wp-includes/js/dist/components.js
+200      GET     6700l    21179w   283149c http://192.168.64.21/wordpress/wp-includes/js/codemirror/esprima.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/413.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/jcrop (Apache)
+200      GET    10859l    34624w   366769c http://192.168.64.21/wordpress/wp-includes/js/codemirror/csslint.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/511.php
+200      GET       29l       45w     2124c http://192.168.64.21/wordpress/wp-includes/js/jcrop/jquery.Jcrop.min.css
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/410.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Restriction.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/random_compat/random_bytes_libsodium.php
+200      GET      993l     3688w    25762c http://192.168.64.21/wordpress/wp-includes/js/customize-base.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/408.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/400.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/505.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Exception/HTTP/416.php
+200      GET       70l      431w     3205c http://192.168.64.21/wordpress/wp-includes/js/wp-ajax-response.js
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Copyright.php
+200      GET        1l        1w       47c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/img/trans.gif
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/Requests/Hooker.php
+200      GET        1l     1777w   130746c http://192.168.64.21/wordpress/wp-includes/js/tinymce/themes/modern/theme.min.js
+200      GET       29l    13290w   585414c http://192.168.64.21/wordpress/wp-includes/js/codemirror/codemirror.min.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/wpdialogs (Apache)
+200      GET      444l     1603w    12457c http://192.168.64.21/wordpress/wp-includes/js/comment-reply.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php
+200      GET        3l       10w      709c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/wordpress/images/playlist-audio.png
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/Curve25519/Ge/Precomp.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/src/Core/X25519.php
+200      GET      517l     2417w    65817c http://192.168.64.21/wordpress/wp-includes/fonts/dashicons.eot
+200      GET       20l      262w    12216c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce-small.eot
+200      GET       71l      458w    24502c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce.eot
+200      GET       71l      457w    24330c http://192.168.64.21/wordpress/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce.ttf
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-recent-posts.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-tag-cloud.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-meta.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-archives.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Poly1305/State.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-custom-html.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-pages.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-search.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/widgets/class-wp-widget-media-video.php
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/sodium_compat/namespaced/Core/Curve25519/Ge/P3.php
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/SimplePie/Decode/HTML/Entities.php
+200      GET      634l     2596w    19560c http://192.168.64.21/wordpress/wp-includes/js/dist/shortcode.js
+200      GET        2l      302w    13811c http://192.168.64.21/wordpress/wp-includes/js/dist/url.min.js
+200      GET        2l       53w     1777c http://192.168.64.21/wordpress/wp-includes/js/dist/escape-html.min.js
+200      GET      801l     2636w    25628c http://192.168.64.21/wordpress/wp-includes/js/dist/plugins.js
+200      GET        2l      271w    10047c http://192.168.64.21/wordpress/wp-includes/js/dist/nux.min.js
+200      GET        2l      154w     7829c http://192.168.64.21/wordpress/wp-includes/js/dist/autop.min.js
+200      GET        2l       46w     1704c http://192.168.64.21/wordpress/wp-includes/js/dist/data-controls.min.js
+200      GET        3l     3110w   166119c http://192.168.64.21/wordpress/wp-includes/js/dist/blocks.min.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/colorpicker (Apache)
+200      GET      126l      267w     3561c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/colorpicker/plugin.js
+200      GET        1l        9w     1349c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/colorpicker/plugin.min.js
+200      GET     1078l     4052w    34530c http://192.168.64.21/wordpress/wp-includes/js/dist/nux.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/js/dist/vendor (Apache)
+200      GET        1l        8w      417c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js
+200      GET        1l       22w      867c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js
+200      GET       30l       75w      531c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/wp-polyfill-node-contains.js
+200      GET      401l     1131w     9631c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/wp-polyfill-formdata.js
+200      GET        1l      607w    47085c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/wp-polyfill-url.min.js
+200      GET     9369l    30240w   735259c http://192.168.64.21/wordpress/wp-includes/js/dist/edit-post.js
+200      GET        9l       14w      447c http://192.168.64.21/wordpress/wp-includes/js/jcrop/Jcrop.gif
+200      GET       22l      260w    15893c http://192.168.64.21/wordpress/wp-includes/js/jcrop/jquery.Jcrop.min.js
+200      GET     2987l    10988w   110332c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/wp-polyfill-url.js
+200      GET      139l     2218w    72805c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/lodash.min.js
+200      GET      239l     2715w   118656c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/react-dom.min.js
+200      GET     7203l    27786w   239724c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/wp-polyfill.js
+200      GET        1l       42w     1322c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/wpdialogs/plugin.min.js
+200      GET       92l      320w     2439c http://192.168.64.21/wordpress/wp-includes/js/tinymce/plugins/wpdialogs/plugin.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-content/uploads (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-content/uploads/2021 (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-content/uploads/2021/03 (Apache)
+200      GET        1l      195w     7908c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js
+200      GET       17l      209w     7165c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js
+301      GET        9l       28w      337c http://192.168.64.21/wordpress/wp-content/upgrade => http://192.168.64.21/wordpress/wp-content/upgrade/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-content/upgrade (Apache)
+200      GET      531l     1453w    14805c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/wp-polyfill-fetch.js
+200      GET        1l      966w    58314c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/moment.min.js
+200      GET        1l     2102w    99310c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/wp-polyfill.min.js
+200      GET       32l      388w    12463c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/react.min.js
+200      GET     5668l    16541w   173825c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/moment.js
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-content/index.php
+200      GET    17161l    70196w   542559c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/lodash.js
+200      GET       33l       90w      895c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/wp-polyfill-element-closest.js
+200      GET       99l      279w     1919c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.js
+200      GET        1l       13w      353c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js
+200      GET     3318l    12056w   105138c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/react.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/archives (Apache)
+200      GET    25147l    97237w   906293c http://192.168.64.21/wordpress/wp-includes/js/dist/vendor/react-dom.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-admin/css (Apache)
+200      GET       16l       36w      550c http://192.168.64.21/wordpress/wp-admin/css/wp-admin-rtl.min.css
+200      GET        2l      266w    12090c http://192.168.64.21/wordpress/wp-admin/css/nav-menus.min.css
+200      GET        2l      472w    15461c http://192.168.64.21/wordpress/wp-admin/css/admin-menu-rtl.min.css
+200      GET      121l      440w     3727c http://192.168.64.21/wordpress/wp-admin/css/l10n-rtl.css
+200      GET      607l     1101w    10048c http://192.168.64.21/wordpress/wp-admin/css/revisions-rtl.css
+200      GET     4116l     8569w    72916c http://192.168.64.21/wordpress/wp-admin/css/common.css
+200      GET        2l       82w     3107c http://192.168.64.21/wordpress/wp-admin/css/color-picker-rtl.min.css
+200      GET        9l     1511w    54912c http://192.168.64.21/wordpress/wp-admin/css/common-rtl.min.css
+200      GET        2l      154w     5507c http://192.168.64.21/wordpress/wp-admin/css/deprecated-media-rtl.min.css
+200      GET     1328l     2817w    24791c http://192.168.64.21/wordpress/wp-admin/css/dashboard.css
+200      GET        2l       46w     1431c http://192.168.64.21/wordpress/wp-admin/css/code-editor.min.css
+200      GET        2l      149w     4994c http://192.168.64.21/wordpress/wp-admin/css/install.min.css
+200      GET     1834l     3572w    32744c http://192.168.64.21/wordpress/wp-admin/css/edit.css
+200      GET     1981l     4312w    41083c http://192.168.64.21/wordpress/wp-admin/css/themes-rtl.css
+200      GET        2l       46w     1435c http://192.168.64.21/wordpress/wp-admin/css/code-editor-rtl.min.css
+301      GET        9l       28w      330c http://192.168.64.21/wordpress/wp-admin/js => http://192.168.64.21/wordpress/wp-admin/js/
+200      GET        2l      149w     4993c http://192.168.64.21/wordpress/wp-admin/css/install-rtl.min.css
+200      GET        2l       19w      746c http://192.168.64.21/wordpress/wp-admin/css/site-icon-rtl.min.css
+200      GET        2l      182w     5486c http://192.168.64.21/wordpress/wp-admin/css/login.min.css
+200      GET        2l       19w      744c http://192.168.64.21/wordpress/wp-admin/css/site-icon.min.css
+200      GET      606l     1095w    10001c http://192.168.64.21/wordpress/wp-admin/css/revisions.css
+200      GET     1317l     2722w    24370c http://192.168.64.21/wordpress/wp-admin/css/media.css
+200      GET        2l      117w     2480c http://192.168.64.21/wordpress/wp-admin/css/l10n-rtl.min.css
+200      GET        2l      727w    25585c http://192.168.64.21/wordpress/wp-admin/css/edit-rtl.min.css
+200      GET      465l      881w     7982c http://192.168.64.21/wordpress/wp-admin/css/site-health-rtl.css
+200      GET        2l      386w    18078c http://192.168.64.21/wordpress/wp-admin/css/customize-nav-menus.min.css
+200      GET     2968l     6537w    69181c http://192.168.64.21/wordpress/wp-admin/css/customize-controls-rtl.css
+200      GET        2l      266w    12118c http://192.168.64.21/wordpress/wp-admin/css/nav-menus-rtl.min.css
+200      GET        2l      154w     5503c http://192.168.64.21/wordpress/wp-admin/css/deprecated-media.min.css
+200      GET        2l      182w     5491c http://192.168.64.21/wordpress/wp-admin/css/login-rtl.min.css
+200      GET      120l      434w     3689c http://192.168.64.21/wordpress/wp-admin/css/l10n.css
+200      GET       76l      150w     1575c http://192.168.64.21/wordpress/wp-admin/css/code-editor.css
+200      GET      417l      862w     6823c http://192.168.64.21/wordpress/wp-admin/css/login.css
+200      GET      382l      761w     6051c http://192.168.64.21/wordpress/wp-admin/css/install-rtl.css
+200      GET      483l     1197w    12713c http://192.168.64.21/wordpress/wp-admin/css/customize-widgets.css
+200      GET      418l      868w     6863c http://192.168.64.21/wordpress/wp-admin/css/login-rtl.css
+200      GET      381l      755w     6017c http://192.168.64.21/wordpress/wp-admin/css/install.css
+200      GET      430l      786w     6668c http://192.168.64.21/wordpress/wp-admin/css/deprecated-media-rtl.css
+200      GET       77l      156w     1614c http://192.168.64.21/wordpress/wp-admin/css/code-editor-rtl.css
+200      GET       41l       72w      611c http://192.168.64.21/wordpress/wp-admin/css/farbtastic.css
+200      GET      886l     2157w    22048c http://192.168.64.21/wordpress/wp-admin/css/customize-nav-menus-rtl.css
+200      GET        2l      406w    14454c http://192.168.64.21/wordpress/wp-admin/css/widgets-rtl.min.css
+200      GET     1748l     3347w    32770c http://192.168.64.21/wordpress/wp-admin/css/forms.css
+200      GET        2l      463w    20968c http://192.168.64.21/wordpress/wp-admin/css/about-rtl.min.css
+200      GET      926l     2034w    19142c http://192.168.64.21/wordpress/wp-admin/css/admin-menu-rtl.css
+200      GET     1427l     2703w    27151c http://192.168.64.21/wordpress/wp-admin/css/about-rtl.css
+200      GET      894l     1819w    15413c http://192.168.64.21/wordpress/wp-admin/css/nav-menus.css
+200      GET        2l      909w    32168c http://192.168.64.21/wordpress/wp-admin/css/themes.min.css
+200      GET     1749l     3353w    32809c http://192.168.64.21/wordpress/wp-admin/css/forms-rtl.css
+200      GET        2l      595w    19303c http://192.168.64.21/wordpress/wp-admin/css/dashboard.min.css
+200      GET       15l       30w      395c http://192.168.64.21/wordpress/wp-admin/css/wp-admin.css
+301      GET        9l       28w      341c http://192.168.64.21/wordpress/wp-includes/blocks/rss => http://192.168.64.21/wordpress/wp-includes/blocks/rss/
+200      GET        2l      117w     2477c http://192.168.64.21/wordpress/wp-admin/css/l10n.min.css
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/rss (Apache)
+200      GET       16l       36w      490c http://192.168.64.21/wordpress/wp-admin/css/wp-admin-rtl.css
+200      GET        2l      150w     6603c http://192.168.64.21/wordpress/wp-admin/css/site-health.min.css
+200      GET        2l     1366w    57802c http://192.168.64.21/wordpress/wp-admin/css/customize-controls-rtl.min.css
+200      GET     1980l     4305w    41029c http://192.168.64.21/wordpress/wp-admin/css/themes.css
+200      GET      484l     1203w    12750c http://192.168.64.21/wordpress/wp-admin/css/customize-widgets-rtl.css
+200      GET        2l      578w    25081c http://192.168.64.21/wordpress/wp-admin/css/forms.min.css
+200      GET        2l      578w    25085c http://192.168.64.21/wordpress/wp-admin/css/forms-rtl.min.css
+200      GET       16l       36w      490c http://192.168.64.21/wordpress/wp-admin/css/wp-admin.min.css
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/blocks/rss.php
+200      GET     1835l     3578w    32784c http://192.168.64.21/wordpress/wp-admin/css/edit-rtl.css
+200      GET     2967l     6531w    69101c http://192.168.64.21/wordpress/wp-admin/css/customize-controls.css
+200      GET        2l      463w    20955c http://192.168.64.21/wordpress/wp-admin/css/about.min.css
+200      GET       43l       74w      647c http://192.168.64.21/wordpress/wp-includes/blocks/rss/block.json
+200      GET      885l     2151w    22002c http://192.168.64.21/wordpress/wp-admin/css/customize-nav-menus.css
+200      GET        2l      150w     6610c http://192.168.64.21/wordpress/wp-admin/css/site-health-rtl.min.css
+200      GET        2l      253w     9724c http://192.168.64.21/wordpress/wp-admin/css/customize-widgets-rtl.min.css
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-admin/images (Apache)
+200      GET        2l      472w    15449c http://192.168.64.21/wordpress/wp-admin/css/admin-menu.min.css
+200      GET        2l     1107w    32485c http://192.168.64.21/wordpress/wp-admin/css/list-tables-rtl.min.css
+200      GET        3l        7w      639c http://192.168.64.21/wordpress/wp-admin/images/marker.png
+200      GET        2l     1107w    32459c http://192.168.64.21/wordpress/wp-admin/css/list-tables.min.css
+200      GET     1318l     2728w    24416c http://192.168.64.21/wordpress/wp-admin/css/media-rtl.css
+200      GET        4l       33w     2935c http://192.168.64.21/wordpress/wp-admin/images/list-2x.png
+200      GET        5l       11w      411c http://192.168.64.21/wordpress/wp-admin/images/arrows.png
+200      GET       30l      127w     3060c http://192.168.64.21/wordpress/wp-admin/images/wpspin_light.gif
+200      GET        9l     1511w    54867c http://192.168.64.21/wordpress/wp-admin/css/common.min.css
+200      GET       21l      143w     9553c http://192.168.64.21/wordpress/wp-admin/images/post-formats32-vs.png
+200      GET        2l        6w      368c http://192.168.64.21/wordpress/wp-admin/images/media-button-image.gif
+200      GET       11l       57w     4766c http://192.168.64.21/wordpress/wp-admin/images/post-formats-vs.png
+200      GET        3l       17w     1258c http://192.168.64.21/wordpress/wp-admin/images/generic.png
+200      GET        2l      910w    32187c http://192.168.64.21/wordpress/wp-admin/css/themes-rtl.min.css
+200      GET        1l        7w      230c http://192.168.64.21/wordpress/wp-admin/images/media-button-video.gif
+200      GET        3l        6w      211c http://192.168.64.21/wordpress/wp-admin/images/align-left-2x.png
+200      GET        2l       10w      786c http://192.168.64.21/wordpress/wp-admin/images/bubble_bg-2x.gif
+200      GET        6l       25w     1611c http://192.168.64.21/wordpress/wp-admin/images/stars.png
+200      GET       94l      437w    39436c http://192.168.64.21/wordpress/wp-admin/images/icons32-vs-2x.png
+200      GET        1l        5w      100c http://192.168.64.21/wordpress/wp-admin/images/resize.gif
+200      GET        3l        9w      225c http://192.168.64.21/wordpress/wp-admin/images/align-center-2x.png
+200      GET       14l       96w     7499c http://192.168.64.21/wordpress/wp-admin/images/imgedit-icons.png
+200      GET        1l        5w      106c http://192.168.64.21/wordpress/wp-admin/images/resize-rtl.gif
+200      GET        4l        9w      714c http://192.168.64.21/wordpress/wp-admin/images/align-none.png
+200      GET        1l        1w      260c http://192.168.64.21/wordpress/wp-admin/images/resize-2x.gif
+200      GET        7l       26w     1459c http://192.168.64.21/wordpress/wp-admin/images/xit-2x.gif
+200      GET        3l        5w      184c http://192.168.64.21/wordpress/wp-admin/images/align-none-2x.png
+200      GET        3l        7w      156c http://192.168.64.21/wordpress/wp-admin/images/comment-grey-bubble.png
+200      GET        5l       14w      862c http://192.168.64.21/wordpress/wp-admin/images/align-right.png
+200      GET        1l        7w      418c http://192.168.64.21/wordpress/wp-admin/images/media-button-music.gif
+200      GET      112l      938w    72975c http://192.168.64.21/wordpress/wp-admin/images/browser-rtl.png
+200      GET       32l      177w    11051c http://192.168.64.21/wordpress/wp-admin/images/wheel.png
+200      GET      182l      398w     3814c http://192.168.64.21/wordpress/wp-admin/css/color-picker.css
+200      GET       42l       78w      647c http://192.168.64.21/wordpress/wp-admin/css/farbtastic-rtl.css
+200      GET        7l       24w     1295c http://192.168.64.21/wordpress/wp-admin/images/no.png
+200      GET        4l        9w      403c http://192.168.64.21/wordpress/wp-admin/images/comment-grey-bubble-2x.png
+200      GET        2l       82w     3104c http://192.168.64.21/wordpress/wp-admin/css/color-picker.min.css
+200      GET       11l       48w     5543c http://192.168.64.21/wordpress/wp-admin/images/w-logo-blue.png
+200      GET        2l      174w     8230c http://192.168.64.21/wordpress/wp-admin/css/revisions-rtl.min.css
+200      GET      464l      875w     7940c http://192.168.64.21/wordpress/wp-admin/css/site-health.css
+200      GET      429l      780w     6629c http://192.168.64.21/wordpress/wp-admin/css/deprecated-media.css
+200      GET      183l      404w     3852c http://192.168.64.21/wordpress/wp-admin/css/color-picker-rtl.css
+200      GET       21l      123w     9210c http://192.168.64.21/wordpress/wp-admin/images/menu-vs.png
+200      GET        4l       10w      556c http://192.168.64.21/wordpress/wp-admin/images/media-button.png
+200      GET       13l       78w     4373c http://192.168.64.21/wordpress/wp-admin/images/wordpress-logo.png
+200      GET        5l       12w     1052c http://192.168.64.21/wordpress/wp-admin/images/yes.png
+200      GET       20l      101w    10808c http://192.168.64.21/wordpress/wp-admin/images/w-logo-white.png
+200      GET        1l        2w      146c http://192.168.64.21/wordpress/wp-admin/images/sort-2x.gif
+200      GET        9l       51w     3801c http://192.168.64.21/wordpress/wp-admin/images/post-formats.png
+200      GET        2l      635w    19688c http://192.168.64.21/wordpress/wp-admin/css/media.min.css
+200      GET       32l      154w    15107c http://192.168.64.21/wordpress/wp-admin/images/icons32-vs.png
+200      GET      925l     2028w    19095c http://192.168.64.21/wordpress/wp-admin/css/admin-menu.css
+200      GET       69l      356w    11950c http://192.168.64.21/wordpress/wp-admin/images/spinner-2x.gif
+200      GET        1l      162w     1521c http://192.168.64.21/wordpress/wp-admin/images/wordpress-logo.svg
+200      GET        2l      386w    18089c http://192.168.64.21/wordpress/wp-admin/css/customize-nav-menus-rtl.min.css
+200      GET      875l     1812w    17657c http://192.168.64.21/wordpress/wp-admin/css/widgets-rtl.css
+200      GET      874l     1806w    17619c http://192.168.64.21/wordpress/wp-admin/css/widgets.css
+200      GET        2l      406w    14451c http://192.168.64.21/wordpress/wp-admin/css/widgets.min.css
+200      GET        2l       20w      538c http://192.168.64.21/wordpress/wp-admin/css/farbtastic-rtl.min.css
+200      GET       54l       95w     1021c http://192.168.64.21/wordpress/wp-admin/css/site-icon.css
+200      GET     2176l     4503w    40125c http://192.168.64.21/wordpress/wp-admin/css/list-tables-rtl.css
+200      GET        2l      727w    25580c http://192.168.64.21/wordpress/wp-admin/css/edit.min.css
+200      GET     2175l     4497w    40064c http://192.168.64.21/wordpress/wp-admin/css/list-tables.css
+200      GET        2l      595w    19300c http://192.168.64.21/wordpress/wp-admin/css/dashboard-rtl.min.css
+200      GET     4117l     8575w    72996c http://192.168.64.21/wordpress/wp-admin/css/common-rtl.css
+200      GET      121l      945w    73562c http://192.168.64.21/wordpress/wp-admin/images/browser.png
+200      GET        3l        9w      331c http://192.168.64.21/wordpress/wp-admin/images/xit.gif
+200      GET        3l        9w      475c http://192.168.64.21/wordpress/wp-admin/images/media-button-other.gif
+200      GET        2l        6w      742c http://192.168.64.21/wordpress/wp-admin/images/date-button.gif
+200      GET        8l       39w     1747c http://192.168.64.21/wordpress/wp-admin/images/date-button-2x.gif
+200      GET        5l      119w     5903c http://192.168.64.21/wordpress/wp-admin/images/spinner.gif
+200      GET       18l      129w     9070c http://192.168.64.21/wordpress/wp-admin/images/menu.png
+200      GET       47l      381w    22830c http://192.168.64.21/wordpress/wp-admin/images/menu-2x.png
+200      GET        2l     1366w    57757c http://192.168.64.21/wordpress/wp-admin/css/customize-controls.min.css
+200      GET       37l      367w    22754c http://192.168.64.21/wordpress/wp-admin/images/menu-vs-2x.png
+200      GET      249l     1218w    98521c http://192.168.64.21/wordpress/wp-admin/images/privacy.png
+200      GET        1l        5w      260c http://192.168.64.21/wordpress/wp-admin/images/resize-rtl-2x.gif
+200      GET       18l       76w     2029c http://192.168.64.21/wordpress/wp-admin/images/loading.gif
+200      GET        8l       21w     1492c http://192.168.64.21/wordpress/wp-admin/images/arrows-2x.png
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-admin/js (Apache)
+200      GET       34l      206w    13966c http://192.168.64.21/wordpress/wp-admin/images/imgedit-icons-2x.png
+200      GET        6l       16w     1751c http://192.168.64.21/wordpress/wp-admin/images/media-button-2x.png
+200      GET      147l      441w     3419c http://192.168.64.21/wordpress/wp-admin/js/custom-background.js
+200      GET        2l       33w     2376c http://192.168.64.21/wordpress/wp-admin/js/svg-painter.min.js
+200      GET        2l       20w     1670c http://192.168.64.21/wordpress/wp-admin/js/link.min.js
+200      GET        2l       23w      620c http://192.168.64.21/wordpress/wp-admin/js/set-post-thumbnail.min.js
+200      GET        2l       34w     2250c http://192.168.64.21/wordpress/wp-admin/js/tags-suggest.min.js
+200      GET        2l       16w     1147c http://192.168.64.21/wordpress/wp-admin/js/media-upload.min.js
+200      GET        2l       18w     1289c http://192.168.64.21/wordpress/wp-admin/js/comment.min.js
+200      GET        2l       17w      692c http://192.168.64.21/wordpress/wp-admin/js/user-suggest.min.js
+200      GET        2l       22w     3084c http://192.168.64.21/wordpress/wp-admin/js/code-editor.min.js
+200      GET        2l      136w     5983c http://192.168.64.21/wordpress/wp-admin/js/site-health.min.js
+200      GET        2l       94w    11193c http://192.168.64.21/wordpress/wp-admin/js/image-edit.min.js
+200      GET      241l      769w     5532c http://192.168.64.21/wordpress/wp-admin/js/svg-painter.js
+200      GET      294l     1078w     7745c http://192.168.64.21/wordpress/wp-admin/js/inline-edit-tax.js
+200      GET        2l      137w     8767c http://192.168.64.21/wordpress/wp-admin/js/dashboard.min.js
+200      GET        2l       43w     2961c http://192.168.64.21/wordpress/wp-admin/js/inline-edit-tax.min.js
+200      GET      220l      878w     7696c http://192.168.64.21/wordpress/wp-admin/js/word-count.js
+200      GET      229l     1019w     7048c http://192.168.64.21/wordpress/wp-admin/js/plugin-install.js
+200      GET        3l       12w      958c http://192.168.64.21/wordpress/wp-admin/images/align-left.png
+200      GET        6l       16w     2030c http://192.168.64.21/wordpress/wp-admin/images/list.png
+200      GET       86l      396w    14638c http://192.168.64.21/wordpress/wp-admin/images/wpspin_light-2x.gif
+200      GET      763l     2673w    23066c http://192.168.64.21/wordpress/wp-admin/js/widgets.js
+200      GET       18l      135w    15028c http://192.168.64.21/wordpress/wp-admin/images/icons32.png
+200      GET     1026l     2772w    25353c http://192.168.64.21/wordpress/wp-admin/js/theme-plugin-editor.js
+200      GET      571l     2219w    16470c http://192.168.64.21/wordpress/wp-admin/js/inline-edit-post.js
+200      GET        2l      186w    21802c http://192.168.64.21/wordpress/wp-admin/js/nav-menu.min.js
+200      GET        2l      180w    26918c http://192.168.64.21/wordpress/wp-admin/js/theme.min.js
+200      GET      210l      767w     5410c http://192.168.64.21/wordpress/wp-admin/js/media.js
+200      GET        2l       11w      476c http://192.168.64.21/wordpress/wp-admin/js/xfn.min.js
+200      GET      136l      481w     3875c http://192.168.64.21/wordpress/wp-admin/js/link.js
+200      GET        2l      133w     4706c http://192.168.64.21/wordpress/wp-admin/js/privacy-tools.min.js
+200      GET     1416l     6165w    45334c http://192.168.64.21/wordpress/wp-admin/js/editor.js
+200      GET      654l     2394w    18795c http://192.168.64.21/wordpress/wp-admin/js/postbox.js
+200      GET      446l     1709w    12761c http://192.168.64.21/wordpress/wp-admin/js/site-health.js
+200      GET     1175l     3919w    33920c http://192.168.64.21/wordpress/wp-admin/js/revisions.js
+200      GET        2l      174w    19669c http://192.168.64.21/wordpress/wp-admin/js/common.min.js
+200      GET        2l       16w     1535c http://192.168.64.21/wordpress/wp-admin/js/word-count.min.js
+200      GET        2l       40w     3458c http://192.168.64.21/wordpress/wp-admin/js/color-picker.min.js
+200      GET        2l       34w     3836c http://192.168.64.21/wordpress/wp-admin/js/gallery.min.js
+200      GET      241l      691w     5642c http://192.168.64.21/wordpress/wp-admin/js/gallery.js
+200      GET        2l       67w     5463c http://192.168.64.21/wordpress/wp-admin/js/user-profile.min.js
+200      GET       36l      129w      873c http://192.168.64.21/wordpress/wp-admin/js/language-chooser.js
+200      GET        2l       10w      409c http://192.168.64.21/wordpress/wp-admin/js/language-chooser.min.js
+200      GET        2l       83w    12582c http://192.168.64.21/wordpress/wp-admin/js/widgets.min.js
+200      GET      212l      738w     6147c http://192.168.64.21/wordpress/wp-admin/js/application-passwords.js
+200      GET     1332l     4813w    39447c http://192.168.64.21/wordpress/wp-admin/js/post.js
+200      GET       28l      108w      876c http://192.168.64.21/wordpress/wp-admin/js/set-post-thumbnail.js
+200      GET      208l      768w     5648c http://192.168.64.21/wordpress/wp-admin/js/tags-suggest.js
+200      GET      333l     1198w    10272c http://192.168.64.21/wordpress/wp-admin/js/privacy-tools.js
+200      GET       64l      335w     2317c http://192.168.64.21/wordpress/wp-admin/js/user-suggest.js
+301      GET        9l       28w      337c http://192.168.64.21/wordpress/wp-content/plugins => http://192.168.64.21/wordpress/wp-content/plugins/
+200      GET       88l      280w     2017c http://192.168.64.21/wordpress/wp-admin/js/custom-header.js
+200      GET        2l       96w    17875c http://192.168.64.21/wordpress/wp-admin/js/revisions.min.js
+200      GET        2l       78w     6677c http://192.168.64.21/wordpress/wp-admin/js/postbox.min.js
+200      GET      401l     1328w    11211c http://192.168.64.21/wordpress/wp-admin/js/user-profile.js
+200      GET        2l      134w    11767c http://192.168.64.21/wordpress/wp-admin/js/theme-plugin-editor.min.js
+200      GET        2l       23w     2373c http://192.168.64.21/wordpress/wp-admin/js/plugin-install.min.js
+200      GET        2l       40w     2039c http://192.168.64.21/wordpress/wp-admin/js/media.min.js
+200      GET        2l       83w    13453c http://192.168.64.21/wordpress/wp-admin/js/editor-expand.min.js
+200      GET     1617l     5793w    42607c http://192.168.64.21/wordpress/wp-admin/js/editor-expand.js
+200      GET      164l      663w     4734c http://192.168.64.21/wordpress/wp-admin/js/tags.js
+200      GET      276l     1042w     7689c http://192.168.64.21/wordpress/wp-admin/js/farbtastic.js
+200      GET     2972l    11108w    93709c http://192.168.64.21/wordpress/wp-admin/js/updates.js
+200      GET        2l      152w    15187c http://192.168.64.21/wordpress/wp-admin/js/edit-comments.min.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-admin/css/colors (Apache)
+200      GET        2l      616w   110807c http://192.168.64.21/wordpress/wp-admin/js/customize-controls.min.js
+200      GET     1347l     4955w    37168c http://192.168.64.21/wordpress/wp-admin/js/edit-comments.js
+200      GET        2l      149w    28014c http://192.168.64.21/wordpress/wp-admin/js/customize-widgets.min.js
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-admin/js/widgets (Apache)
+200      GET      761l     1593w    19607c http://192.168.64.21/wordpress/wp-admin/css/colors/_admin.scss
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-admin/css/colors/modern (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-admin/css/colors/ocean (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-admin/css/colors/sunrise (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-admin/css/colors/blue (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-admin/css/colors/ectoplasm (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-admin/css/colors/coffee (Apache)
+200      GET       37l      101w      825c http://192.168.64.21/wordpress/wp-admin/css/colors/_mixins.scss
+200      GET      154l      397w     4284c http://192.168.64.21/wordpress/wp-admin/js/widgets/media-audio-widget.js
+200      GET      170l      540w     5468c http://192.168.64.21/wordpress/wp-admin/js/widgets/media-image-widget.js
+200      GET        2l       26w     3766c http://192.168.64.21/wordpress/wp-admin/js/widgets/media-gallery-widget.min.js
+200      GET        2l       15w     1447c http://192.168.64.21/wordpress/wp-admin/js/widgets/media-audio-widget.min.js
+200      GET        2l        9w      865c http://192.168.64.21/wordpress/wp-admin/js/accordion.min.js
+200      GET      341l     1058w    10354c http://192.168.64.21/wordpress/wp-admin/js/widgets/media-gallery-widget.js
+200      GET        2l       66w     5885c http://192.168.64.21/wordpress/wp-admin/js/widgets/text-widgets.min.js
+200      GET      256l      720w     7020c http://192.168.64.21/wordpress/wp-admin/js/widgets/media-video-widget.js
+200      GET        2l      157w    14226c http://192.168.64.21/wordpress/wp-admin/js/widgets/media-widgets.min.js
+200      GET        6l       13w      166c http://192.168.64.21/wordpress/wp-admin/css/colors/sunrise/colors.scss
+200      GET      456l     1780w    15630c http://192.168.64.21/wordpress/wp-admin/js/widgets/custom-html-widgets.js
+200      GET      552l     2189w    18089c http://192.168.64.21/wordpress/wp-admin/js/widgets/text-widgets.js
+200      GET        9l       14w      186c http://192.168.64.21/wordpress/wp-admin/css/colors/ocean/colors.scss
+200      GET      437l     1680w    11030c http://192.168.64.21/wordpress/wp-admin/js/tags-box.js
+200      GET        2l      579w    17191c http://192.168.64.21/wordpress/wp-admin/css/colors/sunrise/colors.min.css
+200      GET     1330l     4939w    42722c http://192.168.64.21/wordpress/wp-admin/js/widgets/media-widgets.js
+200      GET      680l     1622w    18697c http://192.168.64.21/wordpress/wp-admin/css/colors/ocean/colors-rtl.css
+200      GET        2l      557w    16597c http://192.168.64.21/wordpress/wp-admin/css/colors/ocean/colors-rtl.min.css
+200      GET      713l     1694w    19376c http://192.168.64.21/wordpress/wp-admin/css/colors/sunrise/colors-rtl.css
+200      GET        2l       10w     1197c http://192.168.64.21/wordpress/wp-admin/js/custom-background.min.js
+200      GET       43l      171w     1305c http://192.168.64.21/wordpress/wp-admin/js/media-gallery.js
+200      GET       11l       18w      249c http://192.168.64.21/wordpress/wp-admin/css/colors/blue/colors.scss
+200      GET      102l      374w     2877c http://192.168.64.21/wordpress/wp-admin/js/comment.js
+200      GET        2l       66w     5542c http://192.168.64.21/wordpress/wp-admin/js/widgets/custom-html-widgets.min.js
+200      GET        2l      579w    17192c http://192.168.64.21/wordpress/wp-admin/css/colors/sunrise/colors-rtl.min.css
+200      GET     1438l     9335w   644638c http://192.168.64.21/wordpress/wp-admin/images/freedoms.png
+200      GET        1l        2w       73c http://192.168.64.21/wordpress/wp-admin/images/sort.gif
+200      GET      713l     1694w    19351c http://192.168.64.21/wordpress/wp-admin/css/colors/blue/colors.css
+200      GET        2l       51w     2863c http://192.168.64.21/wordpress/wp-admin/js/application-passwords.min.js
+200      GET        2l      579w    17188c http://192.168.64.21/wordpress/wp-admin/css/colors/ectoplasm/colors.min.css
+301      GET        9l       28w      336c http://192.168.64.21/wordpress/wp-content/themes => http://192.168.64.21/wordpress/wp-content/themes/
+200      GET     2115l     7222w    55633c http://192.168.64.21/wordpress/wp-admin/js/theme.js
+301      GET        9l       28w      337c http://192.168.64.21/wordpress/wp-content/uploads => http://192.168.64.21/wordpress/wp-content/uploads/
+200      GET        2l       39w     3013c http://192.168.64.21/wordpress/wp-admin/js/tags-box.min.js
+200      GET       16l       60w     3597c http://192.168.64.21/wordpress/wp-admin/images/mask.png
+200      GET        1l      172w     1639c http://192.168.64.21/wordpress/wp-admin/images/wordpress-logo-white.svg
+200      GET      680l     1622w    18696c http://192.168.64.21/wordpress/wp-admin/css/colors/ocean/colors.css
+200      GET        5l      363w    23643c http://192.168.64.21/wordpress/wp-admin/js/iris.min.js
+200      GET     1237l     4739w    31863c http://192.168.64.21/wordpress/wp-admin/js/image-edit.js
+200      GET       94l      376w     2956c http://192.168.64.21/wordpress/wp-admin/js/accordion.js
+200      GET        2l      100w     7374c http://192.168.64.21/wordpress/wp-admin/js/inline-edit-post.min.js
+200      GET        2l      129w    13228c http://192.168.64.21/wordpress/wp-admin/js/editor.min.js
+200      GET      713l     1694w    19375c http://192.168.64.21/wordpress/wp-admin/css/colors/sunrise/colors.css
+200      GET     2024l     6752w    52405c http://192.168.64.21/wordpress/wp-admin/js/common.js
+200      GET     2372l     8269w    71599c http://192.168.64.21/wordpress/wp-admin/js/customize-widgets.js
+200      GET        9l       15w      220c http://192.168.64.21/wordpress/wp-admin/css/colors/modern/colors.scss
+200      GET      713l     1694w    19376c http://192.168.64.21/wordpress/wp-admin/css/colors/modern/colors-rtl.css
+200      GET      713l     1694w    19375c http://192.168.64.21/wordpress/wp-admin/css/colors/modern/colors.css
+200      GET        2l      579w    17191c http://192.168.64.21/wordpress/wp-admin/css/colors/modern/colors.min.css
+200      GET        2l      579w    17168c http://192.168.64.21/wordpress/wp-admin/css/colors/blue/colors-rtl.min.css
+200      GET      713l     1694w    19352c http://192.168.64.21/wordpress/wp-admin/css/colors/blue/colors-rtl.css
+200      GET        2l      557w    16596c http://192.168.64.21/wordpress/wp-admin/css/colors/ocean/colors.min.css
+200      GET        2l      579w    17167c http://192.168.64.21/wordpress/wp-admin/css/colors/blue/colors.min.css
+200      GET        2l      579w    17192c http://192.168.64.21/wordpress/wp-admin/css/colors/modern/colors-rtl.min.css
+200      GET        2l      459w    40826c http://192.168.64.21/wordpress/wp-admin/js/updates.min.js
+200      GET      839l     3484w    27531c http://192.168.64.21/wordpress/wp-admin/js/dashboard.js
+200      GET      356l     1327w     9730c http://192.168.64.21/wordpress/wp-admin/js/color-picker.js
+200      GET      346l     1454w    11588c http://192.168.64.21/wordpress/wp-admin/js/code-editor.js
+200      GET     9293l    33892w   291161c http://192.168.64.21/wordpress/wp-admin/js/customize-controls.js
+200      GET        2l        9w      613c http://192.168.64.21/wordpress/wp-admin/js/media-gallery.min.js
+200      GET        2l       32w     1874c http://192.168.64.21/wordpress/wp-admin/js/tags.min.js
+200      GET        2l      175w    18723c http://192.168.64.21/wordpress/wp-admin/js/post.min.js
+200      GET     1331l     4899w    44018c http://192.168.64.21/wordpress/wp-admin/js/nav-menu.js
+200      GET        2l      383w    45600c http://192.168.64.21/wordpress/wp-admin/js/customize-nav-menus.min.js
+200      GET     3428l    12105w   108373c http://192.168.64.21/wordpress/wp-admin/js/customize-nav-menus.js
+200      GET      895l     1825w    15476c http://192.168.64.21/wordpress/wp-admin/css/nav-menus-rtl.css
+200      GET      113l      540w     3458c http://192.168.64.21/wordpress/wp-admin/js/media-upload.js
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/plugins.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fplugins.php&reauth=1
+200      GET     1426l     2697w    27103c http://192.168.64.21/wordpress/wp-admin/css/about.css
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/gallery (Apache)
+301      GET        9l       28w      345c http://192.168.64.21/wordpress/wp-includes/blocks/gallery => http://192.168.64.21/wordpress/wp-includes/blocks/gallery/
+200      GET       82l      145w     1454c http://192.168.64.21/wordpress/wp-includes/blocks/gallery/block.json
+200      GET      149l      567w     4232c http://192.168.64.21/wordpress/wp-admin/js/password-strength-meter.js
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/media.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fmedia.php&reauth=1
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/video (Apache)
+200      GET       76l      136w     1340c http://192.168.64.21/wordpress/wp-includes/blocks/video/block.json
+200      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-content/plugins/index.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/html (Apache)
+200      GET       16l       27w      233c http://192.168.64.21/wordpress/wp-includes/blocks/html/block.json
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/tools.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Ftools.php&reauth=1
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/upload.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fupload.php&reauth=1
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/about.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fabout.php&reauth=1
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/users.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fusers.php&reauth=1
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/export.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fexport.php&reauth=1
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/calendar (Apache)
+301      GET        9l       28w      331c http://192.168.64.21/wordpress/wp-admin/css => http://192.168.64.21/wordpress/wp-admin/css/
+301      GET        9l       28w      346c http://192.168.64.21/wordpress/wp-includes/blocks/archives => http://192.168.64.21/wordpress/wp-includes/blocks/archives/
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/blocks/archives.php
+200      GET       19l       32w      284c http://192.168.64.21/wordpress/wp-includes/blocks/archives/block.json
+200      GET     1329l     2823w    24823c http://192.168.64.21/wordpress/wp-admin/css/dashboard-rtl.css
+200      GET        2l      635w    19699c http://192.168.64.21/wordpress/wp-admin/css/media-rtl.min.css
+301      GET        9l       28w      334c http://192.168.64.21/wordpress/wp-admin/images => http://192.168.64.21/wordpress/wp-admin/images/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/image (Apache)
+200      GET      165l      744w     5753c http://192.168.64.21/wordpress/wp-admin/js/auth-app.js
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/blocks/index.php
+200      GET        2l       18w     2024c http://192.168.64.21/wordpress/wp-admin/js/widgets/media-image-widget.min.js
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/comment.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fcomment.php&reauth=1
+200      GET       23l       80w     1317c http://192.168.64.21/wordpress/wp-admin/upgrade.php
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/index.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Findex.php&reauth=1
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/profile.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fprofile.php&reauth=1
+301      GET        9l       28w      343c http://192.168.64.21/wordpress/wp-includes/blocks/video => http://192.168.64.21/wordpress/wp-includes/blocks/video/
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/import.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fimport.php&reauth=1
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/menu.php
+301      GET        9l       28w      342c http://192.168.64.21/wordpress/wp-includes/blocks/html => http://192.168.64.21/wordpress/wp-includes/blocks/html/
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/customize.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fcustomize.php&reauth=1
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/link.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Flink.php&reauth=1
+200      GET       17l       83w     1347c http://192.168.64.21/wordpress/wp-admin/install.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/audio (Apache)
+200      GET       43l       76w      722c http://192.168.64.21/wordpress/wp-includes/blocks/audio/block.json
+200      GET       16l       26w      203c http://192.168.64.21/wordpress/wp-includes/blocks/calendar/block.json
+301      GET        9l       28w      346c http://192.168.64.21/wordpress/wp-includes/blocks/calendar => http://192.168.64.21/wordpress/wp-includes/blocks/calendar/
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/privacy.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fprivacy.php&reauth=1
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/edit.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fedit.php&reauth=1
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/update.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fupdate.php&reauth=1
+301      GET        9l       28w      343c http://192.168.64.21/wordpress/wp-includes/blocks/image => http://192.168.64.21/wordpress/wp-includes/blocks/image/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/code (Apache)
+200      GET       15l       25w      204c http://192.168.64.21/wordpress/wp-includes/blocks/code/block.json
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/file (Apache)
+301      GET        9l       28w      343c http://192.168.64.21/wordpress/wp-includes/blocks/audio => http://192.168.64.21/wordpress/wp-includes/blocks/audio/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/list (Apache)
+200      GET       36l       65w      574c http://192.168.64.21/wordpress/wp-includes/blocks/list/block.json
+301      GET        9l       28w      345c http://192.168.64.21/wordpress/wp-includes/blocks/buttons => http://192.168.64.21/wordpress/wp-includes/blocks/buttons/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/buttons (Apache)
+200      GET       10l       17w      144c http://192.168.64.21/wordpress/wp-includes/blocks/buttons/block.json
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/term.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fterm.php&reauth=1
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/blocks/calendar.php
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/group (Apache)
+301      GET        9l       28w      342c http://192.168.64.21/wordpress/wp-includes/blocks/code => http://192.168.64.21/wordpress/wp-includes/blocks/code/
+301      GET        9l       28w      342c http://192.168.64.21/wordpress/wp-includes/blocks/file => http://192.168.64.21/wordpress/wp-includes/blocks/file/
+200      GET       43l       75w      748c http://192.168.64.21/wordpress/wp-includes/blocks/file/block.json
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/categories (Apache)
+301      GET        9l       28w      342c http://192.168.64.21/wordpress/wp-includes/blocks/list => http://192.168.64.21/wordpress/wp-includes/blocks/list/
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/block (Apache)
+301      GET        9l       28w      343c http://192.168.64.21/wordpress/wp-includes/blocks/block => http://192.168.64.21/wordpress/wp-includes/blocks/block/
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/blocks/block.php
+200      GET       15l       25w      209c http://192.168.64.21/wordpress/wp-includes/blocks/block/block.json
+301      GET        9l       28w      343c http://192.168.64.21/wordpress/wp-includes/blocks/group => http://192.168.64.21/wordpress/wp-includes/blocks/group/
+200      GET       23l       39w      354c http://192.168.64.21/wordpress/wp-includes/blocks/categories/block.json
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-admin/maint (Apache)
+301      GET        9l       28w      348c http://192.168.64.21/wordpress/wp-includes/blocks/categories => http://192.168.64.21/wordpress/wp-includes/blocks/categories/
+500      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-includes/blocks/categories.php
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/update-core.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fupdate-core.php&reauth=1
+301      GET        9l       28w      335c http://192.168.64.21/wordpress/wp-admin/network => http://192.168.64.21/wordpress/wp-admin/network/
+200      GET       18l       95w     1380c http://192.168.64.21/wordpress/wp-admin/maint/repair.php
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/network.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fnetwork.php&reauth=1
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/quote (Apache)
+301      GET        9l       28w      343c http://192.168.64.21/wordpress/wp-includes/blocks/quote => http://192.168.64.21/wordpress/wp-includes/blocks/quote/
+301      GET        9l       28w      333c http://192.168.64.21/wordpress/wp-admin/maint => http://192.168.64.21/wordpress/wp-admin/maint/
+200      GET       97l      823w     7278c http://192.168.64.21/wordpress/readme.html
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/embed (Apache)
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/more (Apache)
+200      GET       20l       34w      298c http://192.168.64.21/wordpress/wp-includes/blocks/more/block.json
+301      GET        9l       28w      343c http://192.168.64.21/wordpress/wp-includes/blocks/embed => http://192.168.64.21/wordpress/wp-includes/blocks/embed/
+200      GET       40l       69w      639c http://192.168.64.21/wordpress/wp-includes/blocks/embed/block.json
+301      GET        9l       28w      342c http://192.168.64.21/wordpress/wp-includes/blocks/more => http://192.168.64.21/wordpress/wp-includes/blocks/more/
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/moderation.php => http://192.168.43.162/wordpress/wp-admin/edit-comments.php?comment_status=moderated
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/options.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Foptions.php&reauth=1
+MSG      0.000 feroxbuster::heuristics detected directory listing: http://192.168.64.21/wordpress/wp-includes/blocks/classic (Apache)
+200      GET       16l       27w      238c http://192.168.64.21/wordpress/wp-includes/blocks/classic/block.json
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/network/plugins.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fnetwork%2Fplugins.php&reauth=1
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/network/admin.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fnetwork%2Fadmin.php&reauth=1
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/network/themes.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fnetwork%2Fthemes.php&reauth=1
+302      GET        0l        0w        0c http://192.168.64.21/wordpress/wp-admin/network/sites.php => http://192.168.43.162/wordpress/wp-login.php?redirect_to=http%3A%2F%2F192.168.64.21%2Fwordpress%2Fwp-admin%2Fnetwork%2Fsites.php&reauth=1
+301      GET        9l       28w      345c http://192.168.64.21/wordpress/wp-includes/blocks/classic => http://192.168.64.21/wordpress/wp-includes/blocks/classic/

@@ -372,7 +372,7 @@ Il comando diventa quindi:
     \texttt{dirb http://192.168.64.21/ -X .jpg,.php,.txt,.html -o dirb-documents-output.txt}
 \end{center}
 
-Di seguito è presente l'output di questa scansione. Il report completo è allegato a questo docuemnto nel file \texttt{dirb-documents-output.txt}.
+Di seguito è presente l'output di questa scansione. Il report completo è allegato a questo documento nel file \texttt{dirb-documents-output.txt}.
 
 \begin{figure}[h!]
     \centering
@@ -414,13 +414,52 @@ Il comando invocato a questo scopo è il seguente:
 
 Data la prolissità dell'output, esso è stato salvato all'interno del file \texttt{feroxbuster\_noobbox\_wordpress.txt}, allegato al presente documento.
 
-Consultando i risultati del tool, all'interno di tale cartella sembra sia \textbf{sia effettivamente presente un'installazione di wordpress}.
+Consultando i risultati del tool, all'interno di tale cartella sembra sia \textbf{sia effettivamente presente un'installazione di Wordpress}. Visitando l'endpoint \texttt{wordpress/} si ottiene invece quanto mostrato in Figura 14.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{img/feroxbuster.png}
     \caption{\texttt{feroxbuster} in esecuzione}
 \end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/wordpress.png}
+    \caption{"Just another WordPress site"}
+\end{figure}
+
+\newpage
+\newpage
+\newpage
+
+\subsection{Wordpress ai raggi X: \texttt{wpscan}}
+
+Avendo appurato che sul server web sia in esecuzione un'istanza di \textbf{wordpress}, è possibile proseguire con il processo di enumerazione iniziato in precedenza utilizzando il tool \texttt{wpscan}, che permette un'enumerazione mirata dell'istanza di tale framework in esecuzione sull'asset in analisi.
+
+In questa fase dell'analisi, viene utilizzato il tool nella sua configurazione di default con l'aggiunta di un processo di enumerazione degli \textbf{utenti} (switch \texttt{-e u}). Si è deciso di concentrarsi su questo aspetto poiché in precedenza era stata rinvenuta un'immagine che si presuppone sia una \textbf{password}. Avere a disposizione una coppia di credenziali permette non solo di accedere al \textbf{pannello di amministrazione} ma anche, mediante il tool \textbf{Metasploit}, ad una \textbf{shell} sulla macchina su cui Wordpress è in esecuzione.
+
+Ulteriori informazioni su questo aspetto saranno forniti nelle sezioni successive.
+
+In ogni caso, il comando utilizzato è il seguente:
+
+\begin{center}
+    \texttt{wpscan -{}-url 192.168.64.21/wordpress/ -e u}
+\end{center}
+
+Il risultato dell'esecuzione del tool è allegato al presente documento, ma in sostanza è stato determinato che:
+
+\begin{itemize}
+    \item La versione del framework risulta essere la 6.2.2, rilasciata il 20 maggio 2023; \footnote{Si tenga presente che Wordpress prevede un meccanismo di aggiornamento automatico del framework, attivo di default su tutti i siti web. \cite{wordpress-autoupdate}}
+    \item È stato identificato l'utente \textbf{noobbox}; 
+\end{itemize}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/wpscan_user.png}
+    \caption{\texttt{wpscan} ha rilevato un utente}
+\end{figure}
+
+Le informazioni ottenute in questa fase permettono già di definire una direzione chiara per la fase di \textbf{Exploitation}. Nella fase successiva verrà tuttavia descritta la strategia per identificare e riportare tutte le vulnerabilità presenti sull'asset usando i tools \textbf{Nessus} ed \textbf{OpenVAS}.
 
 \newpage
 \printbibliography[title={Riferimenti bibliografici e risorse consultate}]
