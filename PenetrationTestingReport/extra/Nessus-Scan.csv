@@ -1,0 +1,3138 @@
+Plugin ID,CVE,CVSS v2.0 Base Score,Risk,Host,Protocol,Port,Name,Synopsis,Description,Solution,See Also,Plugin Output
+"10107","","","None","192.168.64.21","tcp","80","HTTP Server Type and Version","A web server is running on the remote host.","This plugin attempts to determine the type and the version of the
+  remote web server.","n/a","","The remote web server type is :
+
+Apache/2.4.38 (Debian)"
+"10662","","","None","192.168.64.21","tcp","80","Web mirroring","Nessus can crawl the remote website.","This plugin makes a mirror of the remote website(s) and extracts the
+list of CGIs that are used by the remote host. 
+
+It is suggested that you change the number of pages to mirror in the
+'Options' section of the client.","n/a","","
+Webmirror performed 1000 queries in 95s (10.0526 queries per second)
+
+The following CGIs have been discovered :
+
+
++ CGI : /wordpress/xmlrpc.php
+  Methods : GET
+  Argument : 
+   Value: rsd
+
+
++ CGI : /wordpress/
+  Methods : GET
+  Argument : s
+
+Directory index found at /wordpress/wp-includes/css/dist/block-library/
+Directory index found at /wordpress/wp-includes/css/dist/
+Directory index found at /wordpress/wp-includes/css/
+Directory index found at /wordpress/wp-includes/
+Directory index found at /manual/style/css/
+Directory index found at /manual/style/
+Directory index found at /manual/images/
+"
+"11032","","","None","192.168.64.21","tcp","80","Web Server Directory Enumeration","It is possible to enumerate directories on the web server.","This plugin attempts to determine the presence of various common
+directories on the remote web server.  By sending a request for a
+directory, the web server response code indicates if it is a valid
+directory or not.","n/a","http://projects.webappsec.org/w/page/13246953/Predictable%20Resource%20Location","
+The following directories were discovered:
+/icons, /manual, /wordpress
+
+While this is not, in and of itself, a bug, you should manually inspect 
+these directories to ensure that they are in compliance with company
+security standards
+"
+"11219","","","None","192.168.64.21","tcp","80","Nessus SYN scanner","It is possible to determine which TCP ports are open.","This plugin is a SYN 'half-open' port scanner.  It shall be reasonably
+quick even against a firewalled target. 
+
+Note that SYN scans are less intrusive than TCP (full connect) scans
+against broken services, but they might cause problems for less robust
+firewalls and also leave unclosed connections on the remote target, if
+the network is loaded.","Protect your target with an IP filter.","","Port 80/tcp was found to be open"
+"18297","","","None","192.168.64.21","tcp","80","WordPress Detection","The remote web server contains a blog application written in PHP.","The remote host is running WordPress, a free blog application written
+in PHP with a MySQL back-end.","n/a","https://wordpress.org/","
+  URL     : http://192.168.64.21/wordpress
+  Version : 6.2.2
+"
+"19506","","","None","192.168.64.21","tcp","0","Nessus Scan Information","This plugin displays information about the Nessus scan.","This plugin displays, for each tested host, information about the
+scan itself :
+
+  - The version of the plugin set.
+  - The type of scanner (Nessus or Nessus Home).
+  - The version of the Nessus Engine.
+  - The port scanner(s) used.
+  - The port range scanned.
+  - The ping round trip time 
+  - Whether credentialed or third-party patch management
+    checks are possible.
+  - Whether the display of superseded patches is enabled
+  - The date of the scan.
+  - The duration of the scan.
+  - The number of hosts scanned in parallel.
+  - The number of checks done in parallel.","n/a","","Information about this scan : 
+
+Nessus version : 10.5.2
+Nessus build : 20009
+Plugin feed version : 202306050606
+Scanner edition used : Nessus Home
+Scanner OS : LINUX
+Scanner distribution : ubuntu1804-aarch64
+Scan type : Normal
+Scan name : NoobBox-1
+Scan policy used : Web Application Tests
+Scanner IP : 192.168.64.23
+Port scanner(s) : nessus_syn_scanner 
+Port range : default
+Ping RTT : 184.104 ms
+Thorough tests : yes
+Experimental tests : no
+Plugin debugging enabled : no
+Paranoia level : 1
+Report verbosity : 1
+Safe checks : yes
+Optimize the test : yes
+Credentialed checks : no
+Patch management checks : None
+Display superseded patches : yes (supersedence plugin launched)
+CGI scanning : enabled
+Web application tests : enabled
+Web app tests -  Test mode : all_pairs
+Web app tests -  Try all HTTP methods : yes
+Web app tests -  Maximum run time : 10 minutes.
+Web app tests -  Stop at first flaw : param
+Max hosts : 30
+Max checks : 4
+Recv timeout : 5
+Backports : Detected
+Allow post-scan editing : Yes
+Scan Start Date : 2023/6/5 12:04 CEST
+Scan duration : 1365 sec
+Scan for malware : no
+"
+"24260","","","None","192.168.64.21","tcp","80","HyperText Transfer Protocol (HTTP) Information","Some information about the remote HTTP configuration can be extracted.","This test gives some information about the remote HTTP protocol - the
+version used, whether HTTP Keep-Alive and HTTP pipelining are enabled,
+etc... 
+
+This test is informational only and does not denote any security
+problem.","n/a","","
+Response Code : HTTP/1.1 200 OK
+
+Protocol version : HTTP/1.1
+SSL : no
+Keep-Alive : yes
+Options allowed : (Not implemented)
+Headers :
+
+  Date: Mon, 05 Jun 2023 10:07:46 GMT
+  Server: Apache/2.4.38 (Debian)
+  Last-Modified: Sat, 06 Mar 2021 07:24:44 GMT
+  ETag: ""29cd-5bcd91843bb2d""
+  Accept-Ranges: bytes
+  Content-Length: 10701
+  Vary: Accept-Encoding
+  Keep-Alive: timeout=5, max=100
+  Connection: Keep-Alive
+  Content-Type: text/html
+  
+Response Body :
+
+
+<!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Transitional//EN"" ""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"">
+<html xmlns=""http://www.w3.org/1999/xhtml"">
+  <head>
+    <meta http-equiv=""Content-Type"" content=""text/html; charset=UTF-8"" />
+    <title>Apache2 Debian Default Page: It works</title>
+    <style type=""text/css"" media=""screen"">
+  * {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  body, html {
+    padding: 3px 3px 3px 3px;
+
+    background-color: #D8DBE2;
+
+    font-family: Verdana, sans-serif;
+    font-size: 11pt;
+    text-align: center;
+  }
+
+  div.main_page {
+    position: relative;
+    display: table;
+
+    width: 800px;
+
+    margin-bottom: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 0px 0px 0px;
+
+    border-width: 2px;
+    border-color: #212738;
+    border-style: solid;
+
+    background-color: #FFFFFF;
+
+    text-align: center;
+  }
+
+  div.page_header {
+    height: 99px;
+    width: 100%;
+
+    background-color: #F5F6F7;
+  }
+
+  div.page_header span {
+    margin: 15px 0px 0px 50px;
+
+    font-size: 180%;
+    font-weight: bold;
+  }
+
+  div.page_header img {
+    margin: 3px 0px 0px 40px;
+
+    border: 0px 0px 0px;
+  }
+
+  div.table_of_contents {
+    clear: left;
+
+    min-width: 200px;
+
+    margin: 3px 3px 3px 3px;
+
+    background-color: #FFFFFF;
+
+    text-align: left;
+  }
+
+  div.table_of_contents_item {
+    clear: left;
+
+    width: 100%;
+
+    margin: 4px 0px 0px 0px;
+
+    background-color: #FFFFFF;
+
+    color: #000000;
+    text-align: left;
+  }
+
+  div.table_of_contents_item a {
+    margin: 6px 0px 0px 6px;
+  }
+
+  div.content_section {
+    margin: 3px 3px 3px 3px;
+
+    background-color: #FFFFFF;
+
+    text-align: left;
+  }
+
+  div.content_section_text {
+    padding: 4px 8px 4px 8px;
+
+    color: #000000;
+    font-size: 100%;
+  }
+
+  div.content_section_text pre {
+    margin: 8px 0px 8px 0px;
+    padding: 8px 8px 8px 8px;
+
+    border-width: 1px;
+    border-style: dotted;
+    border-color: #000000;
+
+    background-color: #F5F6F7;
+
+    font-style: italic;
+  }
+
+  div.content_section_text p {
+    margin-bottom: 6px;
+  }
+
+  div.content_section_text ul, div.content_section_text li {
+    padding: 4px 8px 4px 16px;
+  }
+
+  div.section_header {
+    padding: 3px 6px 3px 6px;
+
+    background-color: #8E9CB2;
+
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 112%;
+    text-align: center;
+  }
+
+  div.section_header_red {
+    background-color: #CD214F;
+  }
+
+  div.section_header_grey {
+    background-color: #9F9386;
+  }
+
+  .floating_element {
+    position: relative;
+    float: left;
+  }
+
+  div.table_of_contents_item a,
+  div.content_section_text a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  div.table_of_contents_item a:link,
+  div.table_of_contents_item a:visited,
+  div.table_of_contents_item a:active {
+    color: #000000;
+  }
+
+  div.table_of_contents_item a:hover {
+    background-color: #000000;
+
+    color: #FFFFFF;
+  }
+
+  div.content_section_text a:link,
+  div.content_section_text a:visited,
+   div.content_section_text a:active {
+    background-color: #DCDFE6;
+
+    color: #000000;
+  }
+
+  div.content_section_text a:hover {
+    background-color: #000000;
+
+    color: #DCDFE6;
+  }
+
+  div.validator {
+  }
+    </style>
+  </head>
+  <body>
+    <div class=""main_page"">
+      <div class=""page_header floating_element"">
+        <img src=""/icons/openlogo-75.png"" alt=""Debian Logo"" class=""floating_element""/>
+        <span class=""floating_element"">
+          Apache2 Debian Default Page
+        </span>
+      </div>
+<!--      <div class=""table_of_contents floating_element"">
+        <div class=""section_header section_header_grey"">
+          TABLE OF CONTENTS
+        </div>
+        <div class=""table_of_contents_item floating_element"">
+          <a href=""#about"">About</a>
+        </div>
+        <div class=""table_of_contents_item floating_element"">
+          <a href=""#changes"">Changes</a>
+        </div>
+        <div class=""table_of_contents_item floating_element"">
+          <a href=""#scope"">Scope</a>
+        </div>
+        <div class=""table_of_contents_item floating_element"">
+          <a href=""#files"">Config files</a>
+        </div>
+      </div>
+-->
+      <div class=""content_section floating_element"">
+
+
+        <div class=""section_header section_header_red"">
+          <div id=""about""></div>
+          It works!
+        </div>
+        <div class=""content_section_text"">
+          <p>
+                This is the default welcome page used to test the correct 
+                operation of the Apache2 server after installation on Debian systems.
+                If you can read this page, it means that the Apache HTTP server installed at
+                this site is working properly. You should <b>replace this file</b> (located at
+                <tt>/var/www/html/index.html</tt>) before continuing to operate your HTTP server.
+          </p>
+
+
+          <p>
+                If you are a normal user of this web site and don't know what this page is
+                about, this probably means that the site is currently unavailable due to
+                maintenance.
+                If the problem persists, please contact the site's administrator.
+          </p>
+
+        </div>
+        <div class=""section_header"">
+          <div id=""changes""></div>
+                Configuration Overview
+        </div>
+        <div class=""content_section_text"">
+          <p>
+                Debian's Apache2 default configuration is different from the
+                upstream default configuration, and split into several files optimized for
+                interaction with Debian tools. The configuration system is
+                <b>fully documented in
+                /usr/share/doc/apache2/README.Debian.gz</b>. Refer to this for the full
+                documentation. Documentation for the web server itself can be
+                found by accessing the <a href=""/manual"">manual</a> if the <tt>apache2-doc</tt>
+                package was installed on this server.
+
+          </p>
+          <p>
+                The configuration layout for an Apache2 web server installation on Debian systems is as follows:
+          </p>
+          <pre>
+/etc/apache2/
+|-- apache2.conf
+|       `--  ports.conf
+|-- mods-enabled
+|       |-- *.load
+|       `-- *.conf
+|-- conf-enabled
+|       `-- *.conf
+|-- sites-enabled
+|       `-- *.conf
+          </pre>
+          <ul>
+                        <li>
+                           <tt>apache2.conf</tt> is the main configuration
+                           file. It puts the pieces together by including all remaining configuration
+                           files when starting up the web server.
+                        </li>
+
+                        <li>
+                           <tt>ports.conf</tt> is always included from the
+                           main configuration file. It is used to determine the listening ports for
+                           incoming connections, and this file can be customized anytime.
+                        </li>
+
+                        <li>
+                           Configuration files in the <tt>mods-enabled/</tt>,
+                           <tt>conf-enabled/</tt> and <tt>sites-enabled/</tt> directories contain
+                           particular configuration snippets which manage modules, global configuration
+                           fragments, or virtual host configurations, respectively.
+                        </li>
+
+                        <li>
+                           They are activated by symlinking available
+                           configuration files from their respective
+                           *-available/ counterparts. These should be managed
+                           by using our helpers
+                           <tt>
+                                a2enmod,
+                                a2dismod,
+                           </tt>
+                           <tt>
+                                a2ensite,
+                                a2dissite,
+                            </tt>
+                                and
+                           <tt>
+                                a2enconf,
+                                a2disconf
+                           </tt>. See their respective man pages for detailed information.
+                        </li>
+
+                        <li>
+                           The binary is called apache2. Due to the use of
+                           environment variables, in the default configuration, apache2 needs to be
+                           started/stopped with <tt>/etc/init.d/apache2</tt> or <tt>apache2ctl</tt>.
+                           <b>Calling <tt>/usr/bin/apache2</tt> directly will not work</b> with the
+                           default configuration.
+                        </li>
+          </ul>
+        </div>
+
+        <div class=""section_header"">
+            <div id=""docroot""></div>
+                Document Roots
+        </div>
+
+        <div class=""content_section_text"">
+            <p>
+                By default, Debian does not allow access through the web browser to
+                <em>any</em> file apart of those located in <tt>/var/www</tt>,
+                <a href=""http://httpd.apache.org/docs/2.4/mod/mod_userdir.html"" rel=""nofollow"">public_html</a>
+                directories (when enabled) and <tt>/usr/share</tt> (for web
+                applications). If your site is using a web document root
+                located elsewhere (such as in <tt>/srv</tt>) you may need to whitelist your
+                document root directory in <tt>/etc/apache2/apache2.conf</tt>.
+            </p>
+            <p>
+                The default Debian document root is <tt>/var/www/html</tt>. You
+                can make your own virtual hosts under /var/www. This is different
+                to previous releases which provides better security out of the box.
+            </p>
+        </div>
+
+        <div class=""section_header"">
+          <div id=""bugs""></div>
+                Reporting Problems
+        </div>
+        <div class=""content_section_text"">
+          <p>
+                Please use the <tt>reportbug</tt> tool to report bugs in the
+                Apache2 package with Debian. However, check <a
+                href=""http://bugs.debian.org/cgi-bin/pkgreport.cgi?ordering=normal;archive=0;src=apache2;repeatmerged=0""
+                rel=""nofollow"">existing bug reports</a> before reporting a new bug.
+          </p>
+          <p>
+                Please report bugs specific to modules (such as PHP and others)
+                to respective packages, not to the web server itself.
+          </p>
+        </div>
+
+
+
+
+      </div>
+    </div>
+    <div class=""validator"">
+    </div>
+  </body>
+</html>
+
+"
+"33817","","","None","192.168.64.21","tcp","80","CGI Generic Tests Load Estimation (all tests)","Load estimation for web application tests.","This script computes the maximum number of requests that would be done 
+by the generic web tests, depending on miscellaneous options. 
+It does not perform any test by itself.
+
+The results can be used to estimate the duration of these tests, or 
+the complexity of additional manual tests.
+
+Note that the script does not try to compute this duration based 
+on external factors such as the network and web servers loads.","n/a","","Here are the estimated number of requests in miscellaneous modes
+for one method only (GET or POST) :
+[Single / Some Pairs / All Pairs / Some Combinations / All Combinations]
+
+on site request forgery                  : S=1          SP=1         AP=1         SC=1         AC=1        
+SQL injection                            : S=28         SP=28        AP=28        SC=28        AC=28       
+unseen parameters                        : S=35         SP=35        AP=35        SC=35        AC=35       
+local file inclusion                     : S=4          SP=4         AP=4         SC=4         AC=4        
+web code injection                       : S=1          SP=1         AP=1         SC=1         AC=1        
+XML injection                            : S=1          SP=1         AP=1         SC=1         AC=1        
+format string                            : S=2          SP=2         AP=2         SC=2         AC=2        
+script injection                         : S=1          SP=1         AP=1         SC=1         AC=1        
+cross-site scripting (comprehensive test): S=17         SP=17        AP=17        SC=17        AC=17       
+injectable parameter                     : S=2          SP=2         AP=2         SC=2         AC=2        
+cross-site scripting (extended patterns) : S=6          SP=6         AP=6         SC=6         AC=6        
+directory traversal (write access)       : S=2          SP=2         AP=2         SC=2         AC=2        
+SSI injection                            : S=3          SP=3         AP=3         SC=3         AC=3        
+header injection                         : S=2          SP=2         AP=2         SC=2         AC=2        
+HTML injection                           : S=5          SP=5         AP=5         SC=5         AC=5        
+directory traversal                      : S=29         SP=29        AP=29        SC=29        AC=29       
+arbitrary command execution (time based) : S=6          SP=6         AP=6         SC=6         AC=6        
+persistent XSS                           : S=4          SP=4         AP=4         SC=4         AC=4        
+SQL injection (2nd order)                : S=1          SP=1         AP=1         SC=1         AC=1        
+directory traversal (extended test)      : S=51         SP=51        AP=51        SC=51        AC=51       
+arbitrary command execution              : S=22         SP=22        AP=22        SC=22        AC=22       
+blind SQL injection (4 requests)         : S=4          SP=4         AP=4         SC=4         AC=4        
+HTTP response splitting                  : S=9          SP=9         AP=9         SC=9         AC=9        
+blind SQL injection                      : S=12         SP=12        AP=12        SC=12        AC=12       
+
+All tests                                : S=248        SP=248       AP=248       SC=248       AC=248      
+
+Here are the estimated number of requests in miscellaneous modes
+for both methods (GET and POST) :
+[Single / Some Pairs / All Pairs / Some Combinations / All Combinations]
+
+on site request forgery                  : S=2          SP=2         AP=2         SC=2         AC=2        
+SQL injection                            : S=56         SP=56        AP=56        SC=56        AC=56       
+unseen parameters                        : S=70         SP=70        AP=70        SC=70        AC=70       
+local file inclusion                     : S=8          SP=8         AP=8         SC=8         AC=8        
+web code injection                       : S=2          SP=2         AP=2         SC=2         AC=2        
+XML injection                            : S=2          SP=2         AP=2         SC=2         AC=2        
+format string                            : S=4          SP=4         AP=4         SC=4         AC=4        
+script injection                         : S=2          SP=2         AP=2         SC=2         AC=2        
+cross-site scripting (comprehensive test): S=34         SP=34        AP=34        SC=34        AC=34       
+injectable parameter                     : S=4          SP=4         AP=4         SC=4         AC=4        
+cross-site scripting (extended patterns) : S=12         SP=12        AP=12        SC=12        AC=12       
+directory traversal (write access)       : S=4          SP=4         AP=4         SC=4         AC=4        
+SSI injection                            : S=6          SP=6         AP=6         SC=6         AC=6        
+header injection                         : S=4          SP=4         AP=4         SC=4         AC=4        
+HTML injection                           : S=10         SP=10        AP=10        SC=10        AC=10       
+directory traversal                      : S=58         SP=58        AP=58        SC=58        AC=58       
+arbitrary command execution (time based) : S=12         SP=12        AP=12        SC=12        AC=12       
+persistent XSS                           : S=8          SP=8         AP=8         SC=8         AC=8        
+SQL injection (2nd order)                : S=2          SP=2         AP=2         SC=2         AC=2        
+directory traversal (extended test)      : S=102        SP=102       AP=102       SC=102       AC=102      
+arbitrary command execution              : S=44         SP=44        AP=44        SC=44        AC=44       
+blind SQL injection (4 requests)         : S=8          SP=8         AP=8         SC=8         AC=8        
+HTTP response splitting                  : S=18         SP=18        AP=18        SC=18        AC=18       
+blind SQL injection                      : S=24         SP=24        AP=24        SC=24        AC=24       
+
+All tests                                : S=496        SP=496       AP=496       SC=496       AC=496      
+
+Your mode : all_pairs, GET and POST, thorough tests.
+Maximum number of requests : 496
+"
+"40984","","5.0","Medium","192.168.64.21","tcp","80","Browsable Web Directories","Some directories on the remote web server are browsable.","Multiple Nessus plugins identified directories on the web server
+that are browsable.","Make sure that browsable directories do not leak confidential
+information or give access to sensitive resources. Additionally, use
+access restrictions or disable directory indexing for any that do.","http://www.nessus.org/u?0a35179e","
+The following directories are browsable :
+
+http://192.168.64.21/manual/images/
+http://192.168.64.21/manual/style/
+http://192.168.64.21/manual/style/css/
+http://192.168.64.21/wordpress/wp-includes/
+http://192.168.64.21/wordpress/wp-includes/css/
+http://192.168.64.21/wordpress/wp-includes/css/dist/
+http://192.168.64.21/wordpress/wp-includes/css/dist/block-library/
+"
+"42423","","7.5","High","192.168.64.21","tcp","80","CGI Generic SSI Injection (HTTP headers)","It may be possible to execute arbitrary code through a CGI script
+hosted on the remote web server.","The remote web server hosts one or more CGI scripts that fail to
+adequately sanitize request strings and seem to be vulnerable to an
+'SSI injection' attack.  By leveraging this issue, an attacker may be
+able to execute arbitrary commands on the remote host.","Disable Server Side Includes if you do not use them.
+
+Otherwise, restrict access to the vulnerable application or contact    
+the vendor for a patch / upgrade.","https://en.wikipedia.org/wiki/Server_Side_Includes
+https://www.owasp.org/index.php/Server-Side_Includes_(SSI)_Injection
+http://projects.webappsec.org/w/page/13246964/SSI%20Injection","
+Using the POST HTTP method, Nessus found that :
+
++ The following resources may be vulnerable to SSI injection (on HTTP headers) :
+
+/manual/da/howto/ssi.html
+
+-------- request --------
+POST /manual/da/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 71
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/da/howto/ssi.html
+------------------------
+
+-------- output --------
+you get the message</p>
+<div class=""example""><p><code>
+[an error occurred while processing this directive]
+</code></p></div>
+------------------------
+
+/manual/de/howto/ssi.html
+
+-------- request --------
+POST /manual/de/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 71
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/de/howto/ssi.html
+------------------------
+
+-------- output --------
+you get the message</p>
+<div class=""example""><p><code>
+[an error occurred while processing this directive]
+</code></p></div>
+------------------------
+
+/manual/tr/howto/ssi.html
+
+-------- request --------
+POST /manual/tr/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 71
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/tr/howto/ssi.html
+------------------------
+
+-------- output --------
+you get the message</p>
+<div class=""example""><p><code>
+[an error occurred while processing this directive]
+</code></p></div>
+------------------------
+
+/manual/zh-cn/howto/ssi.html
+
+-------- request --------
+POST /manual/zh-cn/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 74
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/zh-cn/howto/ssi.html
+------------------------
+
+-------- output --------
+you get the message</p>
+<div class=""example""><p><code>
+[an error occurred while processing this directive]
+</code></p></div>
+------------------------
+
+/manual/pt-br/howto/ssi.html
+
+-------- request --------
+POST /manual/pt-br/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 74
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/pt-br/howto/ssi.html
+------------------------
+
+-------- output --------
+you get the message</p>
+<div class=""example""><p><code>
+[an error occurred while processing this directive]
+</code></p></div>
+------------------------
+
+/manual/ko/howto/ssi.html
+
+-------- request --------
+POST /manual/ko/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 71
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/ko/howto/ssi.html
+------------------------
+
+-------- output --------
+<p>焊烹 SSI 瘤矫绢啊 肋给登搁 促澜苞 鞍篮 巩备啊 唱柯促</p>
+<div class=""example""><p><code>
+[an error occurred while processing this directive]
+</code></p></div>
+------------------------
+
+/manual/ja/howto/ssi.html
+
+-------- request --------
+POST /manual/ja/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 71
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/ja/howto/ssi.html
+------------------------
+
+-------- output --------
+娆°伄銉°儍銈汇兗銈搞亴鍑哄姏銇曘倢銇俱仚銆</p>
+<div class=""example""><p><code>
+[an error occurred while processing this directive]
+</code></p></div>
+------------------------
+
+/manual/fr/howto/ssi.html
+
+-------- request --------
+POST /manual/fr/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 71
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/fr/howto/ssi.html
+------------------------
+
+-------- output --------
+directive SSI, vous recevez le message :</p>
+<div class=""example""><p><code>
+[an error occurred while processing this directive]
+</code></p></div>
+------------------------
+
+/manual/es/howto/ssi.html
+
+-------- request --------
+POST /manual/es/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 71
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/es/howto/ssi.html
+------------------------
+
+-------- output --------
+<p>Generalmente, cuando algo sale mal con sus directivas SSI, obti [...]
+<div class=""example""><p><code>
+[an error occurred while processing this directive]
+</code></p></div>
+------------------------
+
+/manual/en/howto/ssi.html
+
+-------- request --------
+POST /manual/en/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 71
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/en/howto/ssi.html
+------------------------
+
+-------- output --------
+you get the message</p>
+<div class=""example""><p><code>
+[an error occurred while processing this directive]
+</code></p></div>
+------------------------
+
+"
+"43111","","","None","192.168.64.21","tcp","80","HTTP Methods Allowed (per directory)","This plugin determines which HTTP methods are allowed on various CGI
+directories.","By calling the OPTIONS method, it is possible to determine which HTTP
+methods are allowed on each directory.
+
+The following HTTP methods are considered insecure:
+  PUT, DELETE, CONNECT, TRACE, HEAD
+
+Many frameworks and languages treat 'HEAD' as a 'GET' request, albeit
+one without any body in the response. If a security constraint was
+set on 'GET' requests such that only 'authenticatedUsers' could
+access GET requests for a particular servlet or resource, it would be
+bypassed for the 'HEAD' version. This allowed unauthorized blind
+submission of any privileged GET request.
+
+As this list may be incomplete, the plugin also tests - if 'Thorough
+tests' are enabled or 'Enable web applications tests' is set to 'yes'
+in the scan policy - various known HTTP methods on each directory and
+considers them as unsupported if it receives a response code of 400,
+403, 405, or 501.
+
+Note that the plugin output is only informational and does not
+necessarily indicate the presence of any security vulnerabilities.","n/a","http://www.nessus.org/u?d9c03a9a
+http://www.nessus.org/u?b019cbdb
+https://www.owasp.org/index.php/Test_HTTP_Methods_(OTG-CONFIG-006)","Based on the response to an OPTIONS request :
+
+  - HTTP methods GET HEAD OPTIONS POST are allowed on : 
+
+    /
+    /icons
+    /manual
+    /manual/da
+    /manual/da/developer
+    /manual/da/faq
+    /manual/da/howto
+    /manual/da/misc
+    /manual/da/mod
+    /manual/da/platform
+    /manual/da/programs
+    /manual/da/rewrite
+    /manual/da/ssl
+    /manual/da/vhosts
+    /manual/de
+    /manual/de/developer
+    /manual/de/howto
+    /manual/de/misc
+
+
+Based on tests of each method : 
+
+  - HTTP methods GET HEAD OPTIONS POST are allowed on : 
+
+    /
+    /icons
+    /manual
+    /manual/da
+    /manual/da/developer
+    /manual/da/faq
+    /manual/da/howto
+    /manual/da/misc
+    /manual/da/mod
+    /manual/da/platform
+    /manual/da/programs
+    /manual/da/rewrite
+    /manual/da/ssl
+    /manual/da/vhosts
+    /manual/de
+    /manual/de/developer
+    /manual/de/howto
+    /manual/de/misc
+    /wordpress
+
+"
+"47830","","","None","192.168.64.21","tcp","80","CGI Generic Injectable Parameter","Some CGIs are candidate for extended injection tests.","Nessus was able to to inject innocuous strings into CGI parameters
+and read them back in the HTTP response.
+
+The affected parameters are candidates for extended injection tests
+like cross-site scripting attacks.
+
+This is not a weakness per se, the main purpose of this test is to speed
+up other scripts.  The results may be useful for a human pen-tester.","n/a","","
+Using the GET HTTP method, Nessus found that :
+
++ The following resources may be vulnerable to injectable parameter :
+
++ The 's' parameter of the /wordpress/ CGI :
+
+/wordpress/?s=%00aqsqja
+
+-------- output --------
+<meta charset=""UTF-8"" />
+<meta name=""viewport"" content=""width=device-width, initial-scale=1"" />
+<title>Search Results for &#8220;.aqsqja&#8221; &#8211; NoobBox</title>
+<meta name='robots' content='noindex, follow, max-image-preview:la [...]
+<link rel=""alternate"" type=""application/rss+xml"" title=""NoobBox &r [...]
+------------------------
+
+Clicking directly on these URLs should exhibit the issue :
+(you will probably need to read the HTML source)
+
+http://192.168.64.21/wordpress/?s=%00aqsqja
+
+"
+"48204","","","None","192.168.64.21","tcp","80","Apache HTTP Server Version","It is possible to obtain the version number of the remote Apache HTTP
+server.","The remote host is running the Apache HTTP Server, an open source web
+server. It was possible to read the version number from the banner.","n/a","https://httpd.apache.org/","
+  URL        : http://192.168.64.21/
+  Version    : 2.4.99
+  Source     : Server: Apache/2.4.38 (Debian)
+  backported : 1
+  os         : ConvertedDebian
+"
+"49704","","","None","192.168.64.21","tcp","80","External URLs","Links to external sites were gathered.","Nessus gathered HREF links to external sites by crawling the remote
+web server.","n/a","","
+570 external URLs were gathered on this web server : 
+URL...                                  - Seen on...
+
+
+http://apache.webthing.com/mod_diagnostics/ - /manual/en/mod/mod_filter.html
+http://apache.webthing.com/mod_proxy_html/ - /manual/ja/urlmapping.html
+http://apachetoday.com/news_story.php3?ltsn=2000-06-14-002-01-PS - /manual/ko/env.html
+http://apr.apache.org                   - /manual/en/mod/mod_ldap.html
+http://apr.apache.org/                  - /manual/en/glossary.html
+http://apr.apache.org/docs/apr-util/trunk/group___a_p_r___util___bucket___brigades.html - /manual/en/developer/output-filters.html
+http://apr.apache.org/docs/apr/1.4/group__apr__pools.html#ga85f1e193c31d109affda72f9a92c6915 - /manual/en/developer/modguide.html
+http://apr.apache.org/docs/apr/1.4/group__apr__pools.html#gaf61c098ad258069d64cdf8c0a9369f9e - /manual/en/developer/modguide.html
+http://apr.apache.org/docs/apr/1.4/group__apr__strings.html#ga3eca76b8d293c5c3f8021e45eda813d8 - /manual/en/developer/modguide.html
+http://apr.apache.org/docs/apr/1.4/group__apr__strings.html#gabc79e99ff19abbd7cfd18308c5f85d47 - /manual/en/developer/modguide.html
+http://aspell.sourceforge.net/          - /manual/en/developer/thread_safety.html
+http://bahumbug.wordpress.com/2006/10/12/mod_proxy_html-revisited/ - /manual/en/mod/mod_xml2enc.html
+http://bitnami.com/stack/wamp           - /manual/en/platform/windows.html
+http://blog.haproxy.com/haproxy/proxy-protocol/ - /manual/en/mod/mod_remoteip.html
+http://bugs.apache.org/index/full/467   - /manual/en/misc/perf-tuning.html
+http://bugs.debian.org/cgi-bin/pkgreport.cgi?ordering=normal;archive=0;src=apache2;repeatmerged=0 - /
+http://caniuse.com/#search=http2        - /manual/en/howto/http2.html
+http://cgi-spec.golux.com               - /manual/ja/env.html
+http://cgi-spec.golux.com/              - /manual/de/glossary.html
+http://cgiwrap.sourceforge.net/         - /manual/en/misc/security_tips.html
+http://cgiwrap.unixtools.org/           - /manual/ko/misc/security_tips.html
+http://ci.apache.org/projects/httpd/trunk/doxygen/ - /manual/en/developer/index.html
+http://ci.apache.org/projects/httpd/trunk/doxygen/group__APACHE__CORE__CONFIG.html#ga07c7d22ae17805e61204463326cf9c34 - /manual/en/developer/modguide.html
+http://ci.apache.org/projects/httpd/trunk/doxygen/group__APACHE__CORE__CONFIG.html#ga1093a5908a384eacc929b028c79f2a02 - /manual/en/developer/modguide.html
+http://ci.apache.org/projects/httpd/trunk/doxygen/group__APACHE__CORE__CONFIG.html#gafaec43534fcf200f37d9fecbf9247c21 - /manual/en/developer/modguide.html
+http://ci.apache.org/projects/httpd/trunk/doxygen/group__APACHE__CORE__DAEMON.html#ga9d426b6382b49754d4f87c55f65af202 - /manual/en/developer/modguide.html
+http://ci.apache.org/projects/httpd/trunk/doxygen/group__APACHE__CORE__PROTO.html#ga5e91eb6ca777c9a427b2e82bf1eeb81d - /manual/en/developer/modguide.html
+http://ci.apache.org/projects/httpd/trunk/doxygen/group__APACHE__CORE__PROTO.html#gaa2f8412c400197338ec509f4a45e4579 - /manual/en/developer/modguide.html
+http://ci.apache.org/projects/httpd/trunk/doxygen/group__APACHE__CORE__PROTO.html#gac827cd0537d2b6213a7c06d7c26cc36e - /manual/en/developer/modguide.html
+http://ci.apache.org/projects/httpd/trunk/doxygen/group__APACHE__CORE__SCRIPT.html#gaed25877b529623a4d8f99f819ba1b7bd - /manual/en/developer/modguide.html
+http://ci.apache.org/projects/httpd/trunk/doxygen/group__apr__tables.html#gad7ea82d6608a4a633fc3775694ab71e4 - /manual/en/developer/modguide.html
+http://ci.apache.org/projects/httpd/trunk/doxygen/structapr__array__header__t.html - /manual/en/developer/modguide.html
+http://ci.apache.org/projects/httpd/trunk/doxygen/structrequest__rec.html - /manual/en/developer/modguide.html
+http://cr.yp.to/cdb.html                - /manual/en/developer/thread_safety.html
+http://curl.haxx.se/                    - /manual/en/ssl/ssl_faq.html
+http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2009-3555 - /manual/en/mod/mod_ssl.html
+http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3368 - /manual/en/mod/mod_rewrite.html
+http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4317 - /manual/en/mod/mod_rewrite.html
+http://dev.apache.org/                  - /manual/ko/platform/ebcdic.html
+http://dev.mysql.com/doc/mysql/en/Threaded_clients.html - /manual/en/developer/thread_safety.html
+http://developer.novell.com/ndk/apache.htm - /manual/en/platform/netware.html
+http://developer.novell.com/ndk/cldap.htm - /manual/en/platform/netware.html
+http://developer.novell.com/ndk/cwpdk.htm - /manual/en/platform/netware.html
+http://developer.novell.com/ndk/libc.htm - /manual/en/platform/netware.html
+http://distcache.sourceforge.net/       - /manual/en/mod/mod_socache_dc.html
+http://dmoz.org/Computers/Software/Internet/     Site_Management/Log_Analysis/ - /manual/fr/logs.html
+http://dmoz.org/Computers/Software/Internet/Site_Management/Log_Analysis/ - /manual/en/logs.html
+http://en.wikipedia.org/wiki/Backus%E2%80%93Naur_Form - /manual/en/expr.html
+http://en.wikipedia.org/wiki/Domain_Name_System - /manual/en/getting-started.html
+http://en.wikipedia.org/wiki/Hosts_(file) - /manual/en/getting-started.html
+http://en.wikipedia.org/wiki/PCRE       - /manual/en/glossary.html
+http://en.wikipedia.org/wiki/X.509      - /manual/en/ssl/ssl_intro.html
+http://events.ccc.de/congress/2007/Fahrplan/events/2212.en.html - /manual/fr/env.html
+http://expat.sourceforge.net/           - /manual/en/developer/thread_safety.html
+http://fr.wikipedia.org/wiki/Forme_de_Backus-Naur - /manual/fr/expr.html
+http://ftp.ics.uci.edu/pub/ietf/http/#RFC - /manual/en/misc/relevant_standards.html
+http://gcc.gnu.org/                     - /manual/en/install.html
+http://hoohoo.ncsa.uiuc.edu/cgi/env.html - /manual/ja/howto/cgi.html
+http://hoohoo.ncsa.uiuc.edu/cgi/interface.html - /manual/ja/howto/cgi.html
+http://hoohoo.ncsa.uiuc.edu/cgi/overview.html - /manual/de/glossary.html
+http://hpwww.ec-lyon.fr/~vincent/apache/mod_put.html - /manual/en/platform/ebcdic.html
+http://httpd.apache.org                 - /manual/en/programs/htpasswd.html
+http://httpd.apache.org/                - /manual/en/index.html
+http://httpd.apache.org/bug_report.html - /manual/en/platform/netware.html
+http://httpd.apache.org/dev/verification.html - /manual/en/install.html
+http://httpd.apache.org/docs-project/   - /manual/en/index.html
+http://httpd.apache.org/docs/           - /manual/en/index.html
+http://httpd.apache.org/docs/2.2/upgrading.html - /manual/en/upgrading.html
+http://httpd.apache.org/docs/2.4/       - /manual/en/install.html
+http://httpd.apache.org/docs/2.4/mod/mod_userdir.html - /
+http://httpd.apache.org/docs/2.4/ssl/ssl_faq.html - /manual/en/ssl/ssl_faq.html
+http://httpd.apache.org/docs/2.4/suexec.html - /manual/en/suexec.html
+http://httpd.apache.org/download.cgi    - /manual/en/install.html
+http://httpd.apache.org/download.cgi#apache24 - /manual/en/install.html
+http://httpd.apache.org/download.cgi#verify - /manual/en/install.html
+http://httpd.apache.org/lists.html      - /manual/en/mod/directives.html
+http://httpd.apache.org/lists.html#http-announce - /manual/en/misc/security_tips.html
+http://httpd.apache.org/lists.html#http-dev - /manual/zh-cn/developer/index.html
+http://httpd.apache.org/mod_fcgid/      - /manual/en/mod/mod_proxy_fcgi.html
+http://httpd.apache.org/userslist.html  - /manual/en/platform/windows.html
+http://httpwg.org/specs/rfc7540.html    - /manual/en/howto/http2.html
+http://httpwg.org/specs/rfc7540.html#BadCipherSuites - /manual/en/howto/http2.html
+http://httpwg.org/specs/rfc7540.html#FramingLayer - /manual/en/howto/http2.html
+http://httpwg.org/specs/rfc7540.html#StreamsLayer - /manual/en/howto/http2.html
+http://ietf.org/rfc/rfc2246.txt         - /manual/en/ssl/ssl_intro.html
+http://ietf.org/rfc/rfc2616.txt         - /manual/en/glossary.html
+http://memcached.org                    - /manual/en/caching.html
+http://memcached.org/                   - /manual/en/mod/mod_socache_memcache.html
+http://modsecurity.org/                 - /manual/en/misc/security_tips.html
+http://modules.apache.org/              - /manual/en/filter.html
+http://mysql.com                        - /manual/en/developer/thread_safety.html
+http://nasm.sourceforge.net/            - /manual/en/platform/netware.html
+http://net-snmp.sourceforge.net/        - /manual/en/developer/thread_safety.html
+http://nghttp2.org/                     - /manual/en/mod/mod_http2.html
+http://online.securityfocus.com/bid/4876/info/ - /manual/en/misc/security_tips.html
+http://pcre.org/                        - /manual/en/rewrite/intro.html
+http://pcre.org/pcre.txt                - /manual/en/rewrite/intro.html
+http://pdflib.com/                      - /manual/en/developer/thread_safety.html
+http://people.apache.org/~humbedooh/mods/examples/mod_example_1.c - /manual/en/developer/modguide.html
+http://people.apache.org/~humbedooh/mods/examples/mod_example_2.c - /manual/en/developer/modguide.html
+http://people.apache.org/~niq/dbd.html  - /manual/en/mod/mod_dbd.html
+http://perl.apache.org                  - /manual/en/mod/mod_info.html
+http://perldoc.perl.org/perlre.html     - /manual/en/rewrite/intro.html
+http://purl.org/NET/http-errata         - /manual/en/misc/relevant_standards.html
+http://python.ca/scgi/protocol.txt      - /manual/en/mod/mod_proxy_scgi.html
+http://shop.oreilly.com/product/9780596528126.do - /manual/en/rewrite/intro.html
+http://sosc-dr.sun.com/bigadmin/content/dtrace/ - /manual/en/mod/mod_privileges.html
+http://sosc-dr.sun.com/bigadmin/features/articles/least_privilege.jsp - /manual/en/mod/mod_privileges.html
+http://sources.redhat.com/bzip2/index.html - /manual/en/developer/thread_safety.html
+http://subversion.apache.org/           - /manual/en/mod/mod_dav_lock.html
+http://support.novell.com/misc/patlst.htm#nw - /manual/en/platform/netware.html
+http://svn.apache.org/r1833875          - /manual/en/developer/output-filters.html
+http://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/VERSIONING - /manual/en/developer/new_api_2_4.html
+http://svn.apache.org/repos/asf/httpd/httpd/trunk/include/httpd.h - /manual/en/developer/modguide.html
+http://svn.apache.org/viewvc/apr/apr/trunk/crypto/apr_md5.c?view=markup - /manual/en/misc/password_encryptions.html
+http://svn.apache.org/viewvc/apr/apr/trunk/crypto/crypt_blowfish.c?view=markup - /manual/en/misc/password_encryptions.html
+http://svn.eu.apache.org/viewvc?view=revision&revision=957072 - /manual/en/mod/mod_authn_socache.html
+http://svn.haxx.se/users/archive-2006-03/0549.shtml - /manual/en/mod/mod_headers.html
+http://threebit.net/tutorials/apache2_modules/tut1/tutorial1.html - /manual/zh-cn/developer/index.html
+http://threebit.net/tutorials/apache2_modules/tut2/tutorial2.html - /manual/zh-cn/developer/index.html
+http://tomcat.apache.org/               - /manual/en/new_features_2_2.html
+http://tools.ietf.org/html/rfc2045      - /manual/en/ssl/ssl_intro.html
+http://tools.ietf.org/html/rfc2397      - /manual/en/mod/mod_data.html
+http://tools.ietf.org/html/rfc2616      - /manual/en/howto/cgi.html
+http://tools.ietf.org/html/rfc2617#section-3.2.1 - /manual/en/programs/htdigest.html
+http://tools.ietf.org/html/rfc2617#section-3.2.2.2 - /manual/en/mod/mod_auth_basic.html
+http://tools.ietf.org/html/rfc4346      - /manual/en/ssl/ssl_intro.html
+http://tools.ietf.org/html/rfc5246      - /manual/en/ssl/ssl_intro.html
+http://uwsgi-docs.readthedocs.io/en/latest/index.html - /manual/en/mod/mod_proxy_uwsgi.html
+http://web.golux.com/coar/cgi/          - /manual/ja/howto/cgi.html
+http://wiki.apache.org/httpd/           - /manual/en/index.html
+http://wiki.apache.org/httpd/CommonHTTPStatusCodes - /manual/en/getting-started.html
+http://wiki.apache.org/httpd/CouldNotBindToAddress - /manual/en/bind.html
+http://wiki.apache.org/httpd/DistrosDefaultLayout - /manual/en/install.html
+http://wiki.apache.org/httpd/FAQ        - /manual/en/index.html
+http://wiki.apache.org/httpd/Rewrite    - /manual/en/rewrite/index.html
+http://wiki.apache.org/httpd/RewriteLooping - /manual/en/rewrite/tech.html
+http://www.apache-ssl.org/              - /manual/en/ssl/ssl_compat.html
+http://www.apache.org/                  - /manual/en/index.html
+http://www.apache.org/dist/httpd/binaries/netware - /manual/en/platform/netware.html
+http://www.apache.org/dist/httpd/binaries/win32/patches_applied/ - /manual/en/platform/win_compiling.html
+http://www.apache.org/licenses/         - /manual/en/license.html
+http://www.apache.org/licenses/LICENSE-2.0 - /manual/en/index.html
+http://www.apachefriends.org/en/xampp.html - /manual/en/platform/windows.html
+http://www.apachehaus.com/cgi-bin/download.plx - /manual/en/platform/windows.html
+http://www.apachelounge.com/download/   - /manual/en/platform/windows.html
+http://www.apachetutor.org/             - /manual/en/developer/index.html
+http://www.apachetutor.org/dev/brigades - /manual/en/developer/index.html
+http://www.apachetutor.org/dev/config   - /manual/en/developer/index.html
+http://www.apachetutor.org/dev/pools    - /manual/en/developer/index.html
+http://www.apachetutor.org/dev/request  - /manual/en/developer/index.html
+http://www.apachetutor.org/dev/reslist  - /manual/en/developer/index.html
+http://www.boutell.com/cgic/            - /manual/en/howto/cgi.html
+http://www.boutell.com/gd/              - /manual/en/developer/thread_safety.html
+http://www.counterpane.com/             - /manual/en/ssl/ssl_intro.html
+http://www.cpan.org/                    - /manual/en/howto/cgi.html
+http://www.cronolog.org/                - /manual/ja/logs.html
+http://www.cs.princeton.edu/~bwk/btl.mirror/ - /manual/en/platform/win_compiling.html
+http://www.cs.princeton.edu/~bwk/btl.mirror/awk95.exe - /manual/en/platform/win_compiling.html
+http://www.cygwin.com/                  - /manual/en/platform/win_compiling.html
+http://www.doxygen.org/                 - /manual/en/developer/documenting.html
+http://www.enlightenment.org/p.php?p=about/efl&l=en - /manual/en/developer/thread_safety.html
+http://www.faqs.org/rfcs/rfc2617.html   - /manual/en/mod/mod_auth_digest.html
+http://www.fastcgi.com/                 - /manual/en/mod/mod_proxy_fcgi.html
+http://www.freebsd.org/cgi/man.cgi?query=recv - /manual/en/mod/mod_proxy_fdpass.html
+http://www.freetds.org/                 - /manual/en/developer/thread_safety.html
+http://www.freetype.org/                - /manual/en/developer/thread_safety.html
+http://www.gingerall.com/charlie/ga/xml/p_sab.xml - /manual/en/developer/thread_safety.html
+http://www.gnu.org/                     - /manual/en/install.html
+http://www.gnu.org/software/gcc/gcc.html - /manual/de/install.html
+http://www.gnu.org/software/gdbm/gdbm.html - /manual/en/developer/thread_safety.html
+http://www.gnu.org/software/sed/manual/sed.txt - /manual/en/mod/mod_sed.html
+http://www.gzip.org/zlib/               - /manual/en/platform/netware.html
+http://www.gzip.org/zlib/zlib_faq.html#faq38 - /manual/en/mod/mod_deflate.html
+http://www.haproxy.org/download/1.8/doc/proxy-protocol.txt - /manual/en/mod/mod_remoteip.html
+http://www.hardened-php.net/suhosin/    - /manual/en/misc/security_tips.html
+http://www.hpl.hp.com/techreports/Compaq-DEC/WRL-95-4.html - /manual/en/misc/perf-tuning.html
+http://www.hwg.org/lists/hwg-servers/   - /manual/ja/howto/cgi.html
+http://www.iana.org/assignments/character-sets - /manual/en/mod/mod_mime.html
+http://www.iana.org/assignments/media-types/index.html - /manual/en/mod/mod_mime.html
+http://www.ics.uci.edu/pub/ietf/http/draft-ietf-http-connection-00.txt - /manual/en/misc/perf-tuning.html
+http://www.ietf.org/rfc/rfc1413.txt     - /manual/en/mod/mod_ident.html
+http://www.ietf.org/rfc/rfc1766.txt     - /manual/en/mod/mod_negotiation.html
+http://www.ietf.org/rfc/rfc2246.txt     - /manual/en/mod/mod_ssl.html
+http://www.ietf.org/rfc/rfc2396.txt     - /manual/en/glossary.html
+http://www.ietf.org/rfc/rfc2409.txt     - /manual/en/ssl/ssl_faq.html
+http://www.ietf.org/rfc/rfc2616.txt     - /manual/en/mod/mod_cache.html
+http://www.ietf.org/rfc/rfc2817.txt     - /manual/en/new_features_2_2.html
+http://www.ietf.org/rfc/rfc3526.txt     - /manual/en/mod/mod_ssl.html
+http://www.ietf.org/rfc/rfc3546.txt     - /manual/en/glossary.html
+http://www.ietf.org/rfc/rfc3875         - /manual/en/glossary.html
+http://www.ietf.org/rfc/rfc4346.txt     - /manual/en/mod/mod_ssl.html
+http://www.ietf.org/rfc/rfc5077.txt     - /manual/en/mod/mod_ssl.html
+http://www.ietf.org/rfc/rfc5246.txt     - /manual/en/mod/mod_ssl.html
+http://www.ietf.org/rfc/rfc6961.txt     - /manual/en/mod/mod_ssl.html
+http://www.ietf.org/rfc/rfc7568.txt     - /manual/en/mod/mod_ssl.html
+http://www.ietf.org/rfc/rfc8446.txt     - /manual/en/mod/mod_ssl.html
+http://www.ijg.org/files/               - /manual/en/developer/thread_safety.html
+http://www.imagemagick.com/www/changelog.html - /manual/en/developer/thread_safety.html
+http://www.imagemagick.org/             - /manual/en/developer/thread_safety.html
+http://www.iplanet.com/downloads/developer/ - /manual/en/mod/mod_authnz_ldap.html
+http://www.iso.org/iso/country_codes    - /manual/en/misc/relevant_standards.html
+http://www.itu.int/ITU-T/asn1/          - /manual/en/ssl/ssl_intro.html
+http://www.kernel.org/doc/man-pages/online/pages/man3/cmsg.3.html - /manual/en/mod/mod_proxy_fdpass.html
+http://www.libpng.org/pub/png/libpng.html - /manual/en/developer/thread_safety.html
+http://www.loc.gov/standards/iso639-2/  - /manual/en/misc/relevant_standards.html
+http://www.lothar.com/tech/crypto/      - /manual/en/mod/mod_ssl.html
+http://www.lua.org/                     - /manual/en/new_features_2_4.html
+http://www.microsoft.com/downloads/release.asp?ReleaseID=32831 - /manual/ko/platform/windows.html
+http://www.microsoft.com/downloads/release.asp?ReleaseID=32832 - /manual/ko/platform/windows.html
+http://www.microsoft.com/windows95/downloads/contents/WUAdminTools/S_WUNetworkingTools/W95Sockets2/Default.asp - /manual/ko/platform/windows.html
+http://www.netperf.org/netperf/         - /manual/en/platform/perf-hp.html
+http://www.netscape.com/eng/ssl3/draft302.txt - /manual/en/ssl/ssl_intro.html
+http://www.ntp.org                      - /manual/en/install.html
+http://www.onlamp.com/pub/ct/38         - /manual/zh-cn/developer/index.html
+http://www.opaque.net/ming/             - /manual/en/developer/thread_safety.html
+http://www.openldap.org/                - /manual/en/mod/mod_authnz_ldap.html
+http://www.openssl.org/                 - /manual/en/glossary.html
+http://www.openssl.org/docs/man1.0.2/ssl/SSL_CONF_cmd.html#SUPPORTED-CONFIGURATION-FILE-COMMANDS - /manual/en/mod/mod_ssl.html
+http://www.openssl.org/source/          - /manual/en/platform/netware.html
+http://www.oracle.com/                  - /manual/en/developer/thread_safety.html
+http://www.pcre.org                     - /manual/en/mod/mod_include.html
+http://www.pcre.org/                    - /manual/en/glossary.html
+http://www.pdflib.com/products/pdflib-family/pdflib/ - /manual/en/developer/thread_safety.html
+http://www.perl.com                     - /manual/en/mod/mod_include.html
+http://www.perl.org/                    - /manual/en/install.html
+http://www.php.net/                     - /manual/en/platform/ebcdic.html
+http://www.php.net/manual/en/ini.sect.safe-mode.php - /manual/en/misc/security_tips.html
+http://www.postgresql.org/docs/8.4/static/libpq-threading.html - /manual/en/developer/thread_safety.html
+http://www.redhat.com/explore/stronghold/ - /manual/en/ssl/ssl_compat.html
+http://www.research.digital.com/wrl/techreports/abstracts/95.4.html - /manual/ko/misc/perf-tuning.html
+http://www.rfc-editor.org/errata.php    - /manual/en/misc/relevant_standards.html
+http://www.rfc-editor.org/rfc/bcp/bcp47.txt - /manual/en/misc/relevant_standards.html
+http://www.rfc-editor.org/rfc/rfc1945.txt - /manual/en/misc/relevant_standards.html
+http://www.rfc-editor.org/rfc/rfc2396.txt - /manual/en/misc/relevant_standards.html
+http://www.rfc-editor.org/rfc/rfc2616.txt - /manual/en/mod/mod_setenvif.html
+http://www.rfc-editor.org/rfc/rfc2617.txt - /manual/en/misc/relevant_standards.html
+http://www.rfc-editor.org/rfc/rfc2854.txt - /manual/en/misc/relevant_standards.html
+http://www.rfc-editor.org/rfc/rfc3066.txt - /manual/en/misc/relevant_standards.html
+http://www.rfc-editor.org/rfc/rfc3282.txt - /manual/en/misc/relevant_standards.html
+http://www.rfc-editor.org/rfc/rfc4346.txt - /manual/en/misc/relevant_standards.html
+http://www.rsasecurity.com/rsalabs/pkcs/ - /manual/en/ssl/ssl_intro.html
+http://www.serverwatch.com/tutorials/article.php/1132731 - /manual/fr/env.html
+http://www.siemens.de/servers/bs2osd/osdbc_us.htm - /manual/en/platform/ebcdic.html
+http://www.sleepycat.com/               - /manual/en/developer/thread_safety.html
+http://www.specbench.org/               - /manual/en/platform/perf-hp.html
+http://www.squid-cache.org/             - /manual/en/mod/mod_proxy_ftp.html
+http://www.thawte.com/                  - /manual/en/ssl/ssl_intro.html
+http://www.verisign.com/                - /manual/en/ssl/ssl_intro.html
+http://www.w3.org/2002/08/REC-xhtml1-20020801-errata/ - /manual/en/misc/relevant_standards.html
+http://www.w3.org/Daemon/               - /manual/en/platform/ebcdic.html
+http://www.w3.org/MarkUp/2009/xhtml11-2nd-edition-errata.html - /manual/en/misc/relevant_standards.html
+http://www.w3.org/MarkUp/html4-updates/errata - /manual/en/misc/relevant_standards.html
+http://www.w3.org/Protocols/HTTP/Performance/Pipeline.html - /manual/en/misc/perf-tuning.html
+http://www.w3.org/Protocols/rfc2616/  rfc2616.txt - /manual/fr/logs.html
+http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html - /manual/en/caching.html
+http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html#sec13.4 - /manual/en/caching.html
+http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.26 - /manual/en/mod/mod_cache.html
+http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32 - /manual/en/mod/mod_cache.html
+http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.46 - /manual/en/mod/mod_cache.html
+http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9 - /manual/en/mod/mod_cache.html
+http://www.w3.org/Protocols/rfc2616/rfc2616.txt - /manual/en/logs.html
+http://www.w3.org/TR/REC-html32         - /manual/en/misc/relevant_standards.html
+http://www.w3.org/TR/html4/             - /manual/en/mod/mod_session.html
+http://www.w3.org/TR/html401            - /manual/en/misc/relevant_standards.html
+http://www.w3.org/TR/xhtml1             - /manual/en/misc/relevant_standards.html
+http://www.w3.org/TR/xhtml11/           - /manual/en/misc/relevant_standards.html
+http://www.w3.org/pub/WWW/Daemon/User/Config/General.html#MetaDir - /manual/en/mod/mod_cern_meta.html
+http://www.wampserver.com/              - /manual/en/platform/windows.html
+http://www.washington.edu/imap/         - /manual/en/developer/thread_safety.html
+http://www.wassenaar.org/               - /manual/en/platform/win_compiling.html
+http://www.webdav.org                   - /manual/en/mod/mod_dav.html
+http://www.webdav.org/                  - /manual/en/mod/index.html
+http://www.whiterabbitpress.com/osp/apache/ - /manual/ko/glossary.html
+http://www.zlib.net/                    - /manual/en/platform/win_compiling.html
+http://xmlsoft.org/                     - /manual/en/mod/mod_xml2enc.html
+https://addons.mozilla.org/en-us/firefox/addon/spdy-indicator/ - /manual/en/howto/http2.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_access_compat - /manual/en/mod/mod_access_compat.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_actions - /manual/en/mod/mod_actions.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_alias - /manual/en/mod/mod_alias.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_allowmethods - /manual/en/mod/mod_allowmethods.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_asis - /manual/en/mod/mod_asis.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_auth_basic - /manual/en/mod/mod_auth_basic.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_auth_digest - /manual/en/mod/mod_auth_digest.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_auth_form - /manual/en/mod/mod_auth_form.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_authn_anon - /manual/en/mod/mod_authn_anon.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_authn_core - /manual/en/mod/mod_authn_core.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_authn_dbd - /manual/en/mod/mod_authn_dbd.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_authn_dbm - /manual/en/mod/mod_authn_dbm.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_authn_file - /manual/en/mod/mod_authn_file.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_authn_socache - /manual/en/mod/mod_authn_socache.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_authnz_fcgi - /manual/en/mod/mod_authnz_fcgi.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_authnz_ldap - /manual/en/mod/mod_authnz_ldap.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_authz_core - /manual/en/mod/mod_authz_core.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_authz_dbd - /manual/en/mod/mod_authz_dbd.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_authz_dbm - /manual/en/mod/mod_authz_dbm.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_authz_groupfile - /manual/en/mod/mod_authz_groupfile.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_authz_host - /manual/en/mod/mod_authz_host.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_authz_owner - /manual/en/mod/mod_authz_owner.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_authz_user - /manual/en/mod/mod_authz_user.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_autoindex - /manual/en/mod/mod_autoindex.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_brotli - /manual/en/mod/mod_brotli.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_buffer - /manual/en/mod/mod_buffer.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_cache - /manual/en/mod/mod_cache.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&query_format=specific&order=changeddate%20DESC%2Cpriority%2Cbug_severity&component=mod_cache_disk - /manual/en/mod/mod_cache_disk.html
+https://bz.apache.org/bugzilla/buglist.cgi?bug_status=__open__&list_id=144532&product=Apache%20httpd-2&qu"
+"49705","","","None","192.168.64.21","tcp","80","Web Server Harvested Email Addresses","Email addresses were harvested from the web server.","Nessus harvested HREF mailto: links and extracted email addresses by
+crawling the remote web server.","n/a","","
+
+The following email addresses have been gathered :
+
+
+- 'raj@cup.hp.com', referenced from :
+   /manual/en/platform/perf-hp.html
+
+- 'users@httpd.apache.org', referenced from :
+   /manual/en/ssl/ssl_faq.html
+   /manual/da/ssl/ssl_faq.html
+"
+"50344","","","None","192.168.64.21","tcp","80","Missing or Permissive Content-Security-Policy frame-ancestors HTTP Response Header","The remote web server does not take steps to mitigate a class of web
+application vulnerabilities.","The remote web server in some responses sets a permissive
+Content-Security-Policy (CSP) frame-ancestors response header or does
+not set one at all.
+
+The CSP frame-ancestors header has been proposed by the W3C Web
+Application Security Working Group as a way to mitigate cross-site
+scripting and clickjacking attacks.","Set a non-permissive Content-Security-Policy frame-ancestors header
+for all requested resources.","http://www.nessus.org/u?55aa8f57
+http://www.nessus.org/u?07cc2a06
+https://content-security-policy.com/
+https://www.w3.org/TR/CSP2/","
+The following pages do not set a Content-Security-Policy frame-ancestors response header or set a permissive policy:
+
+  - http://192.168.64.21/
+  - http://192.168.64.21/manual/
+  - http://192.168.64.21/manual/da/
+  - http://192.168.64.21/manual/da/bind.html
+  - http://192.168.64.21/manual/da/caching.html
+  - http://192.168.64.21/manual/da/configuring.html
+  - http://192.168.64.21/manual/da/content-negotiation.html
+  - http://192.168.64.21/manual/da/custom-error.html
+  - http://192.168.64.21/manual/da/developer/index.html
+  - http://192.168.64.21/manual/da/dns-caveats.html
+  - http://192.168.64.21/manual/da/dso.html
+  - http://192.168.64.21/manual/da/expr.html
+  - http://192.168.64.21/manual/da/faq/index.html
+  - http://192.168.64.21/manual/da/filter.html
+  - http://192.168.64.21/manual/da/glossary.html
+  - http://192.168.64.21/manual/da/handler.html
+  - http://192.168.64.21/manual/da/howto/auth.html
+  - http://192.168.64.21/manual/da/howto/cgi.html
+  - http://192.168.64.21/manual/da/howto/htaccess.html
+  - http://192.168.64.21/manual/da/howto/public_html.html
+  - http://192.168.64.21/manual/da/howto/ssi.html
+  - http://192.168.64.21/manual/da/index.html
+  - http://192.168.64.21/manual/da/install.html
+  - http://192.168.64.21/manual/da/invoking.html
+  - http://192.168.64.21/manual/da/license.html
+  - http://192.168.64.21/manual/da/logs.html
+  - http://192.168.64.21/manual/da/misc/index.html
+  - http://192.168.64.21/manual/da/misc/perf-tuning.html
+  - http://192.168.64.21/manual/da/misc/security_tips.html
+  - http://192.168.64.21/manual/da/mod/
+  - http://192.168.64.21/manual/da/mod/directive-dict.html
+  - http://192.168.64.21/manual/da/mod/directives.html
+  - http://192.168.64.21/manual/da/mod/event.html
+  - http://192.168.64.21/manual/da/mod/index.html
+  - http://192.168.64.21/manual/da/mod/mod_access_compat.html
+  - http://192.168.64.21/manual/da/mod/mod_actions.html
+  - http://192.168.64.21/manual/da/mod/mod_alias.html
+  - http://192.168.64.21/manual/da/mod/mod_allowmethods.html
+  - http://192.168.64.21/manual/da/mod/mod_asis.html
+  - http://192.168.64.21/manual/da/mod/mod_auth_basic.html
+  - http://192.168.64.21/manual/da/mod/mod_auth_digest.html
+  - http://192.168.64.21/manual/da/mod/mod_auth_form.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_anon.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_core.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_dbd.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_dbm.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_file.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_socache.html
+  - http://192.168.64.21/manual/da/mod/mod_authnz_fcgi.html
+  - http://192.168.64.21/manual/da/mod/mod_authnz_ldap.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_core.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_dbd.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_dbm.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_groupfile.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_host.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_owner.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_user.html
+  - http://192.168.64.21/manual/da/mod/mod_autoindex.html
+  - http://192.168.64.21/manual/da/mod/mod_brotli.html
+  - http://192.168.64.21/manual/da/mod/mod_buffer.html
+  - http://192.168.64.21/manual/da/mod/mod_cache.html
+  - http://192.168.64.21/manual/da/mod/mod_cache_disk.html
+  - http://192.168.64.21/manual/da/mod/mod_cache_socache.html
+  - http://192.168.64.21/manual/da/mod/mod_cern_meta.html
+  - http://192.168.64.21/manual/da/mod/mod_cgi.html
+  - http://192.168.64.21/manual/da/mod/mod_cgid.html
+  - http://192.168.64.21/manual/da/mod/mod_charset_lite.html
+  - http://192.168.64.21/manual/da/mod/mod_data.html
+  - http://192.168.64.21/manual/da/mod/mod_dav.html
+  - http://192.168.64.21/manual/da/mod/mod_dav_fs.html
+  - http://192.168.64.21/manual/da/mod/mod_dav_lock.html
+  - http://192.168.64.21/manual/da/mod/mod_dbd.html
+  - http://192.168.64.21/manual/da/mod/mod_deflate.html
+  - http://192.168.64.21/manual/da/mod/mod_dialup.html
+  - http://192.168.64.21/manual/da/mod/mod_dir.html
+  - http://192.168.64.21/manual/da/mod/mod_dumpio.html
+  - http://192.168.64.21/manual/da/mod/mod_echo.html
+  - http://192.168.64.21/manual/da/mod/mod_env.html
+  - http://192.168.64.21/manual/da/mod/mod_example_hooks.html
+  - http://192.168.64.21/manual/da/mod/mod_expires.html
+  - http://192.168.64.21/manual/da/mod/mod_ext_filter.html
+  - http://192.168.64.21/manual/da/mod/mod_file_cache.html
+  - http://192.168.64.21/manual/da/mod/mod_filter.html
+  - http://192.168.64.21/manual/da/mod/mod_headers.html
+  - http://192.168.64.21/manual/da/mod/mod_heartbeat.html
+  - http://192.168.64.21/manual/da/mod/mod_heartmonitor.html
+  - http://192.168.64.21/manual/da/mod/mod_http2.html
+  - http://192.168.64.21/manual/da/mod/mod_ident.html
+  - http://192.168.64.21/manual/da/mod/mod_imagemap.html
+  - http://192.168.64.21/manual/da/mod/mod_include.html
+  - http://192.168.64.21/manual/da/mod/mod_info.html
+  - http://192.168.64.21/manual/da/mod/mod_isapi.html
+  - http://192.168.64.21/manual/da/mod/mod_lbmethod_bybusyness.html
+  - http://192.168.64.21/manual/da/mod/mod_lbmethod_byrequests.html
+  - http://192.168.64.21/manual/da/mod/mod_lbmethod_bytraffic.html
+  - http://192.168.64.21/manual/da/mod/mod_lbmethod_heartbeat.html
+  - http://192.168.64.21/manual/da/mod/mod_ldap.html
+  - http://192.168.64.21/manual/da/mod/mod_log_config.html
+  - http://192.168.64.21/manual/da/mod/mod_log_debug.html
+  - http://192.168.64.21/manual/da/mod/mod_log_forensic.html
+  - http://192.168.64.21/manual/da/mod/mod_logio.html
+  - http://192.168.64.21/manual/da/mod/mod_lua.html
+  - http://192.168.64.21/manual/da/mod/mod_macro.html
+  - http://192.168.64.21/manual/da/mod/mod_md.html
+  - http://192.168.64.21/manual/da/mod/mod_mime.html
+  - http://192.168.64.21/manual/da/mod/mod_mime_magic.html
+  - http://192.168.64.21/manual/da/mod/mod_negotiation.html
+  - http://192.168.64.21/manual/da/mod/mod_nw_ssl.html
+  - http://192.168.64.21/manual/da/mod/mod_privileges.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_ajp.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_balancer.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_connect.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_express.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_fcgi.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_fdpass.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_ftp.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_hcheck.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_html.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_http.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_http2.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_scgi.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_uwsgi.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_wstunnel.html
+  - http://192.168.64.21/manual/da/mod/mod_ratelimit.html
+  - http://192.168.64.21/manual/da/mod/mod_reflector.html
+  - http://192.168.64.21/manual/da/mod/mod_remoteip.html
+  - http://192.168.64.21/manual/da/mod/mod_reqtimeout.html
+  - http://192.168.64.21/manual/da/mod/mod_request.html
+  - http://192.168.64.21/manual/da/mod/mod_rewrite.html
+  - http://192.168.64.21/manual/da/mod/mod_sed.html
+  - http://192.168.64.21/manual/da/mod/mod_session.html
+  - http://192.168.64.21/manual/da/mod/mod_session_cookie.html
+  - http://192.168.64.21/manual/da/mod/mod_session_crypto.html
+  - http://192.168.64.21/manual/da/mod/mod_session_dbd.html
+  - http://192.168.64.21/manual/da/mod/mod_setenvif.html
+  - http://192.168.64.21/manual/da/mod/mod_slotmem_plain.html
+  - http://192.168.64.21/manual/da/mod/mod_slotmem_shm.html
+  - http://192.168.64.21/manual/da/mod/mod_so.html
+  - http://192.168.64.21/manual/da/mod/mod_socache_dbm.html
+  - http://192.168.64.21/manual/da/mod/mod_socache_dc.html
+  - http://192.168.64.21/manual/da/mod/mod_socache_memcache.html
+  - http://192.168.64.21/manual/da/mod/mod_socache_shmcb.html
+  - http://192.168.64.21/manual/da/mod/mod_speling.html
+  - http://192.168.64.21/manual/da/mod/mod_ssl.html
+  - http://192.168.64.21/manual/da/mod/mod_status.html
+  - http://192.168.64.21/manual/da/mod/mod_substitute.html
+  - http://192.168.64.21/manual/da/mod/mod_suexec.html
+  - http://192.168.64.21/manual/da/mod/mod_unique_id.html
+  - http://192.168.64.21/manual/da/mod/mod_unixd.html
+  - http://192.168.64.21/manual/da/mod/mod_userdir.html
+  - http://192.168.64.21/manual/da/mod/mod_usertrack.html
+  - http://192.168.64.21/manual/da/mod/mod_version.html
+  - http://192.168.64.21/manual/da/mod/mod_vhost_alias.html
+  - http://192.168.64.21/manual/da/mod/mod_watchdog.html
+  - http://192.168.64.21/manual/da/mod/mod_xml2enc.html
+  - http://192.168.64.21/manual/da/mod/mpm_common.html
+  - http://192.168.64.21/manual/da/mod/mpm_netware.html
+  - http://192.168.64.21/manual/da/mod/mpm_winnt.html
+  - http://192.168.64.21/manual/da/mod/mpmt_os2.html
+  - http://192.168.64.21/manual/da/mod/prefork.html
+  - http://192.168.64.21/manual/da/mod/worker.html
+  - http://192.168.64.21/manual/da/mpm.html
+  - http://192.168.64.21/manual/da/new_features_2_0.html
+  - http://192.168.64.21/manual/da/new_features_2_2.html
+  - http://192.168.64.21/manual/da/new_features_2_4.html
+  - http://192.168.64.21/manual/da/platform/ebcdic.html
+  - http://192.168.64.21/manual/da/platform/netware.html
+  - http://192.168.64.21/manual/da/platform/windows.html
+  - http://192.168.64.21/manual/da/programs/apxs.html
+  - http://192.168.64.21/manual/da/programs/httpd.html
+  - http://192.168.64.21/manual/da/programs/index.html
+  - http://192.168.64.21/manual/da/rewrite/access.html
+  - http://192.168.64.21/manual/da/rewrite/advanced.html
+  - http://192.168.64.21/manual/da/rewrite/index.html
+  - http://192.168.64.21/manual/da/rewrite/intro.html
+  - http://192.168.64.21/manual/da/rewrite/proxy.html
+  - http://192.168.64.21/manual/da/rewrite/remapping.html
+  - http://192.168.64.21/manual/da/rewrite/rewritemap.html
+  - http://192.168.64.21/manual/da/rewrite/vhosts.html
+  - http://192.168.64.21/manual/da/sections.html
+  - http://192.168.64.21/manual/da/server-wide.html
+  - http://192.168.64.21/manual/da/sitemap.html
+  - http://192.168.64.21/manual/da/socache.html
+  - http://192.168.64.21/manual/da/ssl/index.html
+  - http://192.168.64.21/manual/da/ssl/ssl_faq.html
+  - http://192.168.64.21/manual/da/stopping.html
+  - http://192.168.64.21/manual/da/suexec.html
+  - http://192.168.64.21/manual/da/upgrading.html
+  - http://192.168.64.21/manual/da/vhosts/details.html
+  - http://192.168.64.21/manual/da/vhosts/examples.html
+  - http://192.168.64.21/manual/da/vhosts/fd-limits.html
+  - http://192.168.64.21/manual/da/vhosts/index.html
+  - http://192.168.64.21/manual/da/vhosts/ip-based.html
+  - http://192.168.64.21/manual/da/vhosts/mass.html
+  - http://192.168.64.21/manual/da/vhosts/name-based.html
+  - http://192.168.64.21/manual/de/
+  - http://192.168.64.21/manual/de/bind.html
+  - http://192.168.64.21/manual/de/caching.html
+  - http://192.168.64.21/manual/de/configuring.html
+  - http://192.168.64.21/manual/de/content-negotiation.html
+  - http://192.168.64.21/manual/de/developer/index.html
+  - http://192.168.64.21/manual/de/dso.html
+  - http://192.168.64.21/manual/de/expr.html
+  - http://192.168.64.21/manual/de/filter.html
+  - http://192.168.64.21/manual/de/getting-started.html
+  - http://192.168.64.21/manual/de/glossary.html
+  - http://192.168.64.21/manual/de/handler.html
+  - http://192.168.64.21/manual/de/howto/access.html
+  - http://192.168.64.21/manual/de/howto/auth.html
+  - http://192.168.64.21/manual/de/howto/cgi.html
+  - http://192.168.64.21/manual/de/howto/htaccess.html
+  - http://192.168.64.21/manual/de/howto/public_html.html
+  - http://192.168.64.21/manual/de/howto/ssi.html
+  - http://192.168.64.21/manual/de/index.html
+  - http://192.168.64.21/manual/de/install.html
+  - http://192.168.64.21/manual/de/invoking.html
+  - http://192.168.64.21/manual/de/license.html
+  - http://192.168.64.21/manual/de/logs.html
+  - http://192.168.64.21/manual/de/misc/index.html
+  - http://192.168.64.21/manual/de/misc/perf-tuning.html
+  - http://192.168.64.21/manual/de/misc/security_tips.html
+  - http://192.168.64.21/manual/de/mod/directives.html
+  - http://192.168.64.21/manual/de/mod/index.html
+  - http://192.168.64.21/manual/de/mpm.html
+  - http://192.168.64.21/manual/de/new_features_2_0.html
+  - http://192.168.64.21/manual/de/new_features_2_2.html
+  - http://192.168.64.21/manual/de/new_features_2_4.html
+  - http://192.168.64.21/manual/de/platform/ebcdic.html
+  - http://192.168.64.21/manual/de/platform/netware.html
+  - http://192.168.64.21/manual/de/platform/rpm.html
+  - http://192.168.64.21/manual/de/platform/windows.html
+  - http://192.168.64.21/manual/de/programs/index.html
+  - http://192.168.64.21/manual/de/rewrite/index.html
+  - http://192.168.64.21/manual/de/sections.html
+  - http://192.168.64.21/manual/de/server-wide.html
+  - http://192.168.64.21/manual/de/sitemap.html
+  - http://192.168.64.21/manual/de/ssl/index.html
+  - http://192.168.64.21/manual/de/stopping.html
+  - http://192.168.64.21/manual/de/suexec.html
+  - http://192.168.64.21/manual/de/upgrading.html
+  - http://192.168.64.21/manual/de/vhosts/index.html
+  - http://192.168.64.21/manual/en/
+  - http://192.168.64.21/manual/en/bind.html
+  - http://192.168.64.21/manual/en/caching.html
+  - http://192.168.64.21/manual/en/configuring.html
+  - http://192.168.64.21/manual/en/content-negotiation.html
+  - http://192.168.64.21/manual/en/custom-error.html
+  - http://192.168.64.21/manual/en/developer/
+  - http://192.168.64.21/manual/en/developer/API.html
+  - http://192.168.64.21/manual/en/developer/documenting.html
+  - http://192.168.64.21/manual/en/developer/filters.html
+  - http://192.168.64.21/manual/en/developer/hooks.html
+  - http://192.168.64.21/manual/en/developer/index.html
+  - http://192.168.64.21/manual/en/developer/modguide.html
+  - http://192.168.64.21/manual/en/developer/modules.html
+  - http://192.168.64.21/manual/en/developer/new_api_2_4.html
+  - http://192.168.64.21/manual/en/developer/output-filters.html
+  - http://192.168.64.21/manual/en/developer/request.html
+  - http://192.168.64.21/manual/en/developer/thread_safety.html
+  - http://192.168.64.21/manual/en/dns-caveats.html
+  - http://192.168.64.21/manual/en/dso.html
+  - http://192.168.64.21/manual/en/expr.html
+  - http://192.168.64.21/manual/en/filter.html
+  - http://192.168.64.21/manual/en/getting-started.html
+  - http://192.168.64.21/manual/en/glossary.html
+  - http://192.168.64.21/manual/en/handler.html
+  - http://192.168.64.21/manual/en/howto/
+  - http://192.168.64.21/manual/en/howto/access.html
+  - http://192.168.64.21/manual/en/howto/auth.html
+  - http://192.168.64.21/manual/en/howto/cgi.html
+  - http://192.168.64.21/manual/en/howto/htaccess.html
+  - http://192.168.64.21/manual/en/howto/http2.html
+  - http://192.168.64.21/manual/en/howto/index.html
+  - http://192.168.64.21/manual/en/howto/public_html.html
+  - http://192.168.64.21/manual/en/howto/reverse_proxy.html
+  - http://192.168.64.21/manual/en/howto/ssi.html
+  - http://192.168.64.21/manual/en/index.html
+  - http://192.168.64.21/manual/en/install.html
+  - http://192.168.64.21/manual/en/invoking.html
+  - http://192.168.64.21/manual/en/license.html
+  - http://192.168.64.21/manual/en/logs.html
+  - http://192.168.64.21/manual/en/misc/
+  - http://192.168.64.21/manual/en/misc/index.html
+  - http://192.168.64.21/manual/en/misc/password_encryptions.html
+  - http://192.168.64.21/manual/en/misc/perf-tuning.html
+  - http://192.168.64.21/manual/en/misc/relevant_standards.html
+  - http://192.168.64.21/manual/en/misc/security_tips.html
+  - http://192.168.64.21/manual/en/mod/
+  - http://192.168.64.21/manual/en/mod/directive-dict.html
+  - http://192.168.64.21/manual/en/mod/directives.html
+  - http://192.168.64.21/manual/en/mod/event.html
+  - http://192.168.64.21/manual/en/mod/index.html
+  - http://192.168.64.21/manual/en/mod/mod_access_compat.html
+  - http://192.168.64.21/manual/en/mod/mod_actions.html
+  - http://192.168.64.21/manual/en/mod/mod_alias.html
+  - http://192.168.64.21/manual/en/mod/mod_allowmethods.html
+  - http://192.168.64.21/manual/en/mod/mod_asis.html
+  - http://192.168.64.21/manual/en/mod/mod_auth_basic.html
+  - http://192.168.64.21/manual/en/mod/mod_auth_digest.html
+  - http://192.168.64.21/manual/en/mod/mod_auth_form.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_anon.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_core.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_dbd.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_dbm.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_file.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_socache.html
+  - http://192.168.64.21/manual/en/mod/mod_authnz_fcgi.html
+  - http://192.168.64.21/manual/en/mod/mod_authnz_ldap.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_core.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_dbd.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_dbm.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_groupfile.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_host.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_owner.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_user.html
+  - http://192.168.64.21/manual/en/mod/mod_autoindex.html
+  - http://192.168.64.21/manual/en/mod/mod_brotli.html
+  - http://192.168.64.21/manual/en/mod/mod_buffer.html
+  - http://192.168.64.21/manual/en/mod/mod_cache.html
+  - http://192.168.64.21/manual/en/mod/mod_cache_disk.html
+  - http://192.168.64.21/manual/en/mod/mod_cache_socache.html
+  - http://192.168.64.21/manual/en/mod/mod_cern_meta.html
+  - http://192.168.64.21/manual/en/mod/mod_cgi.html
+  - http://192.168.64.21/manual/en/mod/mod_cgid.html
+  - http://192.168.64.21/manual/en/mod/mod_charset_lite.html
+  - http://192.168.64.21/manual/en/mod/mod_data.html
+  - http://192.168.64.21/manual/en/mod/mod_dav.html
+  - http://192.168.64.21/manual/en/mod/mod_dav_fs.html
+  - http://192.168.64.21/manual/en/mod/mod_dav_lock.html
+  - http://192.168.64.21/manual/en/mod/mod_dbd.html
+  - http://192.168.64.21/manual/en/mod/mod_deflate.html
+  - http://192.168.64.21/manual/en/mod/mod_dialup.html
+  - http://192.168.64.21/manual/en/mod/mod_dir.html
+  - http://192.168.64.21/manual/en/mod/mod_dumpio.html
+  - http://192.168.64.21/manual/en/mod/mod_echo.html
+  - http://192.168.64.21/manual/en/mod/mod_env.html
+  - http://192.168.64.21/manual/en/mod/mod_example_hooks.html
+  - http://192.168.64.21/manual/en/mod/mod_expires.html
+  - http://192.168.64.21/manual/en/mod/mod_ext_filter.html
+  - http://192.168.64.21/manual/en/mod/mod_file_cache.html
+  - http://192.168.64.21/manual/en/mod/mod_filter.html
+  - http://192.168.64.21/manual/en/mod/mod_headers.html
+  - http://192.168.64.21/manual/en/mod/mod_heartbeat.html
+  - http://192.168.64.21/manual/en/mod/mod_heartmonitor.html
+  - http://192.168.64.21/manual/en/mod/mod_http2.html
+  - http://192.168.64.21/manual/en/mod/mod_ident.html
+  - http://192.168.64.21/manual/en/mod/mod_imagemap.html
+  - http://192.168.64.21/manual/en/mod/mod_include.html
+  - http://192.168.64.21/manual/en/mod/mod_info.html
+  - http://192.168.64.21/manual/en/mod/mod_isapi.html
+  - http://192.168.64.21/manual/en/mod/mod_lbmethod_bybusyness.html
+  - http://192.168.64.21/manual/en/mod/mod_lbmethod_byrequests.html
+  - http://192.168.64.21/manual/en/mod/mod_lbmethod_bytraffic.html
+  - http://192.168.64.21/manual/en/mod/mod_lbmethod_heartbeat.html
+  - http://192.168.64.21/manual/en/mod/mod_ldap.html
+  - http://192.168.64.21/manual/en/mod/mod_log_config.html
+  - http://192.168.64.21/manual/en/mod/mod_log_debug.html
+  - http://192.168.64.21/manual/en/mod/mod_log_forensic.html
+  - http://192.168.64.21/manual/en/mod/mod_logio.html
+  - http://192.168.64.21/manual/en/mod/mod_lua.html
+  - http://192.168.64.21/manual/en/mod/mod_macro.html
+  - http://192.168.64.21/manual/en/mod/mod_md.html
+  - http://192.168.64.21/manual/en/mod/mod_mime.html
+  - http://192.168.64.21/manual/en/mod/mod_mime_magic.html
+  - http://192.168.64.21/manual/en/mod/mod_negotiation.html
+  - http://192.168.64.21/manual/en/mod/mod_nw_ssl.html
+  - http://192.168.64.21/manual/en/mod/mod_privileges.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_ajp.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_balancer.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_connect.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_express.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_fcgi.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_fdpass.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_ftp.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_hcheck.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_html.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_http.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_http2.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_scgi.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_uwsgi.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_wstunnel.html
+  - http://192.168.64.21/manual/en/mod/mod_ratelimit.html
+  - http://192.168.64.21/manual/en/mod/mod_reflector.html
+  - http://192.168.64.21/manual/en/mod/mod_remoteip.html
+  - http://192.168.64.21/manual/en/mod/mod_reqtimeout.html
+  - http://192.168.64.21/manual/en/mod/mod_request.html
+  - http://192.168.64.21/manual/en/mod/mod_rewrite.html
+  - http://192.168.64.21/manual/en/mod/mod_sed.html
+  - http://192.168.64.21/manual/en/mod/mod_session.html
+  - http://192.168.64.21/manual/en/mod/mod_session_cookie.html
+  - http://192.168.64.21/manual/en/mod/mod_session_crypto.html
+  - http://192.168.64.21/manual/en/mod/mod_session_dbd.html
+  - http://192.168.64.21/manual/en/mod/mod_setenvif.html
+  - http://192.168.64.21/manual/en/mod/mod_slotmem_plain.html
+  - http://192.168.64.21/manual/en/mod/mod_slotmem_shm.html
+  - http://192.168.64.21/manual/en/mod/mod_so.html
+  - http://192.168.64.21/manual/en/mod/mod_socache_dbm.html
+  - http://192.168.64.21/manual/en/mod/mod_socache_dc.html
+  - http://192.168.64.21/manual/en/mod/mod_socache_memcache.html
+  - http://192.168.64.21/manual/en/mod/mod_socache_shmcb.html
+  - http://192.168.64.21/manual/en/mod/mod_speling.html
+  - http://192.168.64.21/manual/en/mod/mod_ssl.html
+  - http://192.168.64.21/manual/en/mod/mod_status.html
+  - http://192.168.64.21/manual/en/mod/mod_substitute.html
+  - http://192.168.64.21/manual/en/mod/mod_suexec.html
+  - http://192.168.64.21/manual/en/mod/mod_unique_id.html
+  - http://192.168.64.21/manual/en/mod/mod_unixd.html
+  - http://192.168.64.21/manual/en/mod/mod_userdir.html
+  - http://192.168.64.21/manual/en/mod/mod_usertrack.html
+  - http://192.168.64.21/manual/en/mod/mod_version.html
+  - http://192.168.64.21/manual/en/mod/mod_vhost_alias.html
+  - http://192.168.64.21/manual/en/mod/mod_watchdog.html
+  - http://192.168.64.21/manual/en/mod/mod_xml2enc.html
+  - http://192.168.64.21/manual/en/mod/module-dict.html
+  - http://192.168.64.21/manual/en/mod/mpm_common.html
+  - http://192.168.64.21/manual/en/mod/mpm_netware.html
+  - http://192.168.64.21/manual/en/mod/mpm_winnt.html
+  - http://192.168.64.21/manual/en/mod/mpmt_os2.html
+  - http://192.168.64.21/manual/en/mod/overrides.html
+  - http://192.168.64.21/manual/en/mod/prefork.html
+  - http://192.168.64.21/manual/en/mod/worker.html
+  - http://192.168.64.21/manual/en/mpm.html
+  - http://192.168.64.21/manual/en/new_features_2_0.html
+  - http://192.168.64.21/manual/en/new_features_2_2.html
+  - http://192.168.64.21/manual/en/new_features_2_4.html
+  - http://192.168.64.21/manual/en/platform/
+  - http://192.168.64.21/manual/en/platform/ebcdic.html
+  - http://192.168.64.21/manual/en/platform/index.html
+  - http://192.168.64.21/manual/en/platform/netware.html
+  - http://192.168.64.21/manual/en/platform/perf-hp.html
+  - http://192.168.64.21/manual/en/platform/rpm.html
+  - http://192.168.64.21/manual/en/platform/win_compiling.html
+  - http://192.168.64.21/manual/en/platform/windows.html
+  - http://192.168.64.21/manual/en/programs/
+  - http://192.168.64.21/manual/en/programs/ab.html
+  - http://192.168.64.21/manual/en/programs/apachectl.html
+  - http://192.168.64.21/manual/en/programs/apxs.html
+  - http://192.168.64.21/manual/en/programs/configure.html
+  - http://192.168.64.21/manual/en/programs/dbmmanage.html
+  - http://192.168.64.21/manual/en/programs/fcgistarter.html
+  - http://192.168.64.21/manual/en/programs/htcacheclean.html
+  - http://192.168.64.21/manual/en/programs/htdbm.html
+  - http://192.168.64.21/manual/en/programs/htdigest.html
+  - http://192.168.64.21/manual/en/programs/htpasswd.html
+  - http://192.168.64.21/manual/en/programs/httpd.html
+  - http://192.168.64.21/manual/en/programs/httxt2dbm.html
+  - http://192.168.64.21/manual/en/programs/index.html
+  - http://192.168.64.21/manual/en/programs/log_server_status.html
+  - http://192.168.64.21/manual/en/programs/logresolve.html
+  - http://192.168.64.21/manual/en/programs/other.html
+  - http://192.168.64.21/manual/en/programs/rotatelogs.html
+  - http://192.168.64.21/manual/en/programs/split-logfile.html
+  - http://192.168.64.21/manual/en/programs/suexec.html
+  - http://192.168.64.21/manual/en/rewrite/
+  - http://192.168.64.21/manual/en/rewrite/access.html
+  - http://192.168.64.21/manual/en/rewrite/advanced.html
+  - http://192.168.64.21/manual/en/rewrite/avoid.html
+  - http://192.168.64.21/manual/en/rewrite/flags.html
+  - http://192.168.64.21/manual/en/rewrite/index.html
+  - http://192.168.64.21/manual/en/rewrite/intro.html
+  - http://192.168.64.21/manual/en/rewrite/proxy.html
+  - http://192.168.64.21/manual/en/rewrite/remapping.html
+  - http://192.168.64.21/manual/en/rewrite/rewritemap.html
+  - http://192.168.64.21/manual/en/rewrite/tech.html
+  - http://192.168.64.21/manual/en/rewrite/vhosts.html
+  - http://192.168.64.21/manual/en/sections.html
+  - http://192.168.64.21/manual/en/server-wide.html
+  - http://192.168.64.21/manual/en/sitemap.html
+  - http://192.168.64.21/manual/en/socache.html
+  - http://192.168.64.21/manual/en/ssl/
+  - http://192.168.64.21/manual/en/ssl/index.html
+  - http://192.168.64.21/manual/en/ssl/ssl_compat.html
+  - http://192.168.64.21/manual/en/ssl/ssl_faq.html
+  - http://192.168.64.21/manual/en/ssl/ssl_howto.html
+  - http://192.168.64.21/manual/en/ssl/ssl_intro.html
+  - http://192.168.64.21/manual/en/stopping.html
+  - http://192.168.64.21/manual/en/suexec.html
+  - http://192.168.64.21/manual/en/upgrading.html
+  - http://192.168.64.21/manual/en/vhosts/
+  - http://192.168.64.21/manual/en/vhosts/details.html
+  - http://192.168.64.21/manual/en/vhosts/examples.html
+  - http://192.168.64.21/manual/en/vhosts/fd-limits.html
+  - http://192.168.64.21/manual/en/vhosts/index.html
+  - http://192.168.64.21/manual/en/vhosts/ip-based.html
+  - http://192.168.64.21/manual/en/vhosts/mass.html
+  - http://192.168.64.21/manual/en/vhosts/name-based.html
+  - http://192.168.64.21/manual/es/
+  - http://192.168.64.21/manual/es/bind.html
+  - http://192.168.64.21/manual/es/caching.html
+  - http://192.168.64.21/manual/es/configuring.html
+  - http://192.168.64.21/manual/es/content-negotiation.html
+  - http://192.168.64.21/manual/es/developer/index.html
+  - http://192.168.64.21/manual/es/dso.html
+  - http://192.168.64.21/manual/es/expr.html
+  - http://192.168.64.21/manual/es/filter.html
+  - http://192.168.64.21/manual/es/getting-started.html
+  - http://192.168.64.21/manual/es/glossary.html
+  - http://192.168.64.21/manual/es/handler.html
+  - http://192.168.64.21/manual/es/howto/access.html
+  - http://192.168.64.21/manual/es/howto/auth.html
+  - http://192.168.64.21/manual/es/howto/cgi.html
+  - http://192.168.64.21/manual/es/howto/htaccess.html
+  - http://192.168.64.21/manual/es/howto/http2.html
+  - http://192.168.64.21/manual/es/howto/public_html.html
+  - http://192.168.64.21/manual/es/howto/reverse_proxy.html
+  - http://192.168.64.21/manual/es/howto/ssi.html
+  - http://192.168.64.21/manual/es/index.html
+  - http://192.168.64.21/manual/es/install.html
+  - http://192.168.64.21/manual/es/invoking.html
+  - http://192.168.64.21/manual/es/license.html
+  - http://192.168.64.21/manual/es/logs.html
+  - http://192.168.64.21/manual/es/misc/index.html
+  - http://192.168.64.21/manual/es/misc/perf-tuning.html
+  - http://192.168.64.21/manual/es/misc/security_tips.html
+  - http://192.168.64.21/manual/es/mod/directives.html
+  - http://192.168.64.21/manual/es/mod/index.html
+  - http://192.168.64.21/manual/es/mod/overrides.html
+  - http://192.168.64.21/manual/es/mpm.html
+  - http://192.168.64.21/manual/es/new_features_2_0.html
+  - http://192.168.64.21/manual/es/new_features_2_2.html
+  - http://192.168.64.21/manual/es/new_features_2_4.html
+  - http://192.168.64.21/manual/es/platform/netware.html
+  - http://192.168.64.21/manual/es/platform/rpm.html
+  - http://192.168.64.21/manual/es/platform/windows.html
+  - http://192.168.64.21/manual/es/programs/index.html
+  - http://192.168.64.21/manual/es/rewrite/index.html
+  - http://192.168.64.21/manual/es/sections.html
+  - http://192.168.64.21/manual/es/server-wide.html
+  - http://192.168.64.21/manual/es/sitemap.html
+  - http://192.168.64.21/manual/es/ssl/index.html
+  - http://192.168.64.21/manual/es/stopping.html
+  - http://192.168.64.21/manual/es/suexec.html
+  - http://192.168.64.21/manual/es/upgrading.html
+  - http://192.168.64.21/manual/es/vhosts/index.html
+  - http://192.168.64.21/manual/fr/
+  - http://192.168.64.21/manual/fr/bind.html
+  - http://192.168.64.21/manual/fr/caching.html
+  - http://192.168.64.21/manual/fr/configuring.html
+  - http://192.168.64.21/manual/fr/content-negotiation.html
+  - http://192.168.64.21/manual/fr/developer/index.html
+  - http://192.168.64.21/manual/fr/dso.html
+  - http://192.168.64.21/manual/fr/env.html
+  - http://192.168.64.21/manual/fr/expr.html
+  - http://192.168.64.21/manual/fr/filter.html
+  - http://192.168.64.21/manual/fr/getting-started.html
+  - http://192.168.64.21/manual/fr/glossary.html
+  - http://192.168."
+"50345","","","None","192.168.64.21","tcp","80","Missing or Permissive X-Frame-Options HTTP Response Header","The remote web server does not take steps to mitigate a class of web
+application vulnerabilities.","The remote web server in some responses sets a permissive
+X-Frame-Options response header or does not set one at all.
+
+The X-Frame-Options header has been proposed by Microsoft as a way to
+mitigate clickjacking attacks and is currently supported by all major
+browser vendors","Set a properly configured X-Frame-Options header for all requested
+resources.","https://en.wikipedia.org/wiki/Clickjacking
+http://www.nessus.org/u?399b1f56","
+The following pages do not set a X-Frame-Options response header or set a permissive policy:
+
+  - http://192.168.64.21/
+  - http://192.168.64.21/manual/
+  - http://192.168.64.21/manual/da/
+  - http://192.168.64.21/manual/da/bind.html
+  - http://192.168.64.21/manual/da/caching.html
+  - http://192.168.64.21/manual/da/configuring.html
+  - http://192.168.64.21/manual/da/content-negotiation.html
+  - http://192.168.64.21/manual/da/custom-error.html
+  - http://192.168.64.21/manual/da/developer/index.html
+  - http://192.168.64.21/manual/da/dns-caveats.html
+  - http://192.168.64.21/manual/da/dso.html
+  - http://192.168.64.21/manual/da/expr.html
+  - http://192.168.64.21/manual/da/faq/index.html
+  - http://192.168.64.21/manual/da/filter.html
+  - http://192.168.64.21/manual/da/glossary.html
+  - http://192.168.64.21/manual/da/handler.html
+  - http://192.168.64.21/manual/da/howto/auth.html
+  - http://192.168.64.21/manual/da/howto/cgi.html
+  - http://192.168.64.21/manual/da/howto/htaccess.html
+  - http://192.168.64.21/manual/da/howto/public_html.html
+  - http://192.168.64.21/manual/da/howto/ssi.html
+  - http://192.168.64.21/manual/da/index.html
+  - http://192.168.64.21/manual/da/install.html
+  - http://192.168.64.21/manual/da/invoking.html
+  - http://192.168.64.21/manual/da/license.html
+  - http://192.168.64.21/manual/da/logs.html
+  - http://192.168.64.21/manual/da/misc/index.html
+  - http://192.168.64.21/manual/da/misc/perf-tuning.html
+  - http://192.168.64.21/manual/da/misc/security_tips.html
+  - http://192.168.64.21/manual/da/mod/
+  - http://192.168.64.21/manual/da/mod/directive-dict.html
+  - http://192.168.64.21/manual/da/mod/directives.html
+  - http://192.168.64.21/manual/da/mod/event.html
+  - http://192.168.64.21/manual/da/mod/index.html
+  - http://192.168.64.21/manual/da/mod/mod_access_compat.html
+  - http://192.168.64.21/manual/da/mod/mod_actions.html
+  - http://192.168.64.21/manual/da/mod/mod_alias.html
+  - http://192.168.64.21/manual/da/mod/mod_allowmethods.html
+  - http://192.168.64.21/manual/da/mod/mod_asis.html
+  - http://192.168.64.21/manual/da/mod/mod_auth_basic.html
+  - http://192.168.64.21/manual/da/mod/mod_auth_digest.html
+  - http://192.168.64.21/manual/da/mod/mod_auth_form.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_anon.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_core.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_dbd.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_dbm.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_file.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_socache.html
+  - http://192.168.64.21/manual/da/mod/mod_authnz_fcgi.html
+  - http://192.168.64.21/manual/da/mod/mod_authnz_ldap.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_core.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_dbd.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_dbm.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_groupfile.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_host.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_owner.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_user.html
+  - http://192.168.64.21/manual/da/mod/mod_autoindex.html
+  - http://192.168.64.21/manual/da/mod/mod_brotli.html
+  - http://192.168.64.21/manual/da/mod/mod_buffer.html
+  - http://192.168.64.21/manual/da/mod/mod_cache.html
+  - http://192.168.64.21/manual/da/mod/mod_cache_disk.html
+  - http://192.168.64.21/manual/da/mod/mod_cache_socache.html
+  - http://192.168.64.21/manual/da/mod/mod_cern_meta.html
+  - http://192.168.64.21/manual/da/mod/mod_cgi.html
+  - http://192.168.64.21/manual/da/mod/mod_cgid.html
+  - http://192.168.64.21/manual/da/mod/mod_charset_lite.html
+  - http://192.168.64.21/manual/da/mod/mod_data.html
+  - http://192.168.64.21/manual/da/mod/mod_dav.html
+  - http://192.168.64.21/manual/da/mod/mod_dav_fs.html
+  - http://192.168.64.21/manual/da/mod/mod_dav_lock.html
+  - http://192.168.64.21/manual/da/mod/mod_dbd.html
+  - http://192.168.64.21/manual/da/mod/mod_deflate.html
+  - http://192.168.64.21/manual/da/mod/mod_dialup.html
+  - http://192.168.64.21/manual/da/mod/mod_dir.html
+  - http://192.168.64.21/manual/da/mod/mod_dumpio.html
+  - http://192.168.64.21/manual/da/mod/mod_echo.html
+  - http://192.168.64.21/manual/da/mod/mod_env.html
+  - http://192.168.64.21/manual/da/mod/mod_example_hooks.html
+  - http://192.168.64.21/manual/da/mod/mod_expires.html
+  - http://192.168.64.21/manual/da/mod/mod_ext_filter.html
+  - http://192.168.64.21/manual/da/mod/mod_file_cache.html
+  - http://192.168.64.21/manual/da/mod/mod_filter.html
+  - http://192.168.64.21/manual/da/mod/mod_headers.html
+  - http://192.168.64.21/manual/da/mod/mod_heartbeat.html
+  - http://192.168.64.21/manual/da/mod/mod_heartmonitor.html
+  - http://192.168.64.21/manual/da/mod/mod_http2.html
+  - http://192.168.64.21/manual/da/mod/mod_ident.html
+  - http://192.168.64.21/manual/da/mod/mod_imagemap.html
+  - http://192.168.64.21/manual/da/mod/mod_include.html
+  - http://192.168.64.21/manual/da/mod/mod_info.html
+  - http://192.168.64.21/manual/da/mod/mod_isapi.html
+  - http://192.168.64.21/manual/da/mod/mod_lbmethod_bybusyness.html
+  - http://192.168.64.21/manual/da/mod/mod_lbmethod_byrequests.html
+  - http://192.168.64.21/manual/da/mod/mod_lbmethod_bytraffic.html
+  - http://192.168.64.21/manual/da/mod/mod_lbmethod_heartbeat.html
+  - http://192.168.64.21/manual/da/mod/mod_ldap.html
+  - http://192.168.64.21/manual/da/mod/mod_log_config.html
+  - http://192.168.64.21/manual/da/mod/mod_log_debug.html
+  - http://192.168.64.21/manual/da/mod/mod_log_forensic.html
+  - http://192.168.64.21/manual/da/mod/mod_logio.html
+  - http://192.168.64.21/manual/da/mod/mod_lua.html
+  - http://192.168.64.21/manual/da/mod/mod_macro.html
+  - http://192.168.64.21/manual/da/mod/mod_md.html
+  - http://192.168.64.21/manual/da/mod/mod_mime.html
+  - http://192.168.64.21/manual/da/mod/mod_mime_magic.html
+  - http://192.168.64.21/manual/da/mod/mod_negotiation.html
+  - http://192.168.64.21/manual/da/mod/mod_nw_ssl.html
+  - http://192.168.64.21/manual/da/mod/mod_privileges.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_ajp.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_balancer.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_connect.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_express.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_fcgi.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_fdpass.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_ftp.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_hcheck.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_html.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_http.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_http2.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_scgi.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_uwsgi.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_wstunnel.html
+  - http://192.168.64.21/manual/da/mod/mod_ratelimit.html
+  - http://192.168.64.21/manual/da/mod/mod_reflector.html
+  - http://192.168.64.21/manual/da/mod/mod_remoteip.html
+  - http://192.168.64.21/manual/da/mod/mod_reqtimeout.html
+  - http://192.168.64.21/manual/da/mod/mod_request.html
+  - http://192.168.64.21/manual/da/mod/mod_rewrite.html
+  - http://192.168.64.21/manual/da/mod/mod_sed.html
+  - http://192.168.64.21/manual/da/mod/mod_session.html
+  - http://192.168.64.21/manual/da/mod/mod_session_cookie.html
+  - http://192.168.64.21/manual/da/mod/mod_session_crypto.html
+  - http://192.168.64.21/manual/da/mod/mod_session_dbd.html
+  - http://192.168.64.21/manual/da/mod/mod_setenvif.html
+  - http://192.168.64.21/manual/da/mod/mod_slotmem_plain.html
+  - http://192.168.64.21/manual/da/mod/mod_slotmem_shm.html
+  - http://192.168.64.21/manual/da/mod/mod_so.html
+  - http://192.168.64.21/manual/da/mod/mod_socache_dbm.html
+  - http://192.168.64.21/manual/da/mod/mod_socache_dc.html
+  - http://192.168.64.21/manual/da/mod/mod_socache_memcache.html
+  - http://192.168.64.21/manual/da/mod/mod_socache_shmcb.html
+  - http://192.168.64.21/manual/da/mod/mod_speling.html
+  - http://192.168.64.21/manual/da/mod/mod_ssl.html
+  - http://192.168.64.21/manual/da/mod/mod_status.html
+  - http://192.168.64.21/manual/da/mod/mod_substitute.html
+  - http://192.168.64.21/manual/da/mod/mod_suexec.html
+  - http://192.168.64.21/manual/da/mod/mod_unique_id.html
+  - http://192.168.64.21/manual/da/mod/mod_unixd.html
+  - http://192.168.64.21/manual/da/mod/mod_userdir.html
+  - http://192.168.64.21/manual/da/mod/mod_usertrack.html
+  - http://192.168.64.21/manual/da/mod/mod_version.html
+  - http://192.168.64.21/manual/da/mod/mod_vhost_alias.html
+  - http://192.168.64.21/manual/da/mod/mod_watchdog.html
+  - http://192.168.64.21/manual/da/mod/mod_xml2enc.html
+  - http://192.168.64.21/manual/da/mod/mpm_common.html
+  - http://192.168.64.21/manual/da/mod/mpm_netware.html
+  - http://192.168.64.21/manual/da/mod/mpm_winnt.html
+  - http://192.168.64.21/manual/da/mod/mpmt_os2.html
+  - http://192.168.64.21/manual/da/mod/prefork.html
+  - http://192.168.64.21/manual/da/mod/worker.html
+  - http://192.168.64.21/manual/da/mpm.html
+  - http://192.168.64.21/manual/da/new_features_2_0.html
+  - http://192.168.64.21/manual/da/new_features_2_2.html
+  - http://192.168.64.21/manual/da/new_features_2_4.html
+  - http://192.168.64.21/manual/da/platform/ebcdic.html
+  - http://192.168.64.21/manual/da/platform/netware.html
+  - http://192.168.64.21/manual/da/platform/windows.html
+  - http://192.168.64.21/manual/da/programs/apxs.html
+  - http://192.168.64.21/manual/da/programs/httpd.html
+  - http://192.168.64.21/manual/da/programs/index.html
+  - http://192.168.64.21/manual/da/rewrite/access.html
+  - http://192.168.64.21/manual/da/rewrite/advanced.html
+  - http://192.168.64.21/manual/da/rewrite/index.html
+  - http://192.168.64.21/manual/da/rewrite/intro.html
+  - http://192.168.64.21/manual/da/rewrite/proxy.html
+  - http://192.168.64.21/manual/da/rewrite/remapping.html
+  - http://192.168.64.21/manual/da/rewrite/rewritemap.html
+  - http://192.168.64.21/manual/da/rewrite/vhosts.html
+  - http://192.168.64.21/manual/da/sections.html
+  - http://192.168.64.21/manual/da/server-wide.html
+  - http://192.168.64.21/manual/da/sitemap.html
+  - http://192.168.64.21/manual/da/socache.html
+  - http://192.168.64.21/manual/da/ssl/index.html
+  - http://192.168.64.21/manual/da/ssl/ssl_faq.html
+  - http://192.168.64.21/manual/da/stopping.html
+  - http://192.168.64.21/manual/da/suexec.html
+  - http://192.168.64.21/manual/da/upgrading.html
+  - http://192.168.64.21/manual/da/vhosts/details.html
+  - http://192.168.64.21/manual/da/vhosts/examples.html
+  - http://192.168.64.21/manual/da/vhosts/fd-limits.html
+  - http://192.168.64.21/manual/da/vhosts/index.html
+  - http://192.168.64.21/manual/da/vhosts/ip-based.html
+  - http://192.168.64.21/manual/da/vhosts/mass.html
+  - http://192.168.64.21/manual/da/vhosts/name-based.html
+  - http://192.168.64.21/manual/de/
+  - http://192.168.64.21/manual/de/bind.html
+  - http://192.168.64.21/manual/de/caching.html
+  - http://192.168.64.21/manual/de/configuring.html
+  - http://192.168.64.21/manual/de/content-negotiation.html
+  - http://192.168.64.21/manual/de/developer/index.html
+  - http://192.168.64.21/manual/de/dso.html
+  - http://192.168.64.21/manual/de/expr.html
+  - http://192.168.64.21/manual/de/filter.html
+  - http://192.168.64.21/manual/de/getting-started.html
+  - http://192.168.64.21/manual/de/glossary.html
+  - http://192.168.64.21/manual/de/handler.html
+  - http://192.168.64.21/manual/de/howto/access.html
+  - http://192.168.64.21/manual/de/howto/auth.html
+  - http://192.168.64.21/manual/de/howto/cgi.html
+  - http://192.168.64.21/manual/de/howto/htaccess.html
+  - http://192.168.64.21/manual/de/howto/public_html.html
+  - http://192.168.64.21/manual/de/howto/ssi.html
+  - http://192.168.64.21/manual/de/index.html
+  - http://192.168.64.21/manual/de/install.html
+  - http://192.168.64.21/manual/de/invoking.html
+  - http://192.168.64.21/manual/de/license.html
+  - http://192.168.64.21/manual/de/logs.html
+  - http://192.168.64.21/manual/de/misc/index.html
+  - http://192.168.64.21/manual/de/misc/perf-tuning.html
+  - http://192.168.64.21/manual/de/misc/security_tips.html
+  - http://192.168.64.21/manual/de/mod/directives.html
+  - http://192.168.64.21/manual/de/mod/index.html
+  - http://192.168.64.21/manual/de/mpm.html
+  - http://192.168.64.21/manual/de/new_features_2_0.html
+  - http://192.168.64.21/manual/de/new_features_2_2.html
+  - http://192.168.64.21/manual/de/new_features_2_4.html
+  - http://192.168.64.21/manual/de/platform/ebcdic.html
+  - http://192.168.64.21/manual/de/platform/netware.html
+  - http://192.168.64.21/manual/de/platform/rpm.html
+  - http://192.168.64.21/manual/de/platform/windows.html
+  - http://192.168.64.21/manual/de/programs/index.html
+  - http://192.168.64.21/manual/de/rewrite/index.html
+  - http://192.168.64.21/manual/de/sections.html
+  - http://192.168.64.21/manual/de/server-wide.html
+  - http://192.168.64.21/manual/de/sitemap.html
+  - http://192.168.64.21/manual/de/ssl/index.html
+  - http://192.168.64.21/manual/de/stopping.html
+  - http://192.168.64.21/manual/de/suexec.html
+  - http://192.168.64.21/manual/de/upgrading.html
+  - http://192.168.64.21/manual/de/vhosts/index.html
+  - http://192.168.64.21/manual/en/
+  - http://192.168.64.21/manual/en/bind.html
+  - http://192.168.64.21/manual/en/caching.html
+  - http://192.168.64.21/manual/en/configuring.html
+  - http://192.168.64.21/manual/en/content-negotiation.html
+  - http://192.168.64.21/manual/en/custom-error.html
+  - http://192.168.64.21/manual/en/developer/
+  - http://192.168.64.21/manual/en/developer/API.html
+  - http://192.168.64.21/manual/en/developer/documenting.html
+  - http://192.168.64.21/manual/en/developer/filters.html
+  - http://192.168.64.21/manual/en/developer/hooks.html
+  - http://192.168.64.21/manual/en/developer/index.html
+  - http://192.168.64.21/manual/en/developer/modguide.html
+  - http://192.168.64.21/manual/en/developer/modules.html
+  - http://192.168.64.21/manual/en/developer/new_api_2_4.html
+  - http://192.168.64.21/manual/en/developer/output-filters.html
+  - http://192.168.64.21/manual/en/developer/request.html
+  - http://192.168.64.21/manual/en/developer/thread_safety.html
+  - http://192.168.64.21/manual/en/dns-caveats.html
+  - http://192.168.64.21/manual/en/dso.html
+  - http://192.168.64.21/manual/en/expr.html
+  - http://192.168.64.21/manual/en/filter.html
+  - http://192.168.64.21/manual/en/getting-started.html
+  - http://192.168.64.21/manual/en/glossary.html
+  - http://192.168.64.21/manual/en/handler.html
+  - http://192.168.64.21/manual/en/howto/
+  - http://192.168.64.21/manual/en/howto/access.html
+  - http://192.168.64.21/manual/en/howto/auth.html
+  - http://192.168.64.21/manual/en/howto/cgi.html
+  - http://192.168.64.21/manual/en/howto/htaccess.html
+  - http://192.168.64.21/manual/en/howto/http2.html
+  - http://192.168.64.21/manual/en/howto/index.html
+  - http://192.168.64.21/manual/en/howto/public_html.html
+  - http://192.168.64.21/manual/en/howto/reverse_proxy.html
+  - http://192.168.64.21/manual/en/howto/ssi.html
+  - http://192.168.64.21/manual/en/index.html
+  - http://192.168.64.21/manual/en/install.html
+  - http://192.168.64.21/manual/en/invoking.html
+  - http://192.168.64.21/manual/en/license.html
+  - http://192.168.64.21/manual/en/logs.html
+  - http://192.168.64.21/manual/en/misc/
+  - http://192.168.64.21/manual/en/misc/index.html
+  - http://192.168.64.21/manual/en/misc/password_encryptions.html
+  - http://192.168.64.21/manual/en/misc/perf-tuning.html
+  - http://192.168.64.21/manual/en/misc/relevant_standards.html
+  - http://192.168.64.21/manual/en/misc/security_tips.html
+  - http://192.168.64.21/manual/en/mod/
+  - http://192.168.64.21/manual/en/mod/directive-dict.html
+  - http://192.168.64.21/manual/en/mod/directives.html
+  - http://192.168.64.21/manual/en/mod/event.html
+  - http://192.168.64.21/manual/en/mod/index.html
+  - http://192.168.64.21/manual/en/mod/mod_access_compat.html
+  - http://192.168.64.21/manual/en/mod/mod_actions.html
+  - http://192.168.64.21/manual/en/mod/mod_alias.html
+  - http://192.168.64.21/manual/en/mod/mod_allowmethods.html
+  - http://192.168.64.21/manual/en/mod/mod_asis.html
+  - http://192.168.64.21/manual/en/mod/mod_auth_basic.html
+  - http://192.168.64.21/manual/en/mod/mod_auth_digest.html
+  - http://192.168.64.21/manual/en/mod/mod_auth_form.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_anon.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_core.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_dbd.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_dbm.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_file.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_socache.html
+  - http://192.168.64.21/manual/en/mod/mod_authnz_fcgi.html
+  - http://192.168.64.21/manual/en/mod/mod_authnz_ldap.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_core.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_dbd.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_dbm.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_groupfile.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_host.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_owner.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_user.html
+  - http://192.168.64.21/manual/en/mod/mod_autoindex.html
+  - http://192.168.64.21/manual/en/mod/mod_brotli.html
+  - http://192.168.64.21/manual/en/mod/mod_buffer.html
+  - http://192.168.64.21/manual/en/mod/mod_cache.html
+  - http://192.168.64.21/manual/en/mod/mod_cache_disk.html
+  - http://192.168.64.21/manual/en/mod/mod_cache_socache.html
+  - http://192.168.64.21/manual/en/mod/mod_cern_meta.html
+  - http://192.168.64.21/manual/en/mod/mod_cgi.html
+  - http://192.168.64.21/manual/en/mod/mod_cgid.html
+  - http://192.168.64.21/manual/en/mod/mod_charset_lite.html
+  - http://192.168.64.21/manual/en/mod/mod_data.html
+  - http://192.168.64.21/manual/en/mod/mod_dav.html
+  - http://192.168.64.21/manual/en/mod/mod_dav_fs.html
+  - http://192.168.64.21/manual/en/mod/mod_dav_lock.html
+  - http://192.168.64.21/manual/en/mod/mod_dbd.html
+  - http://192.168.64.21/manual/en/mod/mod_deflate.html
+  - http://192.168.64.21/manual/en/mod/mod_dialup.html
+  - http://192.168.64.21/manual/en/mod/mod_dir.html
+  - http://192.168.64.21/manual/en/mod/mod_dumpio.html
+  - http://192.168.64.21/manual/en/mod/mod_echo.html
+  - http://192.168.64.21/manual/en/mod/mod_env.html
+  - http://192.168.64.21/manual/en/mod/mod_example_hooks.html
+  - http://192.168.64.21/manual/en/mod/mod_expires.html
+  - http://192.168.64.21/manual/en/mod/mod_ext_filter.html
+  - http://192.168.64.21/manual/en/mod/mod_file_cache.html
+  - http://192.168.64.21/manual/en/mod/mod_filter.html
+  - http://192.168.64.21/manual/en/mod/mod_headers.html
+  - http://192.168.64.21/manual/en/mod/mod_heartbeat.html
+  - http://192.168.64.21/manual/en/mod/mod_heartmonitor.html
+  - http://192.168.64.21/manual/en/mod/mod_http2.html
+  - http://192.168.64.21/manual/en/mod/mod_ident.html
+  - http://192.168.64.21/manual/en/mod/mod_imagemap.html
+  - http://192.168.64.21/manual/en/mod/mod_include.html
+  - http://192.168.64.21/manual/en/mod/mod_info.html
+  - http://192.168.64.21/manual/en/mod/mod_isapi.html
+  - http://192.168.64.21/manual/en/mod/mod_lbmethod_bybusyness.html
+  - http://192.168.64.21/manual/en/mod/mod_lbmethod_byrequests.html
+  - http://192.168.64.21/manual/en/mod/mod_lbmethod_bytraffic.html
+  - http://192.168.64.21/manual/en/mod/mod_lbmethod_heartbeat.html
+  - http://192.168.64.21/manual/en/mod/mod_ldap.html
+  - http://192.168.64.21/manual/en/mod/mod_log_config.html
+  - http://192.168.64.21/manual/en/mod/mod_log_debug.html
+  - http://192.168.64.21/manual/en/mod/mod_log_forensic.html
+  - http://192.168.64.21/manual/en/mod/mod_logio.html
+  - http://192.168.64.21/manual/en/mod/mod_lua.html
+  - http://192.168.64.21/manual/en/mod/mod_macro.html
+  - http://192.168.64.21/manual/en/mod/mod_md.html
+  - http://192.168.64.21/manual/en/mod/mod_mime.html
+  - http://192.168.64.21/manual/en/mod/mod_mime_magic.html
+  - http://192.168.64.21/manual/en/mod/mod_negotiation.html
+  - http://192.168.64.21/manual/en/mod/mod_nw_ssl.html
+  - http://192.168.64.21/manual/en/mod/mod_privileges.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_ajp.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_balancer.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_connect.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_express.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_fcgi.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_fdpass.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_ftp.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_hcheck.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_html.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_http.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_http2.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_scgi.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_uwsgi.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_wstunnel.html
+  - http://192.168.64.21/manual/en/mod/mod_ratelimit.html
+  - http://192.168.64.21/manual/en/mod/mod_reflector.html
+  - http://192.168.64.21/manual/en/mod/mod_remoteip.html
+  - http://192.168.64.21/manual/en/mod/mod_reqtimeout.html
+  - http://192.168.64.21/manual/en/mod/mod_request.html
+  - http://192.168.64.21/manual/en/mod/mod_rewrite.html
+  - http://192.168.64.21/manual/en/mod/mod_sed.html
+  - http://192.168.64.21/manual/en/mod/mod_session.html
+  - http://192.168.64.21/manual/en/mod/mod_session_cookie.html
+  - http://192.168.64.21/manual/en/mod/mod_session_crypto.html
+  - http://192.168.64.21/manual/en/mod/mod_session_dbd.html
+  - http://192.168.64.21/manual/en/mod/mod_setenvif.html
+  - http://192.168.64.21/manual/en/mod/mod_slotmem_plain.html
+  - http://192.168.64.21/manual/en/mod/mod_slotmem_shm.html
+  - http://192.168.64.21/manual/en/mod/mod_so.html
+  - http://192.168.64.21/manual/en/mod/mod_socache_dbm.html
+  - http://192.168.64.21/manual/en/mod/mod_socache_dc.html
+  - http://192.168.64.21/manual/en/mod/mod_socache_memcache.html
+  - http://192.168.64.21/manual/en/mod/mod_socache_shmcb.html
+  - http://192.168.64.21/manual/en/mod/mod_speling.html
+  - http://192.168.64.21/manual/en/mod/mod_ssl.html
+  - http://192.168.64.21/manual/en/mod/mod_status.html
+  - http://192.168.64.21/manual/en/mod/mod_substitute.html
+  - http://192.168.64.21/manual/en/mod/mod_suexec.html
+  - http://192.168.64.21/manual/en/mod/mod_unique_id.html
+  - http://192.168.64.21/manual/en/mod/mod_unixd.html
+  - http://192.168.64.21/manual/en/mod/mod_userdir.html
+  - http://192.168.64.21/manual/en/mod/mod_usertrack.html
+  - http://192.168.64.21/manual/en/mod/mod_version.html
+  - http://192.168.64.21/manual/en/mod/mod_vhost_alias.html
+  - http://192.168.64.21/manual/en/mod/mod_watchdog.html
+  - http://192.168.64.21/manual/en/mod/mod_xml2enc.html
+  - http://192.168.64.21/manual/en/mod/module-dict.html
+  - http://192.168.64.21/manual/en/mod/mpm_common.html
+  - http://192.168.64.21/manual/en/mod/mpm_netware.html
+  - http://192.168.64.21/manual/en/mod/mpm_winnt.html
+  - http://192.168.64.21/manual/en/mod/mpmt_os2.html
+  - http://192.168.64.21/manual/en/mod/overrides.html
+  - http://192.168.64.21/manual/en/mod/prefork.html
+  - http://192.168.64.21/manual/en/mod/worker.html
+  - http://192.168.64.21/manual/en/mpm.html
+  - http://192.168.64.21/manual/en/new_features_2_0.html
+  - http://192.168.64.21/manual/en/new_features_2_2.html
+  - http://192.168.64.21/manual/en/new_features_2_4.html
+  - http://192.168.64.21/manual/en/platform/
+  - http://192.168.64.21/manual/en/platform/ebcdic.html
+  - http://192.168.64.21/manual/en/platform/index.html
+  - http://192.168.64.21/manual/en/platform/netware.html
+  - http://192.168.64.21/manual/en/platform/perf-hp.html
+  - http://192.168.64.21/manual/en/platform/rpm.html
+  - http://192.168.64.21/manual/en/platform/win_compiling.html
+  - http://192.168.64.21/manual/en/platform/windows.html
+  - http://192.168.64.21/manual/en/programs/
+  - http://192.168.64.21/manual/en/programs/ab.html
+  - http://192.168.64.21/manual/en/programs/apachectl.html
+  - http://192.168.64.21/manual/en/programs/apxs.html
+  - http://192.168.64.21/manual/en/programs/configure.html
+  - http://192.168.64.21/manual/en/programs/dbmmanage.html
+  - http://192.168.64.21/manual/en/programs/fcgistarter.html
+  - http://192.168.64.21/manual/en/programs/htcacheclean.html
+  - http://192.168.64.21/manual/en/programs/htdbm.html
+  - http://192.168.64.21/manual/en/programs/htdigest.html
+  - http://192.168.64.21/manual/en/programs/htpasswd.html
+  - http://192.168.64.21/manual/en/programs/httpd.html
+  - http://192.168.64.21/manual/en/programs/httxt2dbm.html
+  - http://192.168.64.21/manual/en/programs/index.html
+  - http://192.168.64.21/manual/en/programs/log_server_status.html
+  - http://192.168.64.21/manual/en/programs/logresolve.html
+  - http://192.168.64.21/manual/en/programs/other.html
+  - http://192.168.64.21/manual/en/programs/rotatelogs.html
+  - http://192.168.64.21/manual/en/programs/split-logfile.html
+  - http://192.168.64.21/manual/en/programs/suexec.html
+  - http://192.168.64.21/manual/en/rewrite/
+  - http://192.168.64.21/manual/en/rewrite/access.html
+  - http://192.168.64.21/manual/en/rewrite/advanced.html
+  - http://192.168.64.21/manual/en/rewrite/avoid.html
+  - http://192.168.64.21/manual/en/rewrite/flags.html
+  - http://192.168.64.21/manual/en/rewrite/index.html
+  - http://192.168.64.21/manual/en/rewrite/intro.html
+  - http://192.168.64.21/manual/en/rewrite/proxy.html
+  - http://192.168.64.21/manual/en/rewrite/remapping.html
+  - http://192.168.64.21/manual/en/rewrite/rewritemap.html
+  - http://192.168.64.21/manual/en/rewrite/tech.html
+  - http://192.168.64.21/manual/en/rewrite/vhosts.html
+  - http://192.168.64.21/manual/en/sections.html
+  - http://192.168.64.21/manual/en/server-wide.html
+  - http://192.168.64.21/manual/en/sitemap.html
+  - http://192.168.64.21/manual/en/socache.html
+  - http://192.168.64.21/manual/en/ssl/
+  - http://192.168.64.21/manual/en/ssl/index.html
+  - http://192.168.64.21/manual/en/ssl/ssl_compat.html
+  - http://192.168.64.21/manual/en/ssl/ssl_faq.html
+  - http://192.168.64.21/manual/en/ssl/ssl_howto.html
+  - http://192.168.64.21/manual/en/ssl/ssl_intro.html
+  - http://192.168.64.21/manual/en/stopping.html
+  - http://192.168.64.21/manual/en/suexec.html
+  - http://192.168.64.21/manual/en/upgrading.html
+  - http://192.168.64.21/manual/en/vhosts/
+  - http://192.168.64.21/manual/en/vhosts/details.html
+  - http://192.168.64.21/manual/en/vhosts/examples.html
+  - http://192.168.64.21/manual/en/vhosts/fd-limits.html
+  - http://192.168.64.21/manual/en/vhosts/index.html
+  - http://192.168.64.21/manual/en/vhosts/ip-based.html
+  - http://192.168.64.21/manual/en/vhosts/mass.html
+  - http://192.168.64.21/manual/en/vhosts/name-based.html
+  - http://192.168.64.21/manual/es/
+  - http://192.168.64.21/manual/es/bind.html
+  - http://192.168.64.21/manual/es/caching.html
+  - http://192.168.64.21/manual/es/configuring.html
+  - http://192.168.64.21/manual/es/content-negotiation.html
+  - http://192.168.64.21/manual/es/developer/index.html
+  - http://192.168.64.21/manual/es/dso.html
+  - http://192.168.64.21/manual/es/expr.html
+  - http://192.168.64.21/manual/es/filter.html
+  - http://192.168.64.21/manual/es/getting-started.html
+  - http://192.168.64.21/manual/es/glossary.html
+  - http://192.168.64.21/manual/es/handler.html
+  - http://192.168.64.21/manual/es/howto/access.html
+  - http://192.168.64.21/manual/es/howto/auth.html
+  - http://192.168.64.21/manual/es/howto/cgi.html
+  - http://192.168.64.21/manual/es/howto/htaccess.html
+  - http://192.168.64.21/manual/es/howto/http2.html
+  - http://192.168.64.21/manual/es/howto/public_html.html
+  - http://192.168.64.21/manual/es/howto/reverse_proxy.html
+  - http://192.168.64.21/manual/es/howto/ssi.html
+  - http://192.168.64.21/manual/es/index.html
+  - http://192.168.64.21/manual/es/install.html
+  - http://192.168.64.21/manual/es/invoking.html
+  - http://192.168.64.21/manual/es/license.html
+  - http://192.168.64.21/manual/es/logs.html
+  - http://192.168.64.21/manual/es/misc/index.html
+  - http://192.168.64.21/manual/es/misc/perf-tuning.html
+  - http://192.168.64.21/manual/es/misc/security_tips.html
+  - http://192.168.64.21/manual/es/mod/directives.html
+  - http://192.168.64.21/manual/es/mod/index.html
+  - http://192.168.64.21/manual/es/mod/overrides.html
+  - http://192.168.64.21/manual/es/mpm.html
+  - http://192.168.64.21/manual/es/new_features_2_0.html
+  - http://192.168.64.21/manual/es/new_features_2_2.html
+  - http://192.168.64.21/manual/es/new_features_2_4.html
+  - http://192.168.64.21/manual/es/platform/netware.html
+  - http://192.168.64.21/manual/es/platform/rpm.html
+  - http://192.168.64.21/manual/es/platform/windows.html
+  - http://192.168.64.21/manual/es/programs/index.html
+  - http://192.168.64.21/manual/es/rewrite/index.html
+  - http://192.168.64.21/manual/es/sections.html
+  - http://192.168.64.21/manual/es/server-wide.html
+  - http://192.168.64.21/manual/es/sitemap.html
+  - http://192.168.64.21/manual/es/ssl/index.html
+  - http://192.168.64.21/manual/es/stopping.html
+  - http://192.168.64.21/manual/es/suexec.html
+  - http://192.168.64.21/manual/es/upgrading.html
+  - http://192.168.64.21/manual/es/vhosts/index.html
+  - http://192.168.64.21/manual/fr/
+  - http://192.168.64.21/manual/fr/bind.html
+  - http://192.168.64.21/manual/fr/caching.html
+  - http://192.168.64.21/manual/fr/configuring.html
+  - http://192.168.64.21/manual/fr/content-negotiation.html
+  - http://192.168.64.21/manual/fr/developer/index.html
+  - http://192.168.64.21/manual/fr/dso.html
+  - http://192.168.64.21/manual/fr/env.html
+  - http://192.168.64.21/manual/fr/expr.html
+  - http://192.168.64.21/manual/fr/filter.html
+  - http://192.168.64.21/manual/fr/getting-started.html
+  - http://192.168.64.21/manual/fr/glossary.html
+  - http://192.168.64.21/manual/fr/handler."
+"57640","","5.0","Medium","192.168.64.21","tcp","80","Web Application Information Disclosure","The remote web application discloses path information.","At least one web application hosted on the remote web server discloses
+the physical path to its directories when a malformed request is sent
+to it.
+
+Leaking this kind of information may help an attacker fine-tune
+attacks against the application and its backend.","Filter error messages containing path information.","","
+The request POST /manual/tr/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 71
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/tr/howto/ssi.html
+
+produces the following path information :
+<p>Here's something else that you can do with the <code>exec</code>
+function. You can actually have SSI execute a command using the
+shell (<code>/bin/sh</code>, to be precise - or the DOS shell,
+if you're on Win32). The following, for example, will give you
+a directory listing.</p>
+
+The request POST /manual/de/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 71
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/de/howto/ssi.html
+
+produces the following path information :
+<p>Here's something else that you can do with the <code>exec</code>
+function. You can actually have SSI execute a command using the
+shell (<code>/bin/sh</code>, to be precise - or the DOS shell,
+if you're on Win32). The following, for example, will give you
+a directory listing.</p>
+
+The request POST /manual/pt-br/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 74
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/pt-br/howto/ssi.html
+
+produces the following path information :
+<p>Here's something else that you can do with the <code>exec</code>
+function. You can actually have SSI execute a command using the
+shell (<code>/bin/sh</code>, to be precise - or the DOS shell,
+if you're on Win32). The following, for example, will give you
+a directory listing.</p>
+
+The request POST /manual/da/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 71
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/da/howto/ssi.html
+
+produces the following path information :
+<p>Here's something else that you can do with the <code>exec</code>
+function. You can actually have SSI execute a command using the
+shell (<code>/bin/sh</code>, to be precise - or the DOS shell,
+if you're on Win32). The following, for example, will give you
+a directory listing.</p>
+
+The request POST /manual/zh-cn/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 74
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/zh-cn/howto/ssi.html
+
+produces the following path information :
+<p>Here's something else that you can do with the <code>exec</code>
+function. You can actually have SSI execute a command using the
+shell (<code>/bin/sh</code>, to be precise - or the DOS shell,
+if you're on Win32). The following, for example, will give you
+a directory listing.</p>
+
+The request POST /manual/en/howto/ssi.html HTTP/1.1
+Host: 192.168.64.21
+Accept-Charset: iso-8859-1,utf-8;q=0.9,*;q=0.1
+Accept-Language: en
+Connection: Close
+Content-Length: 71
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+Pragma: no-cache
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*
+
+<!--#include file=""nessus191050569.html""-->=1&/manual/en/howto/ssi.html
+
+produces the following path information :
+<p>Here's something else that you can do with the <code>exec</code>
+function. You can actually have SSI execute a command using the
+shell (<code>/bin/sh</code>, to be precise - or the DOS shell,
+if you're on Win32). The following, for example, will give you
+a directory listing.</p>
+"
+"85582","","4.3","Medium","192.168.64.21","tcp","80","Web Application Potentially Vulnerable to Clickjacking","The remote web server may fail to mitigate a class of web application
+vulnerabilities.","The remote web server does not set an X-Frame-Options response header
+or a Content-Security-Policy 'frame-ancestors' response header in all
+content responses. This could potentially expose the site to a
+clickjacking or UI redress attack, in which an attacker can trick a
+user into clicking an area of the vulnerable page that is different
+than what the user perceives the page to be. This can result in a user
+performing fraudulent or malicious transactions.
+
+X-Frame-Options has been proposed by Microsoft as a way to mitigate
+clickjacking attacks and is currently supported by all major browser
+vendors.
+
+Content-Security-Policy (CSP) has been proposed by the W3C Web
+Application Security Working Group, with increasing support among
+all major browser vendors, as a way to mitigate clickjacking and other
+attacks. The 'frame-ancestors' policy directive restricts which
+sources can embed the protected resource.
+
+Note that while the X-Frame-Options and Content-Security-Policy
+response headers are not the only mitigations for clickjacking, they
+are currently the most reliable methods that can be detected through
+automation. Therefore, this plugin may produce false positives if
+other mitigation strategies (e.g., frame-busting JavaScript) are
+deployed or if the page does not perform any security-sensitive
+transactions.","Return the X-Frame-Options or Content-Security-Policy (with the
+'frame-ancestors' directive) HTTP header with the page's response.
+This prevents the page's content from being rendered by another site
+when using the frame or iframe HTML tags.","http://www.nessus.org/u?399b1f56
+https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet
+https://en.wikipedia.org/wiki/Clickjacking","
+The following pages do not use a clickjacking mitigation response header and contain a clickable event :
+
+  - http://192.168.64.21/manual/da/
+  - http://192.168.64.21/manual/da/index.html
+  - http://192.168.64.21/manual/de/
+  - http://192.168.64.21/manual/de/index.html
+  - http://192.168.64.21/manual/en/
+  - http://192.168.64.21/manual/en/index.html
+  - http://192.168.64.21/manual/es/
+  - http://192.168.64.21/manual/es/index.html
+  - http://192.168.64.21/manual/fr/
+  - http://192.168.64.21/manual/fr/index.html
+  - http://192.168.64.21/manual/ja/
+  - http://192.168.64.21/manual/ja/index.html
+  - http://192.168.64.21/manual/ko/
+  - http://192.168.64.21/manual/ko/index.html
+  - http://192.168.64.21/manual/pt-br/
+  - http://192.168.64.21/manual/pt-br/index.html
+  - http://192.168.64.21/manual/tr/
+  - http://192.168.64.21/manual/tr/index.html
+  - http://192.168.64.21/manual/zh-cn/
+  - http://192.168.64.21/manual/zh-cn/index.html
+  - http://192.168.64.21/wordpress/
+  - http://192.168.64.21/wordpress/index.php/category/uncategorized/
+"
+"90067","","5.0","Medium","192.168.64.21","tcp","80","WordPress User Enumeration","The remote web server contains a PHP application that is affected by
+an information disclosure vulnerability.","The version of WordPress hosted on the remote web server is affected
+by a user enumeration vulnerability. An unauthenticated, remote
+attacker can exploit this to learn the names of valid WordPress users.
+This information could be used to mount further attacks.","n/a","https://hackertarget.com/wordpress-user-enumeration/","Nessus was able to enumerate the following WordPress users from the WordPress install at 'http://192.168.64.21/wordpress' :
+ noobbox"
+"91815","","","None","192.168.64.21","tcp","80","Web Application Sitemap","The remote web server hosts linkable content that can be crawled by
+Nessus.","The remote web server contains linkable content that can be used to
+gather information about a target.","n/a","http://www.nessus.org/u?5496c8d9","
+The following sitemap was created from crawling linkable content on the target host :
+
+  - http://192.168.64.21/
+  - http://192.168.64.21/manual/
+  - http://192.168.64.21/manual/da/
+  - http://192.168.64.21/manual/da/bind.html
+  - http://192.168.64.21/manual/da/caching.html
+  - http://192.168.64.21/manual/da/configuring.html
+  - http://192.168.64.21/manual/da/content-negotiation.html
+  - http://192.168.64.21/manual/da/custom-error.html
+  - http://192.168.64.21/manual/da/developer/index.html
+  - http://192.168.64.21/manual/da/dns-caveats.html
+  - http://192.168.64.21/manual/da/dso.html
+  - http://192.168.64.21/manual/da/expr.html
+  - http://192.168.64.21/manual/da/faq/index.html
+  - http://192.168.64.21/manual/da/filter.html
+  - http://192.168.64.21/manual/da/glossary.html
+  - http://192.168.64.21/manual/da/handler.html
+  - http://192.168.64.21/manual/da/howto/auth.html
+  - http://192.168.64.21/manual/da/howto/cgi.html
+  - http://192.168.64.21/manual/da/howto/htaccess.html
+  - http://192.168.64.21/manual/da/howto/public_html.html
+  - http://192.168.64.21/manual/da/howto/ssi.html
+  - http://192.168.64.21/manual/da/index.html
+  - http://192.168.64.21/manual/da/install.html
+  - http://192.168.64.21/manual/da/invoking.html
+  - http://192.168.64.21/manual/da/license.html
+  - http://192.168.64.21/manual/da/logs.html
+  - http://192.168.64.21/manual/da/misc/index.html
+  - http://192.168.64.21/manual/da/misc/perf-tuning.html
+  - http://192.168.64.21/manual/da/misc/security_tips.html
+  - http://192.168.64.21/manual/da/mod/
+  - http://192.168.64.21/manual/da/mod/directive-dict.html
+  - http://192.168.64.21/manual/da/mod/directives.html
+  - http://192.168.64.21/manual/da/mod/event.html
+  - http://192.168.64.21/manual/da/mod/index.html
+  - http://192.168.64.21/manual/da/mod/mod_access_compat.html
+  - http://192.168.64.21/manual/da/mod/mod_actions.html
+  - http://192.168.64.21/manual/da/mod/mod_alias.html
+  - http://192.168.64.21/manual/da/mod/mod_allowmethods.html
+  - http://192.168.64.21/manual/da/mod/mod_asis.html
+  - http://192.168.64.21/manual/da/mod/mod_auth_basic.html
+  - http://192.168.64.21/manual/da/mod/mod_auth_digest.html
+  - http://192.168.64.21/manual/da/mod/mod_auth_form.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_anon.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_core.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_dbd.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_dbm.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_file.html
+  - http://192.168.64.21/manual/da/mod/mod_authn_socache.html
+  - http://192.168.64.21/manual/da/mod/mod_authnz_fcgi.html
+  - http://192.168.64.21/manual/da/mod/mod_authnz_ldap.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_core.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_dbd.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_dbm.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_groupfile.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_host.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_owner.html
+  - http://192.168.64.21/manual/da/mod/mod_authz_user.html
+  - http://192.168.64.21/manual/da/mod/mod_autoindex.html
+  - http://192.168.64.21/manual/da/mod/mod_brotli.html
+  - http://192.168.64.21/manual/da/mod/mod_buffer.html
+  - http://192.168.64.21/manual/da/mod/mod_cache.html
+  - http://192.168.64.21/manual/da/mod/mod_cache_disk.html
+  - http://192.168.64.21/manual/da/mod/mod_cache_socache.html
+  - http://192.168.64.21/manual/da/mod/mod_cern_meta.html
+  - http://192.168.64.21/manual/da/mod/mod_cgi.html
+  - http://192.168.64.21/manual/da/mod/mod_cgid.html
+  - http://192.168.64.21/manual/da/mod/mod_charset_lite.html
+  - http://192.168.64.21/manual/da/mod/mod_data.html
+  - http://192.168.64.21/manual/da/mod/mod_dav.html
+  - http://192.168.64.21/manual/da/mod/mod_dav_fs.html
+  - http://192.168.64.21/manual/da/mod/mod_dav_lock.html
+  - http://192.168.64.21/manual/da/mod/mod_dbd.html
+  - http://192.168.64.21/manual/da/mod/mod_deflate.html
+  - http://192.168.64.21/manual/da/mod/mod_dialup.html
+  - http://192.168.64.21/manual/da/mod/mod_dir.html
+  - http://192.168.64.21/manual/da/mod/mod_dumpio.html
+  - http://192.168.64.21/manual/da/mod/mod_echo.html
+  - http://192.168.64.21/manual/da/mod/mod_env.html
+  - http://192.168.64.21/manual/da/mod/mod_example_hooks.html
+  - http://192.168.64.21/manual/da/mod/mod_expires.html
+  - http://192.168.64.21/manual/da/mod/mod_ext_filter.html
+  - http://192.168.64.21/manual/da/mod/mod_file_cache.html
+  - http://192.168.64.21/manual/da/mod/mod_filter.html
+  - http://192.168.64.21/manual/da/mod/mod_headers.html
+  - http://192.168.64.21/manual/da/mod/mod_heartbeat.html
+  - http://192.168.64.21/manual/da/mod/mod_heartmonitor.html
+  - http://192.168.64.21/manual/da/mod/mod_http2.html
+  - http://192.168.64.21/manual/da/mod/mod_ident.html
+  - http://192.168.64.21/manual/da/mod/mod_imagemap.html
+  - http://192.168.64.21/manual/da/mod/mod_include.html
+  - http://192.168.64.21/manual/da/mod/mod_info.html
+  - http://192.168.64.21/manual/da/mod/mod_isapi.html
+  - http://192.168.64.21/manual/da/mod/mod_lbmethod_bybusyness.html
+  - http://192.168.64.21/manual/da/mod/mod_lbmethod_byrequests.html
+  - http://192.168.64.21/manual/da/mod/mod_lbmethod_bytraffic.html
+  - http://192.168.64.21/manual/da/mod/mod_lbmethod_heartbeat.html
+  - http://192.168.64.21/manual/da/mod/mod_ldap.html
+  - http://192.168.64.21/manual/da/mod/mod_log_config.html
+  - http://192.168.64.21/manual/da/mod/mod_log_debug.html
+  - http://192.168.64.21/manual/da/mod/mod_log_forensic.html
+  - http://192.168.64.21/manual/da/mod/mod_logio.html
+  - http://192.168.64.21/manual/da/mod/mod_lua.html
+  - http://192.168.64.21/manual/da/mod/mod_macro.html
+  - http://192.168.64.21/manual/da/mod/mod_md.html
+  - http://192.168.64.21/manual/da/mod/mod_mime.html
+  - http://192.168.64.21/manual/da/mod/mod_mime_magic.html
+  - http://192.168.64.21/manual/da/mod/mod_negotiation.html
+  - http://192.168.64.21/manual/da/mod/mod_nw_ssl.html
+  - http://192.168.64.21/manual/da/mod/mod_privileges.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_ajp.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_balancer.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_connect.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_express.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_fcgi.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_fdpass.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_ftp.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_hcheck.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_html.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_http.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_http2.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_scgi.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_uwsgi.html
+  - http://192.168.64.21/manual/da/mod/mod_proxy_wstunnel.html
+  - http://192.168.64.21/manual/da/mod/mod_ratelimit.html
+  - http://192.168.64.21/manual/da/mod/mod_reflector.html
+  - http://192.168.64.21/manual/da/mod/mod_remoteip.html
+  - http://192.168.64.21/manual/da/mod/mod_reqtimeout.html
+  - http://192.168.64.21/manual/da/mod/mod_request.html
+  - http://192.168.64.21/manual/da/mod/mod_rewrite.html
+  - http://192.168.64.21/manual/da/mod/mod_sed.html
+  - http://192.168.64.21/manual/da/mod/mod_session.html
+  - http://192.168.64.21/manual/da/mod/mod_session_cookie.html
+  - http://192.168.64.21/manual/da/mod/mod_session_crypto.html
+  - http://192.168.64.21/manual/da/mod/mod_session_dbd.html
+  - http://192.168.64.21/manual/da/mod/mod_setenvif.html
+  - http://192.168.64.21/manual/da/mod/mod_slotmem_plain.html
+  - http://192.168.64.21/manual/da/mod/mod_slotmem_shm.html
+  - http://192.168.64.21/manual/da/mod/mod_so.html
+  - http://192.168.64.21/manual/da/mod/mod_socache_dbm.html
+  - http://192.168.64.21/manual/da/mod/mod_socache_dc.html
+  - http://192.168.64.21/manual/da/mod/mod_socache_memcache.html
+  - http://192.168.64.21/manual/da/mod/mod_socache_shmcb.html
+  - http://192.168.64.21/manual/da/mod/mod_speling.html
+  - http://192.168.64.21/manual/da/mod/mod_ssl.html
+  - http://192.168.64.21/manual/da/mod/mod_status.html
+  - http://192.168.64.21/manual/da/mod/mod_substitute.html
+  - http://192.168.64.21/manual/da/mod/mod_suexec.html
+  - http://192.168.64.21/manual/da/mod/mod_unique_id.html
+  - http://192.168.64.21/manual/da/mod/mod_unixd.html
+  - http://192.168.64.21/manual/da/mod/mod_userdir.html
+  - http://192.168.64.21/manual/da/mod/mod_usertrack.html
+  - http://192.168.64.21/manual/da/mod/mod_version.html
+  - http://192.168.64.21/manual/da/mod/mod_vhost_alias.html
+  - http://192.168.64.21/manual/da/mod/mod_watchdog.html
+  - http://192.168.64.21/manual/da/mod/mod_xml2enc.html
+  - http://192.168.64.21/manual/da/mod/mpm_common.html
+  - http://192.168.64.21/manual/da/mod/mpm_netware.html
+  - http://192.168.64.21/manual/da/mod/mpm_winnt.html
+  - http://192.168.64.21/manual/da/mod/mpmt_os2.html
+  - http://192.168.64.21/manual/da/mod/prefork.html
+  - http://192.168.64.21/manual/da/mod/worker.html
+  - http://192.168.64.21/manual/da/mpm.html
+  - http://192.168.64.21/manual/da/new_features_2_0.html
+  - http://192.168.64.21/manual/da/new_features_2_2.html
+  - http://192.168.64.21/manual/da/new_features_2_4.html
+  - http://192.168.64.21/manual/da/platform/ebcdic.html
+  - http://192.168.64.21/manual/da/platform/netware.html
+  - http://192.168.64.21/manual/da/platform/windows.html
+  - http://192.168.64.21/manual/da/programs/apxs.html
+  - http://192.168.64.21/manual/da/programs/httpd.html
+  - http://192.168.64.21/manual/da/programs/index.html
+  - http://192.168.64.21/manual/da/rewrite/access.html
+  - http://192.168.64.21/manual/da/rewrite/advanced.html
+  - http://192.168.64.21/manual/da/rewrite/index.html
+  - http://192.168.64.21/manual/da/rewrite/intro.html
+  - http://192.168.64.21/manual/da/rewrite/proxy.html
+  - http://192.168.64.21/manual/da/rewrite/remapping.html
+  - http://192.168.64.21/manual/da/rewrite/rewritemap.html
+  - http://192.168.64.21/manual/da/rewrite/vhosts.html
+  - http://192.168.64.21/manual/da/sections.html
+  - http://192.168.64.21/manual/da/server-wide.html
+  - http://192.168.64.21/manual/da/sitemap.html
+  - http://192.168.64.21/manual/da/socache.html
+  - http://192.168.64.21/manual/da/ssl/index.html
+  - http://192.168.64.21/manual/da/ssl/ssl_faq.html
+  - http://192.168.64.21/manual/da/stopping.html
+  - http://192.168.64.21/manual/da/suexec.html
+  - http://192.168.64.21/manual/da/upgrading.html
+  - http://192.168.64.21/manual/da/vhosts/details.html
+  - http://192.168.64.21/manual/da/vhosts/examples.html
+  - http://192.168.64.21/manual/da/vhosts/fd-limits.html
+  - http://192.168.64.21/manual/da/vhosts/index.html
+  - http://192.168.64.21/manual/da/vhosts/ip-based.html
+  - http://192.168.64.21/manual/da/vhosts/mass.html
+  - http://192.168.64.21/manual/da/vhosts/name-based.html
+  - http://192.168.64.21/manual/de/
+  - http://192.168.64.21/manual/de/bind.html
+  - http://192.168.64.21/manual/de/caching.html
+  - http://192.168.64.21/manual/de/configuring.html
+  - http://192.168.64.21/manual/de/content-negotiation.html
+  - http://192.168.64.21/manual/de/developer/index.html
+  - http://192.168.64.21/manual/de/dso.html
+  - http://192.168.64.21/manual/de/expr.html
+  - http://192.168.64.21/manual/de/filter.html
+  - http://192.168.64.21/manual/de/getting-started.html
+  - http://192.168.64.21/manual/de/glossary.html
+  - http://192.168.64.21/manual/de/handler.html
+  - http://192.168.64.21/manual/de/howto/access.html
+  - http://192.168.64.21/manual/de/howto/auth.html
+  - http://192.168.64.21/manual/de/howto/cgi.html
+  - http://192.168.64.21/manual/de/howto/htaccess.html
+  - http://192.168.64.21/manual/de/howto/public_html.html
+  - http://192.168.64.21/manual/de/howto/ssi.html
+  - http://192.168.64.21/manual/de/index.html
+  - http://192.168.64.21/manual/de/install.html
+  - http://192.168.64.21/manual/de/invoking.html
+  - http://192.168.64.21/manual/de/license.html
+  - http://192.168.64.21/manual/de/logs.html
+  - http://192.168.64.21/manual/de/misc/index.html
+  - http://192.168.64.21/manual/de/misc/perf-tuning.html
+  - http://192.168.64.21/manual/de/misc/security_tips.html
+  - http://192.168.64.21/manual/de/mod/directives.html
+  - http://192.168.64.21/manual/de/mod/index.html
+  - http://192.168.64.21/manual/de/mpm.html
+  - http://192.168.64.21/manual/de/new_features_2_0.html
+  - http://192.168.64.21/manual/de/new_features_2_2.html
+  - http://192.168.64.21/manual/de/new_features_2_4.html
+  - http://192.168.64.21/manual/de/platform/ebcdic.html
+  - http://192.168.64.21/manual/de/platform/netware.html
+  - http://192.168.64.21/manual/de/platform/rpm.html
+  - http://192.168.64.21/manual/de/platform/windows.html
+  - http://192.168.64.21/manual/de/programs/index.html
+  - http://192.168.64.21/manual/de/rewrite/index.html
+  - http://192.168.64.21/manual/de/sections.html
+  - http://192.168.64.21/manual/de/server-wide.html
+  - http://192.168.64.21/manual/de/sitemap.html
+  - http://192.168.64.21/manual/de/ssl/index.html
+  - http://192.168.64.21/manual/de/stopping.html
+  - http://192.168.64.21/manual/de/suexec.html
+  - http://192.168.64.21/manual/de/upgrading.html
+  - http://192.168.64.21/manual/de/vhosts/index.html
+  - http://192.168.64.21/manual/en/
+  - http://192.168.64.21/manual/en/bind.html
+  - http://192.168.64.21/manual/en/caching.html
+  - http://192.168.64.21/manual/en/configuring.html
+  - http://192.168.64.21/manual/en/content-negotiation.html
+  - http://192.168.64.21/manual/en/custom-error.html
+  - http://192.168.64.21/manual/en/developer/
+  - http://192.168.64.21/manual/en/developer/API.html
+  - http://192.168.64.21/manual/en/developer/documenting.html
+  - http://192.168.64.21/manual/en/developer/filters.html
+  - http://192.168.64.21/manual/en/developer/hooks.html
+  - http://192.168.64.21/manual/en/developer/index.html
+  - http://192.168.64.21/manual/en/developer/modguide.html
+  - http://192.168.64.21/manual/en/developer/modules.html
+  - http://192.168.64.21/manual/en/developer/new_api_2_4.html
+  - http://192.168.64.21/manual/en/developer/output-filters.html
+  - http://192.168.64.21/manual/en/developer/request.html
+  - http://192.168.64.21/manual/en/developer/thread_safety.html
+  - http://192.168.64.21/manual/en/dns-caveats.html
+  - http://192.168.64.21/manual/en/dso.html
+  - http://192.168.64.21/manual/en/expr.html
+  - http://192.168.64.21/manual/en/filter.html
+  - http://192.168.64.21/manual/en/getting-started.html
+  - http://192.168.64.21/manual/en/glossary.html
+  - http://192.168.64.21/manual/en/handler.html
+  - http://192.168.64.21/manual/en/howto/
+  - http://192.168.64.21/manual/en/howto/access.html
+  - http://192.168.64.21/manual/en/howto/auth.html
+  - http://192.168.64.21/manual/en/howto/cgi.html
+  - http://192.168.64.21/manual/en/howto/htaccess.html
+  - http://192.168.64.21/manual/en/howto/http2.html
+  - http://192.168.64.21/manual/en/howto/index.html
+  - http://192.168.64.21/manual/en/howto/public_html.html
+  - http://192.168.64.21/manual/en/howto/reverse_proxy.html
+  - http://192.168.64.21/manual/en/howto/ssi.html
+  - http://192.168.64.21/manual/en/index.html
+  - http://192.168.64.21/manual/en/install.html
+  - http://192.168.64.21/manual/en/invoking.html
+  - http://192.168.64.21/manual/en/license.html
+  - http://192.168.64.21/manual/en/logs.html
+  - http://192.168.64.21/manual/en/misc/
+  - http://192.168.64.21/manual/en/misc/index.html
+  - http://192.168.64.21/manual/en/misc/password_encryptions.html
+  - http://192.168.64.21/manual/en/misc/perf-tuning.html
+  - http://192.168.64.21/manual/en/misc/relevant_standards.html
+  - http://192.168.64.21/manual/en/misc/security_tips.html
+  - http://192.168.64.21/manual/en/mod/
+  - http://192.168.64.21/manual/en/mod/directive-dict.html
+  - http://192.168.64.21/manual/en/mod/directives.html
+  - http://192.168.64.21/manual/en/mod/event.html
+  - http://192.168.64.21/manual/en/mod/index.html
+  - http://192.168.64.21/manual/en/mod/mod_access_compat.html
+  - http://192.168.64.21/manual/en/mod/mod_actions.html
+  - http://192.168.64.21/manual/en/mod/mod_alias.html
+  - http://192.168.64.21/manual/en/mod/mod_allowmethods.html
+  - http://192.168.64.21/manual/en/mod/mod_asis.html
+  - http://192.168.64.21/manual/en/mod/mod_auth_basic.html
+  - http://192.168.64.21/manual/en/mod/mod_auth_digest.html
+  - http://192.168.64.21/manual/en/mod/mod_auth_form.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_anon.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_core.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_dbd.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_dbm.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_file.html
+  - http://192.168.64.21/manual/en/mod/mod_authn_socache.html
+  - http://192.168.64.21/manual/en/mod/mod_authnz_fcgi.html
+  - http://192.168.64.21/manual/en/mod/mod_authnz_ldap.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_core.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_dbd.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_dbm.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_groupfile.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_host.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_owner.html
+  - http://192.168.64.21/manual/en/mod/mod_authz_user.html
+  - http://192.168.64.21/manual/en/mod/mod_autoindex.html
+  - http://192.168.64.21/manual/en/mod/mod_brotli.html
+  - http://192.168.64.21/manual/en/mod/mod_buffer.html
+  - http://192.168.64.21/manual/en/mod/mod_cache.html
+  - http://192.168.64.21/manual/en/mod/mod_cache_disk.html
+  - http://192.168.64.21/manual/en/mod/mod_cache_socache.html
+  - http://192.168.64.21/manual/en/mod/mod_cern_meta.html
+  - http://192.168.64.21/manual/en/mod/mod_cgi.html
+  - http://192.168.64.21/manual/en/mod/mod_cgid.html
+  - http://192.168.64.21/manual/en/mod/mod_charset_lite.html
+  - http://192.168.64.21/manual/en/mod/mod_data.html
+  - http://192.168.64.21/manual/en/mod/mod_dav.html
+  - http://192.168.64.21/manual/en/mod/mod_dav_fs.html
+  - http://192.168.64.21/manual/en/mod/mod_dav_lock.html
+  - http://192.168.64.21/manual/en/mod/mod_dbd.html
+  - http://192.168.64.21/manual/en/mod/mod_deflate.html
+  - http://192.168.64.21/manual/en/mod/mod_dialup.html
+  - http://192.168.64.21/manual/en/mod/mod_dir.html
+  - http://192.168.64.21/manual/en/mod/mod_dumpio.html
+  - http://192.168.64.21/manual/en/mod/mod_echo.html
+  - http://192.168.64.21/manual/en/mod/mod_env.html
+  - http://192.168.64.21/manual/en/mod/mod_example_hooks.html
+  - http://192.168.64.21/manual/en/mod/mod_expires.html
+  - http://192.168.64.21/manual/en/mod/mod_ext_filter.html
+  - http://192.168.64.21/manual/en/mod/mod_file_cache.html
+  - http://192.168.64.21/manual/en/mod/mod_filter.html
+  - http://192.168.64.21/manual/en/mod/mod_headers.html
+  - http://192.168.64.21/manual/en/mod/mod_heartbeat.html
+  - http://192.168.64.21/manual/en/mod/mod_heartmonitor.html
+  - http://192.168.64.21/manual/en/mod/mod_http2.html
+  - http://192.168.64.21/manual/en/mod/mod_ident.html
+  - http://192.168.64.21/manual/en/mod/mod_imagemap.html
+  - http://192.168.64.21/manual/en/mod/mod_include.html
+  - http://192.168.64.21/manual/en/mod/mod_info.html
+  - http://192.168.64.21/manual/en/mod/mod_isapi.html
+  - http://192.168.64.21/manual/en/mod/mod_lbmethod_bybusyness.html
+  - http://192.168.64.21/manual/en/mod/mod_lbmethod_byrequests.html
+  - http://192.168.64.21/manual/en/mod/mod_lbmethod_bytraffic.html
+  - http://192.168.64.21/manual/en/mod/mod_lbmethod_heartbeat.html
+  - http://192.168.64.21/manual/en/mod/mod_ldap.html
+  - http://192.168.64.21/manual/en/mod/mod_log_config.html
+  - http://192.168.64.21/manual/en/mod/mod_log_debug.html
+  - http://192.168.64.21/manual/en/mod/mod_log_forensic.html
+  - http://192.168.64.21/manual/en/mod/mod_logio.html
+  - http://192.168.64.21/manual/en/mod/mod_lua.html
+  - http://192.168.64.21/manual/en/mod/mod_macro.html
+  - http://192.168.64.21/manual/en/mod/mod_md.html
+  - http://192.168.64.21/manual/en/mod/mod_mime.html
+  - http://192.168.64.21/manual/en/mod/mod_mime_magic.html
+  - http://192.168.64.21/manual/en/mod/mod_negotiation.html
+  - http://192.168.64.21/manual/en/mod/mod_nw_ssl.html
+  - http://192.168.64.21/manual/en/mod/mod_privileges.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_ajp.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_balancer.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_connect.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_express.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_fcgi.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_fdpass.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_ftp.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_hcheck.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_html.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_http.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_http2.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_scgi.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_uwsgi.html
+  - http://192.168.64.21/manual/en/mod/mod_proxy_wstunnel.html
+  - http://192.168.64.21/manual/en/mod/mod_ratelimit.html
+  - http://192.168.64.21/manual/en/mod/mod_reflector.html
+  - http://192.168.64.21/manual/en/mod/mod_remoteip.html
+  - http://192.168.64.21/manual/en/mod/mod_reqtimeout.html
+  - http://192.168.64.21/manual/en/mod/mod_request.html
+  - http://192.168.64.21/manual/en/mod/mod_rewrite.html
+  - http://192.168.64.21/manual/en/mod/mod_sed.html
+  - http://192.168.64.21/manual/en/mod/mod_session.html
+  - http://192.168.64.21/manual/en/mod/mod_session_cookie.html
+  - http://192.168.64.21/manual/en/mod/mod_session_crypto.html
+  - http://192.168.64.21/manual/en/mod/mod_session_dbd.html
+  - http://192.168.64.21/manual/en/mod/mod_setenvif.html
+  - http://192.168.64.21/manual/en/mod/mod_slotmem_plain.html
+  - http://192.168.64.21/manual/en/mod/mod_slotmem_shm.html
+  - http://192.168.64.21/manual/en/mod/mod_so.html
+  - http://192.168.64.21/manual/en/mod/mod_socache_dbm.html
+  - http://192.168.64.21/manual/en/mod/mod_socache_dc.html
+  - http://192.168.64.21/manual/en/mod/mod_socache_memcache.html
+  - http://192.168.64.21/manual/en/mod/mod_socache_shmcb.html
+  - http://192.168.64.21/manual/en/mod/mod_speling.html
+  - http://192.168.64.21/manual/en/mod/mod_ssl.html
+  - http://192.168.64.21/manual/en/mod/mod_status.html
+  - http://192.168.64.21/manual/en/mod/mod_substitute.html
+  - http://192.168.64.21/manual/en/mod/mod_suexec.html
+  - http://192.168.64.21/manual/en/mod/mod_unique_id.html
+  - http://192.168.64.21/manual/en/mod/mod_unixd.html
+  - http://192.168.64.21/manual/en/mod/mod_userdir.html
+  - http://192.168.64.21/manual/en/mod/mod_usertrack.html
+  - http://192.168.64.21/manual/en/mod/mod_version.html
+  - http://192.168.64.21/manual/en/mod/mod_vhost_alias.html
+  - http://192.168.64.21/manual/en/mod/mod_watchdog.html
+  - http://192.168.64.21/manual/en/mod/mod_xml2enc.html
+  - http://192.168.64.21/manual/en/mod/module-dict.html
+  - http://192.168.64.21/manual/en/mod/mpm_common.html
+  - http://192.168.64.21/manual/en/mod/mpm_netware.html
+  - http://192.168.64.21/manual/en/mod/mpm_winnt.html
+  - http://192.168.64.21/manual/en/mod/mpmt_os2.html
+  - http://192.168.64.21/manual/en/mod/overrides.html
+  - http://192.168.64.21/manual/en/mod/prefork.html
+  - http://192.168.64.21/manual/en/mod/worker.html
+  - http://192.168.64.21/manual/en/mpm.html
+  - http://192.168.64.21/manual/en/new_features_2_0.html
+  - http://192.168.64.21/manual/en/new_features_2_2.html
+  - http://192.168.64.21/manual/en/new_features_2_4.html
+  - http://192.168.64.21/manual/en/platform/
+  - http://192.168.64.21/manual/en/platform/ebcdic.html
+  - http://192.168.64.21/manual/en/platform/index.html
+  - http://192.168.64.21/manual/en/platform/netware.html
+  - http://192.168.64.21/manual/en/platform/perf-hp.html
+  - http://192.168.64.21/manual/en/platform/rpm.html
+  - http://192.168.64.21/manual/en/platform/win_compiling.html
+  - http://192.168.64.21/manual/en/platform/windows.html
+  - http://192.168.64.21/manual/en/programs/
+  - http://192.168.64.21/manual/en/programs/ab.html
+  - http://192.168.64.21/manual/en/programs/apachectl.html
+  - http://192.168.64.21/manual/en/programs/apxs.html
+  - http://192.168.64.21/manual/en/programs/configure.html
+  - http://192.168.64.21/manual/en/programs/dbmmanage.html
+  - http://192.168.64.21/manual/en/programs/fcgistarter.html
+  - http://192.168.64.21/manual/en/programs/htcacheclean.html
+  - http://192.168.64.21/manual/en/programs/htdbm.html
+  - http://192.168.64.21/manual/en/programs/htdigest.html
+  - http://192.168.64.21/manual/en/programs/htpasswd.html
+  - http://192.168.64.21/manual/en/programs/httpd.html
+  - http://192.168.64.21/manual/en/programs/httxt2dbm.html
+  - http://192.168.64.21/manual/en/programs/index.html
+  - http://192.168.64.21/manual/en/programs/log_server_status.html
+  - http://192.168.64.21/manual/en/programs/logresolve.html
+  - http://192.168.64.21/manual/en/programs/other.html
+  - http://192.168.64.21/manual/en/programs/rotatelogs.html
+  - http://192.168.64.21/manual/en/programs/split-logfile.html
+  - http://192.168.64.21/manual/en/programs/suexec.html
+  - http://192.168.64.21/manual/en/rewrite/
+  - http://192.168.64.21/manual/en/rewrite/access.html
+  - http://192.168.64.21/manual/en/rewrite/advanced.html
+  - http://192.168.64.21/manual/en/rewrite/avoid.html
+  - http://192.168.64.21/manual/en/rewrite/flags.html
+  - http://192.168.64.21/manual/en/rewrite/index.html
+  - http://192.168.64.21/manual/en/rewrite/intro.html
+  - http://192.168.64.21/manual/en/rewrite/proxy.html
+  - http://192.168.64.21/manual/en/rewrite/remapping.html
+  - http://192.168.64.21/manual/en/rewrite/rewritemap.html
+  - http://192.168.64.21/manual/en/rewrite/tech.html
+  - http://192.168.64.21/manual/en/rewrite/vhosts.html
+  - http://192.168.64.21/manual/en/sections.html
+  - http://192.168.64.21/manual/en/server-wide.html
+  - http://192.168.64.21/manual/en/sitemap.html
+  - http://192.168.64.21/manual/en/socache.html
+  - http://192.168.64.21/manual/en/ssl/
+  - http://192.168.64.21/manual/en/ssl/index.html
+  - http://192.168.64.21/manual/en/ssl/ssl_compat.html
+  - http://192.168.64.21/manual/en/ssl/ssl_faq.html
+  - http://192.168.64.21/manual/en/ssl/ssl_howto.html
+  - http://192.168.64.21/manual/en/ssl/ssl_intro.html
+  - http://192.168.64.21/manual/en/stopping.html
+  - http://192.168.64.21/manual/en/suexec.html
+  - http://192.168.64.21/manual/en/upgrading.html
+  - http://192.168.64.21/manual/en/vhosts/
+  - http://192.168.64.21/manual/en/vhosts/details.html
+  - http://192.168.64.21/manual/en/vhosts/examples.html
+  - http://192.168.64.21/manual/en/vhosts/fd-limits.html
+  - http://192.168.64.21/manual/en/vhosts/index.html
+  - http://192.168.64.21/manual/en/vhosts/ip-based.html
+  - http://192.168.64.21/manual/en/vhosts/mass.html
+  - http://192.168.64.21/manual/en/vhosts/name-based.html
+  - http://192.168.64.21/manual/es/
+  - http://192.168.64.21/manual/es/bind.html
+  - http://192.168.64.21/manual/es/caching.html
+  - http://192.168.64.21/manual/es/configuring.html
+  - http://192.168.64.21/manual/es/content-negotiation.html
+  - http://192.168.64.21/manual/es/developer/index.html
+  - http://192.168.64.21/manual/es/dso.html
+  - http://192.168.64.21/manual/es/expr.html
+  - http://192.168.64.21/manual/es/filter.html
+  - http://192.168.64.21/manual/es/getting-started.html
+  - http://192.168.64.21/manual/es/glossary.html
+  - http://192.168.64.21/manual/es/handler.html
+  - http://192.168.64.21/manual/es/howto/access.html
+  - http://192.168.64.21/manual/es/howto/auth.html
+  - http://192.168.64.21/manual/es/howto/cgi.html
+  - http://192.168.64.21/manual/es/howto/htaccess.html
+  - http://192.168.64.21/manual/es/howto/http2.html
+  - http://192.168.64.21/manual/es/howto/public_html.html
+  - http://192.168.64.21/manual/es/howto/reverse_proxy.html
+  - http://192.168.64.21/manual/es/howto/ssi.html
+  - http://192.168.64.21/manual/es/index.html
+  - http://192.168.64.21/manual/es/install.html
+  - http://192.168.64.21/manual/es/invoking.html
+  - http://192.168.64.21/manual/es/license.html
+  - http://192.168.64.21/manual/es/logs.html
+  - http://192.168.64.21/manual/es/misc/index.html
+  - http://192.168.64.21/manual/es/misc/perf-tuning.html
+  - http://192.168.64.21/manual/es/misc/security_tips.html
+  - http://192.168.64.21/manual/es/mod/directives.html
+  - http://192.168.64.21/manual/es/mod/index.html
+  - http://192.168.64.21/manual/es/mod/overrides.html
+  - http://192.168.64.21/manual/es/mpm.html
+  - http://192.168.64.21/manual/es/new_features_2_0.html
+  - http://192.168.64.21/manual/es/new_features_2_2.html
+  - http://192.168.64.21/manual/es/new_features_2_4.html
+  - http://192.168.64.21/manual/es/platform/netware.html
+  - http://192.168.64.21/manual/es/platform/rpm.html
+  - http://192.168.64.21/manual/es/platform/windows.html
+  - http://192.168.64.21/manual/es/programs/index.html
+  - http://192.168.64.21/manual/es/rewrite/index.html
+  - http://192.168.64.21/manual/es/sections.html
+  - http://192.168.64.21/manual/es/server-wide.html
+  - http://192.168.64.21/manual/es/sitemap.html
+  - http://192.168.64.21/manual/es/ssl/index.html
+  - http://192.168.64.21/manual/es/stopping.html
+  - http://192.168.64.21/manual/es/suexec.html
+  - http://192.168.64.21/manual/es/upgrading.html
+  - http://192.168.64.21/manual/es/vhosts/index.html
+  - http://192.168.64.21/manual/fr/
+  - http://192.168.64.21/manual/fr/bind.html
+  - http://192.168.64.21/manual/fr/caching.html
+  - http://192.168.64.21/manual/fr/configuring.html
+  - http://192.168.64.21/manual/fr/content-negotiation.html
+  - http://192.168.64.21/manual/fr/developer/index.html
+  - http://192.168.64.21/manual/fr/dso.html
+  - http://192.168.64.21/manual/fr/env.html
+  - http://192.168.64.21/manual/fr/expr.html
+  - http://192.168.64.21/manual/fr/filter.html
+  - http://192.168.64.21/manual/fr/getting-started.html
+  - http://192.168.64.21/manual/fr/glossary.html
+  - http://192.168.64.21/manual/fr/handler.html
+  "
+"101842","","","None","192.168.64.21","tcp","80","WordPress Plugin Detection","The remote WordPress application has plugins installed","The WordPress application running on the remote host has plugins
+installed.","n/a","https://wordpress.org/","
+
+Wordpress Install : http://192.168.64.21/wordpress
+Plugin : Version
+
+Themes:
+twentytwentythree
+twentytwentytwo"
