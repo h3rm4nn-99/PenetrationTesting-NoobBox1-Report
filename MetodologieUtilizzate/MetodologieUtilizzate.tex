@@ -572,6 +572,83 @@ Tale messaggio è però \textit{hardcoded} all'interno del documento nella sezio
 
 \subsubsection{Altre vulnerabilità}
 Analizzando le altre vulnerabilità rilevate, si nota subito come sia stata confermata la possibilità di enumerare gli utenti di \textbf{WordPress}, già comunicata da \textbf{OpenVAS} e \texttt{wpscan}.
+\newpage
+
+\section{Target Exploitation}
+Nelle sezioni precedenti di questo documento sono state raccolte informazioni utili da sfruttare nella fase di \textbf{Exploitation}. In particolare, nella fase di enumerazione è stato possibile rinvenire:
+
+\begin{itemize}
+    \item Lo \textbf{username} di un utente di Wordpress (\texttt{noobbox});
+    \item Quella che sembra una \textbf{password} (rinvenuta nel file \textbf{/img.jpg}) nella root del server
+\end{itemize}
+
+Si suppone che queste credenziali siano valide per l'accesso di amministratore al framework Wordpress.
+
+Poiché nella fase di \textbf{Vulnerability Mapping} non sono state rilevate altre vulnerabilità sfruttabili attivamente, la prima cosa che verrà provata nella fase di Exploitation sarà l'apertura di una shell sulla macchina con la suddetta coppia di credenziali \texttt{noobbox:5p4c3}. 
+Una volta ottenuta una shell, verrà tentata una \textbf{Privilege Escalation} ed eventualmente l'installazione di una \textbf{backdoor} che permetta la permanenza dell'attaccante sulla macchina senza dover ripetere nuovamente l'exploit.
+
+\subsection{Metasploit}
+Il framework Metasploit è probabilmente il tool di Penetration Testing più usato che fornisce un modo semplice e veloce per eseguire exploit di varia natura su una moltitudine di tipologie di asset. Il framework è sviluppato e mantenuto da \textbf{Rapid7} ed è organizzato in \textbf{moduli} \cite{metasploit} che possono essere utilizzati per attaccare diverse tipologie di asset. Metasploit è presente di default su Kali Linux e il database dei moduli è reperibile al percorso \texttt{/usr/share/metasploit-framework/exploits}.
+
+L'interazione col tool avviene mediante il comando
+
+\begin{center}
+    \texttt{msfconsole}
+\end{center}
+
+che permette l'apertura, appunto, di una \textbf{console} da cui è possibile richiamare i moduli mediante la direttiva
+
+\begin{center}
+    \texttt{use <path/del/modulo>}
+\end{center}
+
+I \textbf{parametri} dell'exploit sono invece impostabili mediante la direttiva
+
+\begin{center}
+    \texttt{set nome\_parametro valore\_parametro}
+\end{center}
+
+\subsection{Apertura di una shell}
+
+Per questa analisi, verrà utilizzato il modulo \texttt{exploit/unix/webapp/wp\_admin\_shell\_upload}, che permette l'apertura di una \textbf{shell} di amministratore nel caso siano note le credenziali di accesso di \textbf{Wordpress}, come in questo caso.
+
+Il payload che suddetto modulo usa è di tipo \textbf{reverse}, contenuto nel modulo \texttt{php/meterpreter/reverse\_tcp}, che permette apertura di una sessione \texttt{meterpreter} \footnote{\textbf{Meterpreter} è una shell che fornisce un gran numero di funzioni, tra cui l'upload di file sulla macchina target.\cite{meterpreter}}.
+
+I parametri da impostare per questo exploit sono i seguenti:
+
+\begin{itemize}
+    \item \texttt{username}: l'username associato ad un utente Wordpress. In questo caso \texttt{noobbox};
+    \item \texttt{password}: la password associata all'account di cui sopra. In questo caso \texttt{5p4c3};
+    \item \texttt{rhost}: l'host su cui tentare l'exploit. In questo caso \texttt{192.168.64.21};
+    \item \texttt{targeturi}: l'endpoint corrispondente alla root del sito web realizzato con wordpress. In questo caso \texttt{/wordpress/}.
+\end{itemize}
+
+Per lanciare l'exploit è sufficiente scrivere \texttt{exploit} nella console e premere Invio, come mostrato nella Figura 23.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/metaspolit_exploit.png}
+    \caption{Esecuzione dell'exploit.}
+\end{figure}
+
+\newpage
+
+Per accedere direttamente alla reverse shell aperta in un ambiente \textit{simil-xterm} è sufficiente eseguire il comando \texttt{shell -t} una volta giunti al prompt di \texttt{meterpreter}, come riportato nella Figura 24.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/meterpreter-shell.png}
+    \caption{Apertura di una shell.}
+\end{figure}
+
+L'intuizione relativa all'immagine rilevata in fase di enumerazione si è dimostrata quindi \textbf{corretta}: \texttt{5p4c3} rappresenta dunque una password valida per l'utente \texttt{noobbox}.
+
+Allo stato attuale delle cose, si ha tuttavia a dispozione una shell per l'utente non privilegiato \texttt{www-data}. Tale account è utilizzato per convenzione per eseguire il server Apache \texttt{httpd}\cite{www-data}.
+
+\newpage
+
+\section{Privilege Escalation}
+L'utente \texttt{www-data} \textbf{non è un utente privilegiato}. Lo scopo di questa fase è quindi tentare una \textbf{Privilege Escalation} ed ottenere l'accesso ad utenti "più privilegiati" e successivamente all'account \texttt{root}.
 
 \newpage
 \printbibliography[title={Riferimenti bibliografici e risorse consultate}]
