@@ -392,11 +392,11 @@ Aprendo il file visitando l'URL \texttt{192.168.64.21/img.jpg} si ottiene quanto
 
 Si noti come nella seconda scansione (in cui sono state specificate le estensioni da considerare) non è avvenuta una ricerca ricorsiva. Per ovviare a questa problematica, verrà preso in considerazione il tool \texttt{feroxbuster}.
 
-\subsection{\texttt{feroxbuster}}
+\subsubsection{\texttt{feroxbuster}}
 
-\texttt{feroxbuster} può essere considerata un'alternativa al ben più noto tool \texttt{gobuster} e che risolve il suo difetto più grande: il mancato supporto alle scansioni ricorsive.
+\texttt{feroxbuster} può essere considerata un'alternativa al ben più noto tool \texttt{gobuster} e che risolve il suo difetto più grande: il mancato supporto alle scansioni ricorsive. \cite{feroxbuster}
 
-Scritto nel linguaggio \textbf{rust}, questo tool è presente nei repository di Kali Linux ed è installabile tramite il comando
+Scritto nel linguaggio \textbf{Rust}, questo tool è presente nei repository di Kali Linux ed è installabile tramite il comando
 
 \begin{center}
     \texttt{sudo apt-get install feroxbuster}
@@ -432,11 +432,11 @@ Consultando i risultati del tool, all'interno di tale cartella sembra sia \textb
 \newpage
 \newpage
 
-\subsection{Wordpress ai raggi X: \texttt{wpscan}}
+\subsubsection{Wordpress ai raggi X: \texttt{wpscan}}
 
 Avendo appurato che sul server web sia in esecuzione un'istanza di \textbf{wordpress}, è possibile proseguire con il processo di enumerazione iniziato in precedenza utilizzando il tool \texttt{wpscan}, che permette un'enumerazione mirata dell'istanza di tale framework in esecuzione sull'asset in analisi.
 
-In questa fase dell'analisi, viene utilizzato il tool nella sua configurazione di default con l'aggiunta di un processo di enumerazione degli \textbf{utenti} (switch \texttt{-e u}). Si è deciso di concentrarsi su questo aspetto poiché in precedenza era stata rinvenuta un'immagine che si presuppone sia una \textbf{password}. Avere a disposizione una coppia di credenziali permette non solo di accedere al \textbf{pannello di amministrazione} ma anche, mediante il tool \textbf{Metasploit}, ad una \textbf{shell} sulla macchina su cui Wordpress è in esecuzione.
+In questa fase dell'analisi, viene utilizzato il tool nella sua configurazione di default con l'aggiunta di un processo di enumerazione degli \textbf{utenti} (switch \texttt{-e u}). Si è deciso di concentrarsi su questo aspetto poiché in precedenza era stata rinvenuta un'immagine che si assume possa essere una \textbf{password}. Avere a disposizione una tale coppia di credenziali permette non solo di accedere al \textbf{pannello di amministrazione} ma anche, mediante il tool \textbf{Metasploit}, ad una \textbf{shell} sulla macchina su cui Wordpress è in esecuzione.
 
 Ulteriori informazioni su questo aspetto saranno forniti nelle sezioni successive.
 
@@ -449,7 +449,7 @@ In ogni caso, il comando utilizzato è il seguente:
 Il risultato dell'esecuzione del tool è allegato al presente documento, ma in sostanza è stato determinato che:
 
 \begin{itemize}
-    \item La versione del framework risulta essere la 6.2.2, rilasciata il 20 maggio 2023; \footnote{Si tenga presente che Wordpress prevede un meccanismo di aggiornamento automatico del framework, attivo di default su tutti i siti web. \cite{wordpress-autoupdate}}
+    \item La versione del framework risulta essere la 6.2.2, rilasciata il 20 maggio 2023; \footnote{Si tenga presente che Wordpress implementa un meccanismo di aggiornamento automatico del framework, attivo di default su tutti i siti web. \cite{wordpress-autoupdate}}
     \item È stato identificato l'utente \textbf{noobbox}; 
 \end{itemize}
 
@@ -459,7 +459,119 @@ Il risultato dell'esecuzione del tool è allegato al presente documento, ma in s
     \caption{\texttt{wpscan} ha rilevato un utente}
 \end{figure}
 
-Le informazioni ottenute in questa fase permettono già di definire una direzione chiara per la fase di \textbf{Exploitation}. Nella fase successiva verrà tuttavia descritta la strategia per identificare e riportare tutte le vulnerabilità presenti sull'asset usando i tools \textbf{Nessus} ed \textbf{OpenVAS}.
+Una successiva analisi volta alla ricerca di \textit{plug-ins} in uso da questa istanza del framework (mediante lo switch \texttt{-e p}) ha invece dato esito \textbf{negativo} e quindi non viene mostrata.
+
+\newpage
+\section{Vulnerability Mapping}
+Le informazioni ottenute nella fase di Target Enumeration permettono già di definire una direzione chiara per la fase di \textbf{Exploitation}. In questa fase verrà invece descritta la strategia per identificare e riportare tutte le vulnerabilità presenti sull'asset usando i tools \textbf{OpenVAS} e \textbf{Nessus}.
+
+\subsection{OpenVAS}
+\textbf{OpenVAS} (\textit{Open Vulnerability Assessment Scanner}) è un tool open source messo a disposizione dall'azienda \textbf{Greenborne} che permette l'analisi automatica di asset, in maniera autenticata e non autenticata.\cite{openvas}
+
+Questo tool è installabile direttamente dai repository di Kali Linux mediante il comando:
+
+\begin{center}
+    \texttt{sudo apt-get install openvas}
+\end{center}
+
+che permette il downlaod del tool insieme alle sue dipendenze. Si configura mediante lo script \texttt{gvm-setup} e si avvia mediante lo script \texttt{gvm-start} che si occuperà di avviare tutti i servizi e di mettere a disposizione un'interfaccia web all'indirizzo \texttt{localhost:9392}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8 \textwidth]{img/openvas-dashboard.png}
+    \caption{La \textit{dashboard} di OpenVAS}
+\end{figure}
+
+Questo tool è stato utilizzato nella sua configurazione \textbf{\textit{Full and Fast}}, che permette un'analisi completa dell'asset. Nella Figura 17 viene mostrata l'interfaccia di creazione di un nuovo task di scansione.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/openvas-scan-task.png}
+    \caption{Nuovo task}
+\end{figure}
+
+\subsubsection{OpenVAS: i risultati}
+I risultati riportati dal tool dopo la scansione sono già filtrati e vengono considerate le vulnerabilità che hanno il valore di \textbf{QoD} (\textit{Quality of Detection}) pari o maggiore al \textbf{70\%}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/openvas-results.png}
+    \caption{I risultati della scansione}
+\end{figure}
+
+
+Una discussione dettagliata sui risultati dei tool viene affrontata in una sezione apposita nel \textbf{Penetration Testing Report}, consegnato insieme al presente documento, ma in linea di massima le informazioni più importanti ottenute riguardano:
+
+\begin{itemize}
+    \item Non è presente alcun tipo di cifratura delle informazioni in transito da e verso il server;
+    \item È stato possibile \textbf{enumerare gli utenti di Wordpress}, ad ulteriore conferma di quanto riscontrato in precedenza utilizzando \texttt{wpscan}.
+\end{itemize}
+
+\subsection{Nessus}
+Il secondo tool utilizzato nella fase di Vulnerability Mapping consiste in \textbf{Nessus}, tool fornito dall'azienda \textbf{Tenable} che mette a disposizione sia una versione gratuita (denominata \textbf{Nessus Essentials}) che una versione a pagamento pensata per gli utenti Enterprise. Allo scopo di questa analisi viene utilizzata la versione Essentials.
+
+\subsubsection{Installazione di Nessus}
+Il tool non è presente di default nei repository di Kali Linux e di conseguenza deve essere scaricato dal sito web del produttore (raggiungibile alla pagina \url{https://www.tenable.com/downloads/nessus}). Poiché la macchina Kali in uso per l'analisi viene eseguita su architettura \textbf{aarch64} è necessario scaricare il pacchetto \texttt{.deb} corrispondente. Allo stato attuale delle cose, l'unico pacchetto deb disponibile per tale architettura è quello per \textbf{Ubuntu} ma che è installabile senza problemi anche su Kali mediante:
+
+\begin{center}
+    \texttt{sudo dpkg -i Nessus-10.5.2-ubuntu1804\_aarch64.deb}
+\end{center}
+
+assumendo di trovarsi nella stessa directory in cui è presente il file.
+
+Il servizio è avviabile mediante \textbf{systemd}, utilizzando il comando:
+
+\begin{center}
+    \texttt{sudo systemctl start nessud.service}
+\end{center}
+
+Il tool si controlla mediante un'interfaccia web raggiungibile all'indirizzo \texttt{localhost:8834}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/nessus-dashboard.png}
+    \caption{La \textit{dashboard} di Nessus}
+\end{figure}
+
+La peculiarità di questo tool consiste nella presenza di diversi \textit{templates} di scansione, che si concentrano su determinati aspetta dell'asset da analizzare, come mostrato nella Figura 20.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/nessus-templates.png}
+    \caption{I templates di Nessus}
+\end{figure}
+
+Per analizzare l'asset in esame, si è scelto di utilizzare il template \textbf{Web Application Tests}, che risulta quello più adatto per il contesto. Nel wizard che permette la definizione di una nuova scansione è stata selezionata la modalità \textbf{Complessa} che effettua le operazioni riportate nella Figura 21.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/nessus-complex-scan.png}
+    \caption{La scansione complessa di Nessus}
+\end{figure}
+
+\newpage
+\subsubsection{Nessus: i risultati}
+Al termine della scansione, Nessus fornisce un riepilogo delle vulnerabilità individuate e rappresentati mediante grafici, come mostrato nella Figura 22.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/nessus-results.png}
+    \caption{I risultati della scansione}
+\end{figure}
+
+Analizzando brevemente i risultati contenuti all'interno del file \texttt{Nessus-Scan.pdf}, allegato al Penetration Testing Report, si nota come Nessus abbia trovato (tralasciando qui i risultati di livello INFO) \textbf{cinque vulnerabilità}: una di livello \textbf{HIGH} e altre quattro di livello \textbf{MEDIUM}.
+
+\subsubsection{Nota sulla vulnerabilità \textbf{HIGH}}
+La vulnerabilità catalogata come di livello \textbf{HIGH} rappresenta in realtà un \textbf{falso positivo}. Facendo riferimento ai dettagli sul rilevamento, Nessus prova ad effettuare una \textbf{Server Side Includes (SSI) Injection} sulle pagine del \textbf{manuale del server} che spiegano come funziona questa tecnologia, tentando di includere una risorsa non esistente (e che quindi causerebbe un errore) e rilevando effettivamente un messaggio nel documento HTML di risposta che recita:
+
+\begin{center}
+    \texttt{[an error occurred while processing this directive]}
+\end{center}
+
+Tale messaggio è però \textit{hardcoded} all'interno del documento nella sezione che spiega come personalizzare proprio i messaggi di errore. Si può dunque ragionevolmente assumere che la Web App non sia vulnerabile a questo tipo di attacchi.
+
+\subsubsection{Altre vulnerabilità}
+Analizzando le altre vulnerabilità rilevate, si nota subito come sia stata confermata la possibilità di enumerare gli utenti di \textbf{WordPress}, già comunicata da \textbf{OpenVAS} e \texttt{wpscan}.
 
 \newpage
 \printbibliography[title={Riferimenti bibliografici e risorse consultate}]
