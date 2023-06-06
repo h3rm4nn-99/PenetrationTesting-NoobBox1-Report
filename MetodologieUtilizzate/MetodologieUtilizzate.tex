@@ -808,11 +808,11 @@ L'attivazione della backdoor avviene in tre step:
 
 \begin{enumerate}
     \item L'handler viene attivato mediante il comando \texttt{run};
-    \item Il web server su cui è stato caricato l'exploit viene contattato dall'esterno mediante \texttt{http://192.168.64.21/useful\_app.php};
-    \item Il web server contatta la macchina Kali e riceve il payload per l'apertura della reverse shell;
+    \item Il web server su cui è stata caricata la backdoor viene contattato dall'esterno mediante richiesta a \texttt{http://192.168.64.21/useful\_app.php};
+    \item Il web server contatta a sua volta la macchina Kali e riceve la seconda parte del payload per la successiva apertura della reverse shell.
 \end{enumerate}
 
-Il risultato viene mostrato qui di seguito:
+Il risultato viene mostrato qui di seguito.
 
 \begin{figure}[h!]
     \centering
@@ -820,7 +820,7 @@ Il risultato viene mostrato qui di seguito:
     \caption{Attivazione dell'handler}
 \end{figure}
 
-Come si nota, una sessione \textbf{meterpreter} è stata aperta ed è, di conseguenza, possibile diventare root utilizzando la stessa strategia mostrata in precedenza, utilizzando il comando \texttt{shell -t} da meterpreter, effettuando il login con \texttt{noobbox} eseguendo l'editor \texttt{vim}.
+Si noti come sia stata aperta una sessione \textbf{meterpreter} ed è, di conseguenza, possibile diventare root utilizzando la stessa strategia mostrata in precedenza, utilizzando il comando \texttt{shell -t} da meterpreter, effettuando il login con \texttt{noobbox} ed eseguendo l'editor \texttt{vim}.
 
 \newpage
 \begin{figure}[h!]
