@@ -87,5 +87,24 @@ Tale documento è articolato in diverse sezioni. Ciascuna di queste si concentra
 \end{enumerate}
 
 \newpage
+\section{Executive Summary}
+Il processo di Penetration Testing che questo documento sommarizza è stato svolto su un asset \textit{vulnerable by default} denominato \textbf{NoobBox-1} reperibile presso la piattaforma \textbf{VulnHub} all'indirizzo \url{https://www.vulnhub.com/entry/noobbox-1,664/}. Nato come sfida CTF, è stato utilizzato dall'autore del presente documento per prendere confidenza con i tool e le metodologie più utilizzate nel contesto del Penetration Testing.
+
+Gli obiettivi che sono stati fissati e raggiunti in questo processo consistono sostanzialmente in:
+
+\begin{itemize}
+    \item Identificazione ed enumerazione completa dei servizi presenti all'interno dell'asset;
+    \item Rilevamento delle vulnerabilità e delle debolezze presenti all'interno dell'asset;
+    \item Ottenere accesso privilegiato alla macchina;
+    \item Provvedere all'installazione di software specializzato per permettere l'accesso persistente all'asset.
+\end{itemize}
+
+L'attività di Penetration Testing è stata condotta a partire dal giorno 22 maggio 2023 ed ha avuto una connotazione \textbf{grey box} poiché alcune informazioni sono reperibili direttamente dalla piattaforma VulnHub.
+
+Il livello di rischio derivato dall'analisi è stato classificato come \textbf{Medio-Alto} perché sebbene non siano presenti vulnerabilità intrinseche dei servizi in esecuzione che siano direttamente sfruttabili, è stato comunque possibile ottenere accesso privilegiato alla macchina mediante \textbf{errori di configurazione} e pratiche di sicurezza \textbf{scorrette}.
+
+Una volta applicate le migliorie e le correzioni descritte nella sezione denominata \textbf{Remediation Report}, il livello di rischio scenderebbe ad un livello tale da non permettere più l'accesso non autorizzato alla macchina.
+
+\newpage
 \printbibliography[title={Riferimenti bibliografici}]
 \end{document}
