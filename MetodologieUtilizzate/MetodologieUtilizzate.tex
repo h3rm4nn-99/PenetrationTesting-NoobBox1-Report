@@ -507,6 +507,9 @@ Una discussione dettagliata sui risultati dei tool viene affrontata in una sezio
     \item È stato possibile \textbf{enumerare gli utenti di Wordpress}, ad ulteriore conferma di quanto riscontrato in precedenza utilizzando \texttt{wpscan}.
 \end{itemize}
 
+\subsubsection{OpenVAS: Nota sulla QoD}
+Impostando il filtro \texttt{min\_qod} a 0 si nota come siano state rilevate delle vulnerabilità relative ad \textbf{Apache httpd} ma che hanno una Quality of Detection \textbf{molto bassa}: del 30\%. Questi rilevamenti non sono necessariamente frutto di una effettiva vulnerabilità dell'applicazionema si basano unicamente sulla \textbf{versione} del web server installata sull'asset e rilevata dal tool.
+
 \subsection{Nessus}
 Il secondo tool utilizzato nella fase di Vulnerability Mapping consiste in \textbf{Nessus}, tool fornito dall'azienda \textbf{Tenable} che mette a disposizione sia una versione gratuita (denominata \textbf{Nessus Essentials}) che una versione a pagamento pensata per gli utenti Enterprise. Allo scopo di questa analisi viene utilizzata la versione Essentials.
 
@@ -561,7 +564,7 @@ Al termine della scansione, Nessus fornisce un riepilogo delle vulnerabilità in
 
 Analizzando brevemente i risultati contenuti all'interno del file \texttt{Nessus-Scan.pdf}, allegato al Penetration Testing Report, si nota come Nessus abbia trovato (tralasciando qui i risultati di livello INFO) \textbf{cinque vulnerabilità}: una di livello \textbf{HIGH} e altre quattro di livello \textbf{MEDIUM}.
 
-\subsubsection{Nota sulla vulnerabilità \textbf{HIGH}}
+\subsubsection{Nota su falsi positivi}
 La vulnerabilità catalogata come di livello \textbf{HIGH} rappresenta in realtà un \textbf{falso positivo}. Facendo riferimento ai dettagli sul rilevamento, Nessus prova ad effettuare una \textbf{Server Side Includes (SSI) Injection} sulle pagine del \textbf{manuale del server} che spiegano come funziona questa tecnologia, tentando di includere una risorsa non esistente (e che quindi causerebbe un errore) e rilevando effettivamente un messaggio nel documento HTML di risposta che recita:
 
 \begin{center}
@@ -570,9 +573,41 @@ La vulnerabilità catalogata come di livello \textbf{HIGH} rappresenta in realt�
 
 Tale messaggio è però \textit{hardcoded} all'interno del documento nella sezione che spiega come personalizzare proprio i messaggi di errore. Si può dunque ragionevolmente assumere che la Web App non sia vulnerabile a questo tipo di attacchi.
 
+Lo stesso discorso vale anche per una vulnerabilità etichettata come \textbf{Web Application Information Disclosure}. Lo scanner rileva la presenza di \textbf{path locali} nelle pagine relative al \textbf{manuale} (in particolare la stringa \texttt{/bin/sh}). Anche in questo caso, però, si tratta di \textbf{stringhe hardcoded}.
+
+Tali osservazioni verranno riportate anche nel \textbf{Penetration Testing Report}, allegato al presente documento.
+
 \subsubsection{Altre vulnerabilità}
 Analizzando le altre vulnerabilità rilevate, si nota subito come sia stata confermata la possibilità di enumerare gli utenti di \textbf{WordPress}, già comunicata da \textbf{OpenVAS} e \texttt{wpscan}.
+
+Nessus riporta anche una INFO che fa riferimento alla presenza di un parametro della richiesta HTTP chiamato \texttt{s} il cui valore è presente anche nel documento di risposta, il che potrebbe suggerire a potenziali problematiche di Cross Site Scripting. Tuttavia, da un'interazione diretta con il sito web è possibile notare che mediante il parametro \texttt{s} si effettua una ricerca e passando, ad esempio, la scritta \texttt{test}, nella pagina HTML viene visualizzata la stringa \texttt{Search results for "test"}. 
+
+È stata comunque tentata l'iniezione di codice JavaScript per far comparire un alert mediante lo snippet \texttt{<code>alert(1)</code>} in tale parametro. Tuttavia, com'è possibile notare nella figura successiva, l'attacco fallisce poiché il contenuto viene evidentemente sanitizzato.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/xss.png}
+\end{figure}
+
 \newpage
+Si è provveduto, inoltre, a verificare la fattibilità di attacchi di tipo \textbf{SQL Injection} mediante il tool \texttt{sqlmap} e specificando come URL (switch \texttt{-u})
+
+\begin{center}
+    \texttt{http://192.168.64.21/wordpress/?s=1}
+\end{center}
+
+e specificando di usare come "entrypoint" il parametro \texttt{s}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/sqlmap.png}
+\end{figure}
+
+L'output di questo tool suggerisce che mediante tale parametro non sembra essere possibile veicolare alcuna injection.
+
+\newpage
+
+
 
 \section{Target Exploitation}
 Nelle sezioni precedenti di questo documento sono state raccolte informazioni utili da sfruttare nella fase di \textbf{Exploitation}. In particolare, nella fase di enumerazione è stato possibile rinvenire:
@@ -644,6 +679,18 @@ Per accedere direttamente alla reverse shell aperta in un ambiente \textit{simil
 L'intuizione relativa all'immagine rilevata in fase di enumerazione si è dimostrata quindi \textbf{corretta}: \texttt{5p4c3} rappresenta dunque una password valida per l'utente \texttt{noobbox}.
 
 Allo stato attuale delle cose, si ha tuttavia a dispozione una shell per l'utente non privilegiato \texttt{www-data}. Tale account è utilizzato per convenzione per eseguire il server Apache \texttt{httpd}\cite{www-data}.
+
+\subsection{Extra: vulnerabilità con QoD basso ed \texttt{armitage}}
+Nella sezione precedente è stato discusso di come OpenVAS abbia rilevato delle vulnerabilità ma queste presentassero una Quality of Detection bassa e non venissero nemmeno mostrate di default nel report generato da questo tool. 
+
+In ogni caso, tali vulnerabilità sono state frutto di una \textbf{ricerca manuale su internet} specificando le relative stringhe CVE alla ricerca di eventuali exploit, con esito \textbf{negativo}.
+
+Per avere un'ulteriore conferma della non sfruttabilità di tali vulnerabilità è stata utilizzata la funzione \textbf{Hail Mary} del tool \texttt{armitage}, che permette di lanciare tutti gli exploit disponibili nel framework \textbf{Metasploit} compatibili con il tipo di host in questione senza sfruttare ulteriori informazioni (al contrario dell'exploit che utilizza le \textbf{credenziali di wordpress}). Come si nota dall'immagine qui sotto, ogni tentativo di exploitation è fallito e nessuna sessione di \texttt{meterpreter} è stata aperta.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/armitage.png}
+\end{figure}
 
 \newpage
 
