@@ -508,7 +508,7 @@ Una discussione dettagliata sui risultati dei tool viene affrontata in una sezio
 \end{itemize}
 
 \subsubsection{OpenVAS: Nota sulla QoD}
-Impostando il filtro \texttt{min\_qod} a 0 si nota come siano state rilevate delle vulnerabilità relative ad \textbf{Apache httpd} ma che hanno una Quality of Detection \textbf{molto bassa}: del 30\%. Questi rilevamenti non sono necessariamente frutto di una effettiva vulnerabilità dell'applicazionema si basano unicamente sulla \textbf{versione} del web server installata sull'asset e rilevata dal tool. In ogni caso, anche queste vulnerabilità sono state riportate nell'output generato dal tool e considerato a corredo del \textbf{Penetration Testing Report}, con i dovuti \textit{distinguo}.
+Impostando il filtro \texttt{min\_qod} a 0 si nota come siano state rilevate delle vulnerabilità relative ad \textbf{Apache httpd} ma che hanno una Quality of Detection \textbf{molto bassa}: del 30\%. Questi rilevamenti non sono necessariamente frutto di una effettiva vulnerabilità dell'applicazionema e si basano unicamente sulla \textbf{versione} del web server installata sull'asset e rilevata dal tool. In ogni caso, anche queste vulnerabilità sono state riportate nell'output generato dal tool e considerato a corredo del \textbf{Penetration Testing Report}, con i dovuti \textit{distinguo}.
 
 \subsection{Nessus}
 Il secondo tool utilizzato nella fase di Vulnerability Mapping consiste in \textbf{Nessus}, tool fornito dall'azienda \textbf{Tenable} che mette a disposizione sia una versione gratuita (denominata \textbf{Nessus Essentials}) che una versione a pagamento pensata per gli utenti Enterprise. Allo scopo di questa analisi viene utilizzata la versione Essentials.
@@ -683,9 +683,9 @@ Allo stato attuale delle cose, si ha tuttavia a dispozione una shell per l'utent
 \subsection{Extra: vulnerabilità con QoD basso ed \texttt{armitage}}
 Nella sezione precedente è stato discusso di come OpenVAS abbia rilevato delle vulnerabilità ma queste presentassero una Quality of Detection bassa e non venissero nemmeno mostrate di default nel report generato da questo tool. 
 
-In ogni caso, tali vulnerabilità sono state frutto di una \textbf{ricerca manuale su internet} specificando le relative stringhe CVE alla ricerca di eventuali exploit, con esito \textbf{negativo}.
+In ogni caso, tali vulnerabilità sono state frutto di una \textbf{ricerca manuale su internet} specificando le relative stringhe CVE alla ricerca di eventuali exploit sfruttabili per accedere all'asset, ma con esito \textbf{negativo}.
 
-Per avere un'ulteriore conferma della non sfruttabilità di tali vulnerabilità è stata utilizzata la funzione \textbf{Hail Mary} del tool \texttt{armitage}, che permette di lanciare tutti gli exploit disponibili nel framework \textbf{Metasploit} compatibili con il tipo di host in questione senza sfruttare ulteriori informazioni (al contrario dell'exploit che utilizza le \textbf{credenziali di wordpress}, rilevate per vie traverse). Come si nota dall'immagine qui sotto, ogni tentativo di exploitation è fallito e nessuna sessione di \texttt{meterpreter} è stata aperta.
+Per avere un'ulteriore conferma della non sfruttabilità di tali vulnerabilità è stata utilizzata la funzione \textbf{Hail Mary} del tool \texttt{armitage}, che permette di lanciare tutti gli exploit disponibili nel framework \textbf{Metasploit} compatibili con il tipo di host in questione senza sfruttare ulteriori informazioni (al contrario dell'exploit che utilizza le \textbf{credenziali di Wordpress}, rilevate per vie traverse). Come si nota dall'immagine qui sotto, ogni tentativo di exploitation è fallito e nessuna sessione di \texttt{meterpreter} è stata aperta.
 
 \begin{figure}[h!]
     \centering
