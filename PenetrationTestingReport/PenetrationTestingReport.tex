@@ -81,7 +81,8 @@ Tale documento è articolato in diverse sezioni. Ciascuna di queste si concentra
 \begin{enumerate}
     \item \textbf{Executive Summary}: in questa sezione viene svolta una sintesi dei risultati del processo e dello stato generale di sicurezza del sistema analizzato;
     \item \textbf{Engagement Highlights}: in questa sezione vengono esplicitate le regole di ingaggio tra chi ha commissionato l'indagine ed il Penetration Tester, le metodologie e gli obiettivi dell'analisi;
-    \item \textbf{Vulnerability Report}: in questa sezione viene fornita una visione d'insieme delle vulnerabilità e delle debolezze individuate durante il processo;
+    \item \textbf{Vulnerability Report}: in questa sezione viene fornita una visione d'insieme delle problematiche di sicurezza di cui l'asset è affetto;
+    \item \textbf{Findings Summary}: in questa sezione vengono presentate con maggior livello di dettaglio le vulnerabilità riscontrate durante il processo di Penetration Testing;
     \item \textbf{Remediation Report}: in questa sezione sono proposte eventuali soluzioni alle vulnerabilità ed alle debolezze descritte nella sezione precedente;
     \item \textbf{Detailed Summary}: in questa sezione è presente una discussione approfondita sulle problematiche individuate in precedenza.
 \end{enumerate}
@@ -99,11 +100,40 @@ Gli obiettivi che sono stati fissati e raggiunti in questo processo consistono s
     \item Provvedere all'installazione di software specializzato per permettere l'accesso persistente all'asset.
 \end{itemize}
 
-L'attività di Penetration Testing è stata condotta a partire dal giorno 22 maggio 2023 ed ha avuto una connotazione \textbf{grey box} poiché alcune informazioni sono reperibili direttamente dalla piattaforma VulnHub.
+L'attività di Penetration Testing è stata condotta a partire dal giorno 22 maggio 2023 ed ha avuto una connotazione \textbf{grey box} poiché alcune informazioni sono reperibili direttamente dalla piattaforma VulnHub e che fungono da punto di partenza.
 
 Il livello di rischio derivato dall'analisi è stato classificato come \textbf{Medio-Alto} perché sebbene non siano presenti vulnerabilità intrinseche dei servizi in esecuzione che siano direttamente sfruttabili, è stato comunque possibile ottenere accesso privilegiato alla macchina mediante \textbf{errori di configurazione} e pratiche di sicurezza \textbf{scorrette}.
 
 Una volta applicate le migliorie e le correzioni descritte nella sezione denominata \textbf{Remediation Report}, il livello di rischio scenderebbe ad un livello tale da non permettere più l'accesso non autorizzato alla macchina.
+
+\newpage
+
+\section{Engagements Highlights}
+Poiché l'analisi che questo documento descrive consiste in un progetto di stampo accademico e l'asset considerato ha questo tipo di analisi come scopo dichiarato, non sono state definite delle limitazioni dal punto di vista legale o contrattuale. In particolare, non sono presenti parti dell'asset che non sarebbero dovute essere analizzate così come non è stata imposta alcuna limitazione riguardo gli strumenti da utilizzare. Inoltre, non è stato (ovviamente) previsto alcun accordo di non-divulgazione.
+
+\newpage
+
+\section{Vulnerability Report}
+In questa sezione viene proposta un'\textit{overview} delle problematiche di sicurezza presenti sull'asset.
+
+In particolare, le problematiche appartengono alle categorie di:
+
+\begin{itemize}
+    \item Information disclosure;
+    \item Obsolescenza del software utilizzato dall'asset;
+    \item Errori di configurazione e cattive pratiche di sicurezza;
+\end{itemize}
+
+\subsection{Information Disclosure}
+Alcune informazioni sensibili che possono essere ricollegate a meccanismi di funzionamento interni all'asset sono \textbf{pubblicamente accessibili}. In particolare, visitando il sito web offerto dall'asset all'URL \texttt{/img.jpg} è possibile rinvenire la password dell'utente amministratore di \textbf{Wordpress}. Questo aspetto già da solo consente l'accesso non autorizzato all'asset.
+
+\subsection{Obsolescenza del software utilizzato nell'asset}
+Alcune componenti dell'asset sono ormai \textbf{obsolete}. In particolare, il server web \textbf{Apache httpd} è aggiornato alla versione \textbf{2.4.38}, rilasciata il \textbf{22 gennaio 2019}. Questa versione del software è risulta essere afflitta da alcune vulnerabilita. Sebbene nessuna di queste vulnerabilità sia risultata sfruttabile per ottenere l'accesso alla macchina, l'obsolescenza dei software, sia nel caso di \texttt{httpd2} che di qualunque software rende più probabile, a lungo termine, la compromissione dell'asset.
+
+\subsection{Errori di configurazione e cattive pratiche di sicurezza}
+L'utente che amministra il sito web creato con \textbf{Wordpress} possiede \textbf{lo stesso username} dell'utente della macchina locale. Una situazione del genere semplifica notevolmente il processo di enumerazione dell'asset, che può condurre alla sua compromissione. A peggiorare la situazione è stata la constatazione di un \textbf{riuso} della password per i due account. Una situazione del genere consente ad un attaccante di accedere ai file personali dell'utente locale dell'asset. 
+
+È stata inoltre rilevata la possibilità per l'utente locale di eseguire software con privilegi \textbf{ingiustamente elevati}. Quest'ultimo aspetto, in caso di accesso non autorizzato, permette di effettuare \textbf{Privilege Escalation}.
 
 \newpage
 \printbibliography[title={Riferimenti bibliografici}]
