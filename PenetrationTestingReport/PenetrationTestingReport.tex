@@ -109,11 +109,16 @@ Una volta applicate le migliorie e le correzioni descritte nella sezione denomin
 \newpage
 
 \section{Engagements Highlights}
-Poiché l'analisi che questo documento descrive consiste in un progetto di stampo accademico e l'asset considerato ha questo tipo di analisi come scopo dichiarato, non sono state definite delle limitazioni dal punto di vista legale o contrattuale. In particolare, non sono presenti parti dell'asset che non sarebbero dovute essere analizzate così come non è stata imposta alcuna limitazione riguardo gli strumenti da utilizzare. Inoltre, non è stato (ovviamente) previsto alcun accordo di non-divulgazione.
+Poiché l'analisi descritta da questo documento consiste in un progetto di stampo accademico e l'asset considerato ha questo tipo di analisi come scopo dichiarato, non sono state definite delle limitazioni dal punto di vista legale o contrattuale. 
+
+In particolare, non sono presenti parti dell'asset che non sarebbero dovute essere analizzate così come non è stata imposta alcuna limitazione riguardo gli strumenti da utilizzare. 
+
+Inoltre, non è stato (ovviamente) previsto alcun accordo di non-divulgazione.
 
 \newpage
 
 \section{Vulnerability Report}
+\label{sec:vulnrep}
 In questa sezione viene proposta un'\textit{overview} delle problematiche di sicurezza presenti sull'asset.
 
 In particolare, le problematiche appartengono alle categorie di:
@@ -136,5 +141,33 @@ L'utente della macchina locale possiede \textbf{lo stesso username} dell'utente 
 È stata inoltre rilevata la possibilità per l'utente locale di eseguire software con privilegi \textbf{ingiustamente elevati}. Quest'ultimo aspetto, in caso di accesso non autorizzato, permette di effettuare \textbf{Privilege Escalation}.
 
 \newpage
+\section{Findings Summary}
+\newpage
+
+\section{Remediation Report}
+In questa sezione verranno presentate delle strategie per risolvere o mitigare le problematiche di sicurezza emerse durante il processo svolto e documentate nella \hyperref[sec:vulnrep]{Sezione 4}.
+
+\subsection{Remediation per \textbf{Information Disclosure}}
+\begin{enumerate}
+    \item \textbf{Eliminare} il file \texttt{img.jpg} dalla root del web server per evitare di divulgare la password dell'amministratore di \textbf{Wordpress};
+    \item Installare e configurare il plugin di Wordpress \textbf{Stop User Enumeration} per contrastare tool di enumerazione automatica \cite{sue};
+    \item Aggiornare il profilo dell'aministratore di \textbf{Wordpress} ed utilizzare un \textbf{Display Name} diverso dallo username.
+\end{enumerate}
+
+\subsection{Remediation per \textbf{Obsolescenza del software}}
+La strategia più semplice (ma anche la migliore!) per risolvere le criticità appartenenti a questa categoria consiste nell'applicare in maniera frequente le \textbf{patch dei vendor} dei vari software in esecuzione, con una particolare attenzione ad \textbf{Apache httpd}. Tale processo può essere svolto sia \textbf{manualmente} che \textbf{automaticamente}, utilizzando sistemi di scheduling dei task come ad esempio \texttt{cron} nei momenti in cui tipicamente il traffico verso il sito web è minore.
+
+\newpage
+\subsection{Remediation per \textbf{Cattive pratiche di sicurezza}}
+\begin{enumerate}
+    \item Modificare lo username dell'utente della macchina locale (o quello dell'admin di Wordpress) per far sì che non siano identici e contrastare il processo di enumerazione;
+    \item Ripetere lo stesso procedimento descritto al punto precedente per le \textbf{password} dei due account;
+    \item Eliminare dal file \texttt{/etc/sudoers} la possibilità per l'utente \texttt{noobbox} di eseguire il comando \texttt{vim} come utente \texttt{root}.
+\end{enumerate}
+\newpage
+
+\section{Detailed Summary}
+\newpage
+
 \printbibliography[title={Riferimenti bibliografici}]
 \end{document}
