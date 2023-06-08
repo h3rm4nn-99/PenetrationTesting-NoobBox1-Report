@@ -683,7 +683,7 @@ Allo stato attuale delle cose, si ha tuttavia a dispozione una shell per l'utent
 \subsection{Extra: vulnerabilità con QoD basso ed \texttt{armitage}}
 Nella sezione precedente è stato discusso di come OpenVAS abbia rilevato delle vulnerabilità ma queste presentassero una Quality of Detection bassa e non venissero nemmeno mostrate di default nel report generato da questo tool. 
 
-In ogni caso, tali vulnerabilità sono state frutto di una \textbf{ricerca manuale su internet} specificando le relative stringhe CVE alla ricerca di eventuali exploit sfruttabili per accedere all'asset, ma con esito \textbf{negativo}.
+In ogni caso, tali vulnerabilità sono state oggetto di una \textbf{ricerca manuale su internet} specificando le relative stringhe CVE alla ricerca di eventuali exploit sfruttabili per accedere all'asset, ma con esito \textbf{negativo}.
 
 Per avere un'ulteriore conferma della non sfruttabilità di tali vulnerabilità è stata utilizzata la funzione \textbf{Hail Mary} del tool \texttt{armitage}, che permette di lanciare tutti gli exploit disponibili nel framework \textbf{Metasploit} compatibili con il tipo di host in questione senza sfruttare ulteriori informazioni (al contrario dell'exploit che utilizza le \textbf{credenziali di Wordpress}, rilevate per vie traverse). Come si nota dall'immagine qui sotto, ogni tentativo di exploitation è fallito e nessuna sessione di \texttt{meterpreter} è stata aperta.
 
@@ -801,6 +801,27 @@ Per confermare che si stia effettivamente utilizzando una shell di root, è poss
 \end{figure}
 
 Come è possibile notare, la fase di Privilege Escalation è stata completata con successo, essendo riusciti ad ottenere il \textbf{massimo privilegio possibile}.
+
+\subsubsection{Extra: vulnerabilità rilevate da \texttt{linpeas.sh}}
+Analizzando in maniera approfondita l'output dello script \texttt{linpeas.sh} si nota come siano state rilevate \textbf{diverse vulnerabilità} che riguardano alcune componenti del sistema, tra cui il comando \texttt{sudo} e che potrebbero garantire l'accesso root. Vengono inoltre proposti dei link ad \textbf{exploit proof of concept}. In particolare:
+
+\begin{enumerate}
+    \item \textbf{CVE-2019-13272};
+    \item \textbf{CVE-2021-3156};
+    \item \textbf{CVE-2021-22555};
+    \item \textbf{CVE-2019-18634}.
+\end{enumerate}
+
+Tuttavia, le vulnerabilità 1, 3 e 4 richiedono che il sorgente indicato sia \textbf{compilato} direttamente sull'asset, che \textbf{è sprovvisto del compilatore \texttt{gcc}}. La sua installazione, tuttavia, richiede i \textbf{permessi di root}, azzerando l'utilità di questi rilevamenti.
+
+La vulnerabilità indicata come 2 richiede invece che sia installato un interprete python, effettivamente presente sull'asset. È quindi possibile tentare un'ulteriore \textbf{Privilege Escalation}
+
+Una volta caricato sull'asset l'exploit chiamato \texttt{exploit\_nss.py}, reperibile nell'archivio zip scaricabile all'url indicato nel report generato da \texttt{linpeas.sh} (allegato al presente documento)\footnote{\url{https://codeload.github.com/blasty/CVE-2021-3156/zip/main}} e mandato in esecuzione, si viene informati che il target è \textbf{già stato patchato}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{img/patched.png}
+\end{figure}
 
 \newpage
 \section{Maintaining access: installazione di una backdoor}

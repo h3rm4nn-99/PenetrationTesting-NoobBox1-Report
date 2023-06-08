@@ -6,6 +6,7 @@
 \usepackage{csquotes}
 \usepackage{subfig}
 \usepackage{graphicx}
+\usepackage[table]{xcolor}
 \usepackage{indentfirst}
 \usepackage{fancyhdr}
 \usepackage{alphabeta}
@@ -16,7 +17,7 @@
 \usepackage{listings}
 \usepackage[htt]{hyphenat}
 \usepackage{pgfplots}
-
+\usepackage{pgf-pie}
 \usepackage[
     backend=biber,
     sorting=none
@@ -142,6 +143,26 @@ L'utente della macchina locale possiede \textbf{lo stesso username} dell'utente 
 
 \newpage
 \section{Findings Summary}
+In questa sezione viene proposta una panoramica dei risultati della fase di \textbf{Vulnerability Assessment}, che si propone di rilevare le vulnerabilità di cui l'asset è affetto. Siccome per eseguire la ricerca delle vulnerabilità è stato utilizzato più di un tool, il conto delle vulnerabilità non includerà più volte una vulnerabilità già riscontrata una volta. Il totale tra vulnerabilità riscontrate ed informazioni ammonta a \textbf{54}.
+
+Seguono dei diagrammi che forniscono una più chiara ripartizione dei rilevamenti.
+
+\vspace{15mm}
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|l|l|l|l|l|}
+            \hline
+            Livello di Rischio                              & \cellcolor[HTML]{FE0000}HIGH & \cellcolor[HTML]{FFCC67}MEDIUM & \cellcolor[HTML]{34FF34}LOW & \cellcolor[HTML]{34CDF9}INFO \\ \hline
+            \multicolumn{1}{|c|}{\textit{\# vulnerabilità}} & \multicolumn{1}{c|}{21}      & \multicolumn{1}{c|}{14}        & \multicolumn{1}{c|}{2}      & \multicolumn{1}{c|}{17}      \\ \hline
+        \end{tabular}
+    \end{table}
+    \vspace{15mm}
+    \begin{center}
+        \begin{tikzpicture}
+            \pie[color={red!100,orange!100,green!100,cyan!100}]{38.8/HIGH, 25.9/MEDIUM, 3.7/LOW, 31.4/INFO}
+        \end{tikzpicture}
+    \end{center}
+        
 \newpage
 
 \section{Remediation Report}
