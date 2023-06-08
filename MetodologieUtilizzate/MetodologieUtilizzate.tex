@@ -725,7 +725,7 @@ A questo punto, avendo a disposizione unicamente la password \texttt{5p4c3}, vie
 Al netto del messaggio di errore dovuto probabilmente al fatto che ci si sta interfacciando con una shell generata da \texttt{meterpreter}, è possibile notare come \textbf{la password di Wordpress si stata riutilizzata anche per l'utente presente sulla macchina}, dato che il login \textbf{è andato a buon fine}. Questa di per sé è una scelta che amplifica l'attacco veicolato in precedenza.
 
 \subsection{Vertical Privilege Escalation: \texttt{linpeas.sh}}
-L'obiettivo dell'indagine diventa quindi \textbf{assumere i privilegi di \texttt{root}}. Si tenga presente come la semplice elevazione dei privilegi mediante il comando \texttt{sudo su} non funziona perché la shell utilizzata dall'utente \texttt{noobbox} non permette l'esecuzione di tale comando. Per aggirare questa limitazione e rendere più completa l'indagine è stato utilizzato lo script \texttt{linpeas.sh}.
+L'obiettivo dell'indagine diventa quindi \textbf{assumere i privilegi di \texttt{root}}. Si tenga presente come la semplice elevazione dei privilegi mediante il comando \texttt{sudo su} non funziona perché la configurazione attuale di \texttt{sudo} per l'utente \texttt{noobbox} non permette l'esecuzione di tale comando. Per aggirare questa limitazione e rendere più completa l'indagine è stato utilizzato lo script \texttt{linpeas.sh}.
 
 Questo tool fa parte della suite \textbf{PEASS-ng} \textit{(Privilege Escalation Awesome Scripts SUITE)}, sviluppata dal ricercatore Carlos Polop ed il cui codice è disponibile sulla piattaforma GitHub \cite{linpeas}.
 
@@ -816,7 +816,7 @@ Tuttavia, le vulnerabilità 1, 3 e 4 richiedono che il sorgente indicato sia \te
 
 La vulnerabilità indicata come 2 richiede invece che sia installato un interprete python, effettivamente presente sull'asset. È quindi possibile tentare un'ulteriore \textbf{Privilege Escalation}
 
-Una volta caricato sull'asset l'exploit chiamato \texttt{exploit\_nss.py}, reperibile nell'archivio zip scaricabile all'url indicato nel report generato da \texttt{linpeas.sh} (allegato al presente documento)\footnote{\url{https://codeload.github.com/blasty/CVE-2021-3156/zip/main}} e mandato in esecuzione, si viene informati che il target è \textbf{già stato patchato}.
+Una volta caricato sull'asset l'exploit chiamato \texttt{exploit\_nss.py}, reperibile nell'archivio zip scaricabile all'url indicato nel report generato da \texttt{linpeas.sh} (allegato al presente documento)\footnote{\url{https://codeload.github.com/blasty/CVE-2021-3156/zip/main}} e mandato in esecuzione, si viene informati che il target è \textbf{già stato patchato}. Di conseguenza, questa vulnerabilità non sarà considerata nel conteggio finale nel Penetration Testing Report.
 
 \begin{figure}[h!]
     \centering

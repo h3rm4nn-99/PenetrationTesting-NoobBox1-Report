@@ -143,7 +143,7 @@ L'utente della macchina locale possiede \textbf{lo stesso username} dell'utente 
 
 \newpage
 \section{Findings Summary}
-In questa sezione viene proposta una panoramica dei risultati della fase di \textbf{Vulnerability Assessment}, che si propone di rilevare le vulnerabilità di cui l'asset è affetto. Siccome per eseguire la ricerca delle vulnerabilità è stato utilizzato più di un tool, il conto delle vulnerabilità non includerà più volte una vulnerabilità già riscontrata una volta. Il totale tra vulnerabilità riscontrate ed informazioni ammonta a \textbf{54}.
+In questa sezione viene proposta una panoramica dei risultati della fase di \textbf{Vulnerability Assessment}, che si propone di rilevare le vulnerabilità di cui l'asset è affetto. Siccome per eseguire la ricerca delle vulnerabilità è stato utilizzato più di un tool, il conto delle vulnerabilità non includerà più volte una vulnerabilità già riscontrata una volta. Il totale tra vulnerabilità riscontrate ed informazioni ammonta a \textbf{53}. Nessuna delle vulnerabilità di livello alto si è rivelata sfruttabile.
 
 Seguono dei diagrammi che forniscono una più chiara ripartizione dei rilevamenti.
 
@@ -153,13 +153,13 @@ Seguono dei diagrammi che forniscono una più chiara ripartizione dei rilevament
         \begin{tabular}{|l|l|l|l|l|}
             \hline
             Livello di Rischio                              & \cellcolor[HTML]{FE0000}HIGH & \cellcolor[HTML]{FFCC67}MEDIUM & \cellcolor[HTML]{34FF34}LOW & \cellcolor[HTML]{34CDF9}INFO \\ \hline
-            \multicolumn{1}{|c|}{\textit{\# vulnerabilità}} & \multicolumn{1}{c|}{21}      & \multicolumn{1}{c|}{14}        & \multicolumn{1}{c|}{2}      & \multicolumn{1}{c|}{17}      \\ \hline
+            \multicolumn{1}{|c|}{\textit{\# vulnerabilità}} & \multicolumn{1}{c|}{20}      & \multicolumn{1}{c|}{14}        & \multicolumn{1}{c|}{2}      & \multicolumn{1}{c|}{17}      \\ \hline
         \end{tabular}
     \end{table}
     \vspace{15mm}
     \begin{center}
         \begin{tikzpicture}
-            \pie[color={red!100,orange!100,green!100,cyan!100}]{38.8/HIGH, 25.9/MEDIUM, 3.7/LOW, 31.4/INFO}
+            \pie[color={red!100,orange!100,green!100,cyan!100}]{37.7/HIGH, 26.4/MEDIUM, 3.7/LOW, 32.0/INFO}
         \end{tikzpicture}
     \end{center}
         
@@ -188,7 +188,86 @@ La strategia più semplice (ma anche la migliore!) per risolvere le criticità a
 \newpage
 
 \section{Detailed Summary}
+In questa sezione vengono fornite informazioni dettagliate sulle vulnerabilità e sulle debolezze di cui l'asset è affetto che sono state riscontrate durante il processo di Penetration Testing nella fase di \textbf{Vulnerability Mapping}.
+
+Per assolvere a tale compito, sono stati utilizzati in particolare tre tools:
+
+\begin{enumerate}
+    \item \textbf{Nessus};
+    \item \textbf{OpenVAS};
+    \item \textbf{LinPEAS}, utilizzato per ottenere informazioni utili alla \textbf{Privilege Escalation} ma che ha permesso di rilevare vulnerabilità che affliggono, tra gli altri, il tool \texttt{sudo}.
+\end{enumerate}
+
+\subsection{Nessus}
+Un resoconto dettagliato delle vulnerabilità rilevate dal tool \textbf{Nessus} è allegato al presente docuemento ed è presente al percorso \texttt{extra/Nessus-Scan.pdf}. Si noti che tale tool ha prodotto \textbf{due falsi positivi}, di cui è stato discusso nella documentazione del processo. In particolare, le vulnerabilità etichettate come:
+
+\begin{itemize}
+    \item 42423 - CGI Generic SSI Injection (HTTP headers);
+    \item 57640 - Web Application Information Disclosure 
+\end{itemize}
+
+sono falsi positivi e come tali \textbf{non sono stati considerati nel conteggio finale delle vulnerabilità}
+
+\subsection{OpenVAS}
+Parimenti, un resoconto dettagliato delle vulnerabilità rilevate dal tool \textbf{OpenVAS} è allegato al presente docuemento ed è presente al percorso \texttt{extra/OpenVAS-Scan.pdf}.
+
+\subsection{LinPEAS}
+Poiché tale tool non fornisce un output strutturato, sono di seguito riportate informazioni dettagliate sulla natura delle vulnerabilità rilevate.
+
+\subsubsection{CVE-2019-13272}
+\begin{itemize}
+    \item \textbf{Descrizione:} nelle versioni del Kernel Linux precedenti alla 5.1.17, la funzione \texttt{ptrace\_link()} all'interno del file \texttt{kernel/ptrace.c} gestisce male le credenziali di un processo che intende sfruttare il meccanismo delle relazioni \texttt{ptrace}. In determinati scenari, tipicamente quando sussiste una relazione padre-figlio, la situazione potrebbe essere sfruttata da un utente locale per ottenere \textbf{accesso root}.
+    \item \textbf{Livello di Impatto}: HIGH;
+    \item \textbf{Punteggio CVSS v3}: 7.8;
+    \item \textbf{Riferimento}: \cite{13272}
+    \item \textbf{Contromisura}: effettuare un aggiornamento software, in particolare del \textbf{kernel}.
+\end{itemize}
+
+\subsubsection{CVE-2019-18634}
+\begin{itemize}
+    \item \textbf{Descrizione:} nelle versioni di \texttt{sudo} precedenti alla 1.8.26, l'opzione \texttt{pwfeedback} (utilizzata per far apparire degli asterischi mentre si sta digitando la password ad un prompt di \texttt{sudo}) attivabile all'interno del file \texttt{/etc/sudoers} permetteva ad un attaccante di veicolare un attacco di \textbf{stack based buffer overflow} mediante l'utilizzo di una stringa di caratteri molto lunga.
+    \item \textbf{Livello di Impatto}: HIGH;
+    \item \textbf{Punteggio CVSS v3}: 7.8;
+    \item \textbf{Riferimento}: \cite{18634}
+    \item \textbf{Contromisura}: effettuare un aggiornamento software, in particolare del pacchetto \textbf{sudo}.
+\end{itemize}
+
+\subsubsection{CVE-2021-22555}
+\begin{itemize}
+    \item \textbf{Descrizione:} nelle versioni del Kernel Linux a partire dalla 2.6.19-rc1 è stato rilevato un \textbf{heap-out-of-bound write} nel file \texttt{net/netfilter/x\_tables.c}, tramite il quale è possibile veicolare un attacco di \textbf{Denial of Service} usando la tecnica dell'\textbf{heap based memory corruption}. 
+    \item \textbf{Livello di Impatto}: HIGH;
+    \item \textbf{Punteggio CVSS v3}: 7.8;
+    \item \textbf{Riferimento}: \cite{22555}
+    \item \textbf{Contromisura}: effettuare un aggiornamento software, in particolare del \textbf{kernel}.
+\end{itemize}
 \newpage
 
+\subsection{Altre debolezze e criticità}
+Oltre alle vulnerabilità rilevate dai tool prima menzionati, l'asset è affetto da ulteriori debolezze ed errori di configurazione che possono portare ad accessi non autorizzati e \textbf{privilege escalation}.
+
+\subsubsection{Disclosure della password di Wordpress}
+\begin{itemize}
+    \item \textbf{Descrizione}: alla pagina \texttt{http://192.168.64.21/img.jpg} è possibile visualizzare una password che può essere ricondotta facilmente a quella dell'amministratore di wordpress;
+    \item \textbf{Rischi e potenziali attacchi}: in combinazione con la debolezza che riguarda l'enumerabilità degli utenti di Wordpress già rilevata da \textbf{Nessus}, tale debolezza può essere utilizzata per impersonare l'amministratore di \textbf{Wordpress};
+    \item \textbf{Contromisura}: eliminare il file \texttt{img.jpg} dal web server.
+\end{itemize}
+
+\subsubsection{Riuso degli username e delle password}
+\begin{itemize}
+    \item \textbf{Descrizione}: sia l'utente locale dell'asset che l'admin di Worpress condividono la stessa coppia di credenziali.
+    \item \textbf{Rischi e potenziali attacchi}: nel caso un attaccante riesca ad entrare in possesso delle credenziali di un account, ha automaticamente compresso anche l'altro;
+    \item \textbf{Contromisura}: cambiare nome utente e password ad uno dei due account.
+\end{itemize}
+
+\subsubsection{Esecuzione di \texttt{vim} come root}
+\begin{itemize}
+    \item \textbf{Descrizione}: tale politica di sicurezza scorretta è stata rilevata sia manualmente andando ad analizzare il file \texttt{/etc/sudoers} che mediante \textbf{Linpeas}. La configurazione corrente del tool \texttt{sudo} non permette all'utente \texttt{noobbox} di eseguire alcun comando come root, ad eccezione del comando \texttt{vim}. Anche in questo modo è comunque possibile ottenere una shell di root.
+    \item \textbf{Rischi e potenziali attacchi}: l'esecuzione dell'editor \texttt{vim} supporta l'esecuzione di un "comando" dell'editor subito dopo il suo avvio. Mediante il comando \texttt{vim -c ':!<cmd>'} è possibile eseguire il comando di shell \texttt{<cmd>} all'apertura dell'editor. Usando \texttt{sudo vim -c ':!/bin/bash'} viene aperta una \textbf{shell di root}.
+    \item \textbf{Contromisura}: inibire anche l'accesso al comando \texttt{vim} andando a modificare il file \texttt{/etc/sudoers} ed eliminare le righe che recitano: \begin{center}
+        \texttt{User noobbox may run the following commands on N00bBox:\\
+    (ALL : ALL) /usr/bin/vim}
+    \end{center}
+\end{itemize}
+\newpage
 \printbibliography[title={Riferimenti bibliografici}]
 \end{document}
