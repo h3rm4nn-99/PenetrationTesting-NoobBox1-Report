@@ -125,13 +125,13 @@ In particolare, le problematiche appartengono alle categorie di:
 \end{itemize}
 
 \subsection{Information Disclosure}
-Alcune informazioni sensibili che possono essere ricollegate a meccanismi di funzionamento interni all'asset sono \textbf{pubblicamente accessibili}. In particolare, visitando il sito web offerto dall'asset all'URL \texttt{/img.jpg} è possibile rinvenire la password dell'utente amministratore di \textbf{Wordpress}. Questo aspetto già da solo consente l'accesso non autorizzato all'asset.
+Alcune informazioni sensibili che possono essere ricollegate a meccanismi di funzionamento interni all'asset sono \textbf{pubblicamente accessibili}. In particolare, visitando il sito web offerto dall'asset all'URL \texttt{/img.jpg} è possibile rinvenire la password dell'utente amministratore di \textbf{Wordpress}. Inoltre, lo username di quest'ultimo è enumerabile mediante scansioni automatiche. Entrambi questi aspetti consentono immediatamente l'accesso non autorizzato all'asset.
 
 \subsection{Obsolescenza del software utilizzato nell'asset}
-Alcune componenti dell'asset sono ormai \textbf{obsolete}. In particolare, il server web \textbf{Apache httpd} è aggiornato alla versione \textbf{2.4.38}, rilasciata il \textbf{22 gennaio 2019}. Questa versione del software è risulta essere afflitta da alcune vulnerabilita. Sebbene nessuna di queste vulnerabilità sia risultata sfruttabile per ottenere l'accesso alla macchina, l'obsolescenza dei software, sia nel caso di \texttt{httpd2} che di qualunque software rende più probabile, a lungo termine, la compromissione dell'asset.
+Alcune componenti dell'asset sono ormai \textbf{obsolete}. In particolare, il server web \textbf{Apache httpd} è aggiornato alla versione \textbf{2.4.38}, rilasciata il \textbf{22 gennaio 2019}. Questa versione del software risulta essere afflitta da alcune vulnerabilita. Sebbene nessuna di queste sia risultata sfruttabile per ottenere l'accesso alla macchina, l'obsolescenza dei software, sia nel caso di \texttt{httpd2} che di qualunque altro software rende sempre più probabile la compromissione dell'asset man mano che passa il tempo.
 
-\subsection{Errori di configurazione e cattive pratiche di sicurezza}
-L'utente che amministra il sito web creato con \textbf{Wordpress} possiede \textbf{lo stesso username} dell'utente della macchina locale. Una situazione del genere semplifica notevolmente il processo di enumerazione dell'asset, che può condurre alla sua compromissione. A peggiorare la situazione è stata la constatazione di un \textbf{riuso} della password per i due account. Una situazione del genere consente ad un attaccante di accedere ai file personali dell'utente locale dell'asset. 
+\subsection{Cattive pratiche di sicurezza}
+L'utente della macchina locale possiede \textbf{lo stesso username} dell'utente che amministra il sito web creato con \textbf{Wordpress}. Una situazione del genere semplifica notevolmente il processo di enumerazione dell'asset, che può condurre alla sua compromissione. A peggiorare la situazione è stata la constatazione di un \textbf{riuso} della password per i due account. Una situazione del genere consente ad un attaccante di accedere ai file personali dell'utente locale dell'asset. 
 
 È stata inoltre rilevata la possibilità per l'utente locale di eseguire software con privilegi \textbf{ingiustamente elevati}. Quest'ultimo aspetto, in caso di accesso non autorizzato, permette di effettuare \textbf{Privilege Escalation}.
 
