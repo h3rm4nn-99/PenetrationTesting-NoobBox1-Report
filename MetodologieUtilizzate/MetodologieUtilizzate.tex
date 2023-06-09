@@ -110,7 +110,7 @@ La macchina virtuale in questione utilizza il kernel Linux 6.1 e di seguito è p
 \subsubsection{Dettagli sull'asset}
 Come menzionato in precedenza, la seconda macchina consiste proprio nell'asset su cui deve essere condotta l'analisi. Originariamente pensato per essere una sfida CTF, sulla piattaforma VulnHub viene rivelata la presenza di due \textit{flags} a cui accedere: una per l'utente non privilegiato ed una per \texttt{root}. 
 
-Naturalmente, allo scopo di questo progetto non ci si è limitati alla cattura delle flag ma è stato seguito un approccio più sistematico che prevede l'utilizzo di tools e di metodologie standard tipiche di un processo di Penetration Testing.
+Naturalmente, allo scopo di questo progetto non ci si è concentrati sulla cattura delle flag ma è stato seguito un approccio più sistematico che prevede l'utilizzo di tools e di metodologie standard tipiche di un processo di Penetration Testing.
 
 Sulla piattaforma VulnHub viene offerto il download di NoobBox-1 in formato \texttt{.ova}, compatibile con il software \textbf{Oracle VirtualBox}. Tuttavia, al momento della stesura di questo documento, non esiste una versione nativa di tale software per la piattaforma Apple Silicon in uso e l'hypervisor d'elezione non supporta l'importazione di file \texttt{.ova}. 
 
@@ -133,9 +133,9 @@ Al primo avvio della macchina ci si rende conto che è in uso il sistema operati
 
 In ogni caso, la versione del sistema operativo utilizzato dall'asset sarà oggetto di una successiva analisi per evitare qualsiasi tipo di depistaggio o ambiguità.
 
-La quantità di informazioni che è possibile carpire senza effettuare analisi "esterne" all'asset stesso si ferma tuttavia qui poiché \textbf{non è possibile accedere alla macchina}. Lo scopo della sfida CTF è in reltà proprio quello di effettuare il login e "catturare" le due flag descritte in precedenza. È quindi necessario svolgere ulteriori analisi
+La quantità di informazioni che è possibile carpire senza effettuare analisi "esterne" all'asset stesso si ferma tuttavia qui poiché \textbf{non è possibile accedere alla macchina}. Lo scopo della sfida CTF è in realtà proprio quello di effettuare il login e "catturare" le due flag descritte in precedenza. È quindi necessario svolgere ulteriori analisi
 
-Tutti i passaggi descritti in questo documento assumono che la macchina Kali si trovi \textbf{sulla stessa rete locale} della macchina che costituise l'asset da analizzare.
+Tutti i passaggi descritti in questo documento assumono che la macchina Kali si trovi \textbf{sulla stessa rete locale} della macchina che costituisce l'asset da analizzare.
 
 \section{Target Discovery}
 Come detto, la diretta conseguenza dell'impossibilità di accedere all'asset in alcun modo consiste nella necessità di determinare in qualche modo il suo indirizzo IP sulla rete.
@@ -151,7 +151,7 @@ Prima di tutto, è necessario specificare che:
 
 A questo punto, per determinare l'indirizzo IP dell'asset è possibile utilizzare il tool \texttt{netdiscover}, che viene fornito di default con Kali Linux e che deve essere eseguito come utente \texttt{root}.
 
-Suddetto tool, secondo la documentazione accessibile mediante il comando \texttt{man netdiscover}, permette di rilevare host attivi su di una rete locale inviandogli richeste \textbf{ARP}. 
+Suddetto tool, secondo la documentazione accessibile mediante il comando \texttt{man netdiscover}, permette di rilevare host attivi su di una rete locale inviandogli richieste \textbf{ARP}. 
 
 Due sono le opzioni che devono essere specificate in questo contesto:
 
@@ -206,7 +206,7 @@ Il comando completo utilizzato in questo contesto risulta essere:
     \texttt{p0f -i eth0}
 \end{center}
 
-Come prima cosa, si è provato ad accedere all'asset mediante il comando \texttt{curl} utilizzando l'indirizzo IP ottenuto in precedenza sulla porta 80, che in questo caso si è rivelata \textbf{aperta}.\footnote{Si tenga presente che lo stato della porta 80 costituisce già di per sé un elemento \textbf{prezioso} per l'indagine in corso, ma una discussione approfonditta su questo topic verrà affrontata nella sezione dedicata alla \textbf{Target Enumeration}}.
+Come prima cosa, si è provato a contattare l'asset mediante il comando \texttt{curl} utilizzando l'indirizzo IP ottenuto in precedenza sulla porta 80, che in questo caso si è rivelata \textbf{aperta}.\footnote{Si tenga presente che lo stato della porta 80 costituisce già di per sé un elemento \textbf{prezioso} per l'indagine in corso, ma una discussione approfondita su questo topic verrà affrontata nella sezione dedicata alla \textbf{Target Enumeration}}.
 
 
 Analizzando tuttavia i risultati mostrati a schermo (qui di seguito, si notino i punti interrogativi in corrispondenza della voce \texttt{server}) ci si accorge che il tool \texttt{p0f} \textbf{non è riuscito ad identificare correttamente il sistema operativo del target}. Si è reso quindi necessario provare altre strategie.
@@ -272,7 +272,7 @@ Facendo riferimento al report generato è possibile notare che:
 \begin{itemize}
     \item Il servizio presente sulla porta 80 TCP (identificata come aperta anche in precedenza) consiste in \textbf{Apache \texttt{httpd}} in versione \textbf{2.4.38};
     \item Non è presente nessun altro servizio TCP attivo sul target, dato che le altre 65534 porte sono state dichiarate \textbf{chiuse};
-    \item È stato possibile ottenere un ulteriore discontro sul sistema operativo in esecuzione sull'asset: \textbf{Debian}.
+    \item È stato possibile ottenere un ulteriore riscontro sul sistema operativo in esecuzione sull'asset: \textbf{Debian}.
 \end{itemize}
 
 \subsection{Extra: UDP Port Scanning}
@@ -394,7 +394,7 @@ Si noti come nella seconda scansione (in cui sono state specificate le estension
 
 \subsubsection{\texttt{feroxbuster}}
 
-\texttt{feroxbuster} può essere considerata un'alternativa al ben più noto tool \texttt{gobuster} e che risolve il suo difetto più grande: il mancato supporto alle scansioni ricorsive. \cite{feroxbuster}
+\texttt{feroxbuster} può essere considerato un'alternativa al ben più noto tool \texttt{gobuster} e che risolve il suo difetto più grande: il mancato supporto alle scansioni ricorsive. \cite{feroxbuster}
 
 Scritto nel linguaggio \textbf{Rust}, questo tool è presente nei repository di Kali Linux ed è installabile tramite il comando
 
@@ -459,14 +459,14 @@ Il risultato dell'esecuzione del tool è allegato al presente documento, ma in s
     \caption{\texttt{wpscan} ha rilevato un utente}
 \end{figure}
 
-Una successiva analisi volta alla ricerca di \textit{plug-ins} in uso da questa istanza del framework (mediante lo switch \texttt{-e p}) ha invece dato esito \textbf{negativo} e quindi non viene mostrata.
+Una successiva analisi volta alla ricerca di \textit{plugins} in uso da questa istanza del framework (mediante lo switch \texttt{-e p}) ha invece dato esito \textbf{negativo} e quindi non viene mostrata.
 
 \newpage
 \section{Vulnerability Mapping}
 Le informazioni ottenute nella fase di Target Enumeration permettono già di definire una direzione chiara per la fase di \textbf{Exploitation}. In questa fase verrà invece descritta la strategia per identificare e riportare tutte le vulnerabilità presenti sull'asset usando i tools \textbf{OpenVAS} e \textbf{Nessus}.
 
 \subsection{OpenVAS}
-\textbf{OpenVAS} (\textit{Open Vulnerability Assessment Scanner}) è un tool open source messo a disposizione dall'azienda \textbf{Greenborne} che permette l'analisi automatica di asset, in maniera autenticata e non autenticata.\cite{openvas}
+\textbf{OpenVAS} (\textit{Open Vulnerability Assessment Scanner}) è un tool open source messo a disposizione dall'azienda \textbf{Greenbone} che permette l'analisi automatica di asset, in maniera autenticata e non autenticata.\cite{openvas}
 
 Questo tool è installabile direttamente dai repository di Kali Linux mediante il comando:
 
@@ -474,7 +474,7 @@ Questo tool è installabile direttamente dai repository di Kali Linux mediante i
     \texttt{sudo apt-get install openvas}
 \end{center}
 
-che permette il downlaod del tool insieme alle sue dipendenze. Si configura mediante lo script \texttt{gvm-setup} e si avvia mediante lo script \texttt{gvm-start} che si occuperà di avviare tutti i servizi e di mettere a disposizione un'interfaccia web all'indirizzo \texttt{localhost:9392}.
+che permette il download del tool insieme alle sue dipendenze. Si configura mediante lo script \texttt{gvm-setup} e si avvia mediante lo script \texttt{gvm-start} che si occuperà di avviare tutti i servizi e di mettere a disposizione un'interfaccia web all'indirizzo \texttt{localhost:9392}.
 
 \begin{figure}[h!]
     \centering
@@ -508,7 +508,7 @@ Una discussione dettagliata sui risultati dei tool viene affrontata in una sezio
 \end{itemize}
 
 \subsubsection{OpenVAS: Nota sulla QoD}
-Impostando il filtro \texttt{min\_qod} a 0 si nota come siano state rilevate delle vulnerabilità relative ad \textbf{Apache httpd} ma che hanno una Quality of Detection \textbf{molto bassa}: del 30\%. Questi rilevamenti non sono necessariamente frutto di una effettiva vulnerabilità dell'applicazionema e si basano unicamente sulla \textbf{versione} del web server installata sull'asset e rilevata dal tool. In ogni caso, anche queste vulnerabilità sono state riportate nell'output generato dal tool e considerato a corredo del \textbf{Penetration Testing Report}, con i dovuti \textit{distinguo}.
+Impostando il filtro \texttt{min\_qod} a 0 si nota come siano state rilevate delle vulnerabilità relative ad \textbf{Apache httpd} ma che hanno una Quality of Detection \textbf{molto bassa}: del 30\%. Questi rilevamenti non sono necessariamente frutto di una effettiva esposizione dell'applicazione a tali problematiche e si basano unicamente sulla \textbf{versione} del web server installata sull'asset e rilevata dal tool. In ogni caso, anche queste vulnerabilità sono state riportate nell'output generato dal tool e presentato a corredo del \textbf{Penetration Testing Report}.
 
 \subsection{Nessus}
 Il secondo tool utilizzato nella fase di Vulnerability Mapping consiste in \textbf{Nessus}, tool fornito dall'azienda \textbf{Tenable} che mette a disposizione sia una versione gratuita (denominata \textbf{Nessus Essentials}) che una versione a pagamento pensata per gli utenti Enterprise. Allo scopo di questa analisi viene utilizzata la versione Essentials.
@@ -525,7 +525,7 @@ assumendo di trovarsi nella stessa directory in cui è presente il file.
 Il servizio è avviabile mediante \textbf{systemd}, utilizzando il comando:
 
 \begin{center}
-    \texttt{sudo systemctl start nessud.service}
+    \texttt{sudo systemctl start nessusd.service}
 \end{center}
 
 Il tool si controlla mediante un'interfaccia web raggiungibile all'indirizzo \texttt{localhost:8834}.
@@ -678,7 +678,7 @@ Per accedere direttamente alla reverse shell aperta in un ambiente \textit{simil
 
 L'intuizione relativa all'immagine rilevata in fase di enumerazione si è dimostrata quindi \textbf{corretta}: \texttt{5p4c3} rappresenta dunque una password valida per l'utente \texttt{noobbox}.
 
-Allo stato attuale delle cose, si ha tuttavia a dispozione una shell per l'utente non privilegiato \texttt{www-data}. Tale account è utilizzato per convenzione per eseguire il server Apache \texttt{httpd}\cite{www-data}.
+Allo stato attuale delle cose, si ha tuttavia a disposizione una shell per l'utente non privilegiato \texttt{www-data}. Tale account è utilizzato per convenzione per eseguire il server Apache \texttt{httpd}\cite{www-data}.
 
 \subsection{Extra: vulnerabilità con QoD basso ed \texttt{armitage}}
 Nella sezione precedente è stato discusso di come OpenVAS abbia rilevato delle vulnerabilità ma queste presentassero una Quality of Detection bassa e non venissero nemmeno mostrate di default nel report generato da questo tool. 
@@ -711,7 +711,7 @@ il cui risultato è mostrato nella Figura 25.
     \caption{\texttt{noobbox} strikes again}
 \end{figure}
 
-È stato dunque appurato che, in base alla struttura delle directory sui sistemi Unix, è presente un utente \texttt{noobbox} anche per il sistema operativo in sé.
+È stato dunque appurato che, in base alla struttura delle directory sui sistemi Unix, è presente un utente chiamato \texttt{noobbox} anche per il sistema operativo in sé.
 
 A questo punto, avendo a disposizione unicamente la password \texttt{5p4c3}, viene tentato il login come utente \texttt{noobbox} utilizzando tale password. Si sta tentando quindi una sorta di \textbf{Horizontal Privilege Escalation}, mostrata nella Figura 26.
 
@@ -722,7 +722,7 @@ A questo punto, avendo a disposizione unicamente la password \texttt{5p4c3}, vie
 \end{figure}
 
 \newpage
-Al netto del messaggio di errore dovuto probabilmente al fatto che ci si sta interfacciando con una shell generata da \texttt{meterpreter}, è possibile notare come \textbf{la password di Wordpress si stata riutilizzata anche per l'utente presente sulla macchina}, dato che il login \textbf{è andato a buon fine}. Questa di per sé è una scelta che amplifica l'attacco veicolato in precedenza.
+Al netto del messaggio di errore dovuto probabilmente al fatto che ci si sta interfacciando con una shell generata da \texttt{meterpreter}, è possibile notare come \textbf{la password di Wordpress sia stata riutilizzata anche per l'utente presente sulla macchina}, dato che il login \textbf{è andato a buon fine}. Questa già di per sé è una scelta che amplifica l'attacco veicolato in precedenza.
 
 \subsection{Vertical Privilege Escalation: \texttt{linpeas.sh}}
 L'obiettivo dell'indagine diventa quindi \textbf{assumere i privilegi di \texttt{root}}. Si tenga presente come la semplice elevazione dei privilegi mediante il comando \texttt{sudo su} non funziona perché la configurazione attuale di \texttt{sudo} per l'utente \texttt{noobbox} non permette l'esecuzione di tale comando. Per aggirare questa limitazione e rendere più completa l'indagine è stato utilizzato lo script \texttt{linpeas.sh}.
@@ -897,7 +897,7 @@ Si noti come sia stata aperta una sessione \textbf{meterpreter} ed è, di conseg
     \caption{Utilizzo della backdoor}
 \end{figure}
 
-Essendo la backdoor salvata nella root del web server, questa sarà \textbf{disponibile anche successivamente ad un riavvio del sistema}.
+Essendo la backdoor conservata nella root del web server, questa sarà \textbf{disponibile anche successivamente ad un riavvio del sistema}.
 
 Anche la fase di \textbf{Maintaining access} può dirsi, quindi, \textbf{completata con successo}.
 

@@ -262,7 +262,7 @@ Oltre alle vulnerabilità rilevate dai tool prima menzionati, l'asset è affetto
 \subsubsection{Esecuzione di \texttt{vim} come root}
 \begin{itemize}
     \item \textbf{Descrizione}: tale politica di sicurezza scorretta è stata rilevata sia manualmente andando ad analizzare il file \texttt{/etc/sudoers} che mediante \textbf{LinPEAS}. La configurazione corrente del tool \texttt{sudo} non permette all'utente \texttt{noobbox} di eseguire alcun comando come root, ad eccezione del comando \texttt{vim}. Anche in questo modo è comunque possibile ottenere una shell di root.
-    \item \textbf{Rischi e potenziali attacchi}: l'esecuzione dell'editor \texttt{vim} supporta l'esecuzione di un "comando" dell'editor subito dopo il suo avvio. Mediante il comando \texttt{vim -c ':!<cmd>'} è possibile eseguire il comando di shell \texttt{<cmd>} all'apertura dell'editor. Usando \texttt{sudo vim -c ':!/bin/bash'} viene aperta una \textbf{shell di root}.
+    \item \textbf{Rischi e potenziali attacchi}: l'esecuzione dell'editor \texttt{vim} supporta l'esecuzione di un "comando" dell'editor subito dopo il suo avvio. Mediante la command line \texttt{vim -c ':!<cmd>'} è possibile eseguire il comando di shell \texttt{<cmd>} all'apertura dell'editor. Usando \texttt{sudo vim -c ':!/bin/bash'} viene aperta una \textbf{shell di root}.
     \item \textbf{Contromisura}: inibire anche l'accesso al comando \texttt{vim} andando a modificare il file \texttt{/etc/sudoers} ed eliminare le righe che recitano: \begin{center}
         \texttt{User noobbox may run the following commands on N00bBox:\\
     (ALL : ALL) /usr/bin/vim}
