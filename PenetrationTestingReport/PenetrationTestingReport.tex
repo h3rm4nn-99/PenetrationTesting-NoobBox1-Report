@@ -109,7 +109,7 @@ Una volta applicate le migliorie e le correzioni descritte nella sezione denomin
 
 \newpage
 
-\section{Engagements Highlights}
+\section{Engagement Highlights}
 Poiché l'analisi descritta da questo documento consiste in un progetto di stampo accademico e l'asset considerato ha questo tipo di analisi come scopo dichiarato, non sono state definite delle limitazioni dal punto di vista legale o contrattuale. 
 
 In particolare, non sono presenti parti dell'asset che non sarebbero dovute essere analizzate così come non è stata imposta alcuna limitazione riguardo gli strumenti da utilizzare. 
@@ -172,7 +172,7 @@ In questa sezione verranno presentate delle strategie per risolvere o mitigare l
 \begin{enumerate}
     \item \textbf{Eliminare} il file \texttt{img.jpg} dalla root del web server per evitare di divulgare la password dell'amministratore di \textbf{Wordpress};
     \item Installare e configurare il plugin di Wordpress \textbf{Stop User Enumeration} per contrastare tool di enumerazione automatica \cite{sue};
-    \item Aggiornare il profilo dell'aministratore di \textbf{Wordpress} ed utilizzare un \textbf{Display Name} diverso dallo username.
+    \item Aggiornare il profilo dell'amministratore di \textbf{Wordpress} ed utilizzare un \textbf{Display Name} diverso dallo username.
 \end{enumerate}
 
 \subsection{Remediation per \textbf{Obsolescenza del software}}
@@ -199,7 +199,7 @@ Per assolvere a tale compito, sono stati utilizzati in particolare tre tools:
 \end{enumerate}
 
 \subsection{Nessus}
-Un resoconto dettagliato delle vulnerabilità rilevate dal tool \textbf{Nessus} è allegato al presente docuemento ed è presente al percorso \texttt{extra/Nessus-Scan.pdf}. Si noti che tale tool ha prodotto \textbf{due falsi positivi}, di cui è stato discusso nella documentazione del processo. In particolare, le vulnerabilità etichettate come:
+Un resoconto dettagliato delle vulnerabilità rilevate dal tool \textbf{Nessus} è allegato al presente documento ed è presente al percorso \texttt{extra/Nessus-Scan.pdf}. Si noti che tale tool ha prodotto \textbf{due falsi positivi}, di cui è stato discusso nella documentazione del processo. In particolare, le vulnerabilità etichettate come:
 
 \begin{itemize}
     \item 42423 - CGI Generic SSI Injection (HTTP headers);
@@ -209,7 +209,7 @@ Un resoconto dettagliato delle vulnerabilità rilevate dal tool \textbf{Nessus} 
 sono falsi positivi e come tali \textbf{non sono stati considerati nel conteggio finale delle vulnerabilità}
 
 \subsection{OpenVAS}
-Parimenti, un resoconto dettagliato delle vulnerabilità rilevate dal tool \textbf{OpenVAS} è allegato al presente docuemento ed è presente al percorso \texttt{extra/OpenVAS-Scan.pdf}.
+Parimenti, un resoconto dettagliato delle vulnerabilità rilevate dal tool \textbf{OpenVAS} è allegato al presente documento ed è presente al percorso \texttt{extra/OpenVAS-Scan.pdf}.
 
 \subsection{LinPEAS}
 Poiché tale tool non fornisce un output strutturato, sono di seguito riportate informazioni dettagliate sulla natura delle vulnerabilità rilevate.
@@ -254,14 +254,14 @@ Oltre alle vulnerabilità rilevate dai tool prima menzionati, l'asset è affetto
 
 \subsubsection{Riuso degli username e delle password}
 \begin{itemize}
-    \item \textbf{Descrizione}: sia l'utente locale dell'asset che l'admin di Worpress condividono la stessa coppia di credenziali.
+    \item \textbf{Descrizione}: sia l'utente locale dell'asset che l'admin di Wordpress condividono la stessa coppia di credenziali.
     \item \textbf{Rischi e potenziali attacchi}: nel caso un attaccante riesca ad entrare in possesso delle credenziali di un account, ha automaticamente compresso anche l'altro;
     \item \textbf{Contromisura}: cambiare nome utente e password ad uno dei due account.
 \end{itemize}
 
 \subsubsection{Esecuzione di \texttt{vim} come root}
 \begin{itemize}
-    \item \textbf{Descrizione}: tale politica di sicurezza scorretta è stata rilevata sia manualmente andando ad analizzare il file \texttt{/etc/sudoers} che mediante \textbf{Linpeas}. La configurazione corrente del tool \texttt{sudo} non permette all'utente \texttt{noobbox} di eseguire alcun comando come root, ad eccezione del comando \texttt{vim}. Anche in questo modo è comunque possibile ottenere una shell di root.
+    \item \textbf{Descrizione}: tale politica di sicurezza scorretta è stata rilevata sia manualmente andando ad analizzare il file \texttt{/etc/sudoers} che mediante \textbf{LinPEAS}. La configurazione corrente del tool \texttt{sudo} non permette all'utente \texttt{noobbox} di eseguire alcun comando come root, ad eccezione del comando \texttt{vim}. Anche in questo modo è comunque possibile ottenere una shell di root.
     \item \textbf{Rischi e potenziali attacchi}: l'esecuzione dell'editor \texttt{vim} supporta l'esecuzione di un "comando" dell'editor subito dopo il suo avvio. Mediante il comando \texttt{vim -c ':!<cmd>'} è possibile eseguire il comando di shell \texttt{<cmd>} all'apertura dell'editor. Usando \texttt{sudo vim -c ':!/bin/bash'} viene aperta una \textbf{shell di root}.
     \item \textbf{Contromisura}: inibire anche l'accesso al comando \texttt{vim} andando a modificare il file \texttt{/etc/sudoers} ed eliminare le righe che recitano: \begin{center}
         \texttt{User noobbox may run the following commands on N00bBox:\\
