@@ -301,8 +301,8 @@ TSWLatexianTemp*
 #*Notes.bib
 
 # For the purposes of this project, we can avoid uploading the pdf files to the remote repository.
-PenetrationTestingReport.pdf
-MetodologieUtilizzate.pdf
+PenetrationTestingReport/PenetrationTestingReport.pdf
+MetodologieUtilizzate/MetodologieUtilizzate.pdf
 
 # macOS stuff
 .DS_Store
